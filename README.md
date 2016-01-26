@@ -3,6 +3,22 @@ A tool based on donated statistics that helps organizations better estimate the 
 ## Installation
 
 
+## Quickstart
+
+### OS X
+
+1. Make a projects directory (`mkdir -p ~/projects`)
+2. Clone the repository to your computer (`git clone https://github.com/clirdlf/digitization_cost_calculator.git ~/projects`)
+3. Change to the project directory (`cd ~/projects/digitization_cost_calculator`)
+4. Start a PHP server (`php -S localhost:8000`)
+5. Open the project in your browser at [http://localhost:8000](http://localhost:8000)
+6. Celebrate :tada:
+
+### Get Updates
+
+1. Make sure you're on the master branch (`git checkout master`)
+2. Pull from origin: (`git pull master origin`)
+
 ## Contributing
 
 1. [Create an issue][issues] to discuss your idea.
