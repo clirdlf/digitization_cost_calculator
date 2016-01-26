@@ -8,7 +8,7 @@ A tool based on donated statistics that helps organizations better estimate the 
 ### OS X
 
 1. Make a projects directory (`mkdir -p ~/projects`)
-2. Clone the repository to your computer (`git clone https://github.com/clirdlf/digitization_cost_calculator.git ~/projects`)
+2. Clone the repository to your computer (`cd ~/projects && git clone https://github.com/clirdlf/digitization_cost_calculator.git`)
 3. Change to the project directory (`cd ~/projects/digitization_cost_calculator`)
 4. Start a PHP server (`php -S localhost:8000`)
 5. Open the project in your browser at [http://localhost:8000](http://localhost:8000)
