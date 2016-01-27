@@ -36,10 +36,8 @@ The Digitization Cost Calculator is licensed under the terms of the [Apache 2 li
 ## Links
 
 * [DLF](https://diglib.org)
-* [Code of Conduct][code-of-conduct]
 * [Issue Tracker][issues]
 * [Source code](https://github.com/clirdlf/digitization_cost_calculator)
 
-[code-of-conduct]: http://todogroup.org/opencodeofconduct/#CLIR+DLF/info@diglib.org
 [issues]: https://github.com/clirdlf/digitization_cost_calculator/issues
 [fork-it]: https://github.com/clirdlf/digitization_cost_calculator/fork
