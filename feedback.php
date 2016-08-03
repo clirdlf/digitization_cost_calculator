@@ -40,9 +40,9 @@ ul, ol {
 	</div>
   <nav>
      <ul class="sf-menu">
-            <li ><a href="digitization_calculator.php">calculator</a></li>
-            <li ><a href="data-notes.php">notes on data</a></li>
-             <li class="current"><a href="feedback.php">feedback / data submission</a></li>
+            <li ><a href="/">calculator</a></li>
+            <li ><a href="/data-notes.php">notes on data</a></li>
+             <li class="current"><a href="/feedback.php">feedback / data submission</a></li>
 
 		</ul> 
         <div class="clear"></div>
