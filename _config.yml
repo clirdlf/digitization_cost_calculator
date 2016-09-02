@@ -1,0 +1,16 @@
+# Site settings
+title: Digitization Dashboard
+email: info@diglib.org
+description: > # A brief description of the site
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://dashboard.diglib.org/" # the base hostname & protocol for your site
+twitter_username: clirdlf
+
+# Build settings
+markdown: kramdown
+exclude:
+  - gulpfile.js
+  - node_modules
+  - package.json
+  - templates
+google-tracking-id: ''

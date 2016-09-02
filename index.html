@@ -1,0 +1,147 @@
+---
+layout: default
+javascripts:
+- /js/calculator.js
+---
+<div class="container">
+  <div class="page-header">
+    <h1>Digitization Calculator <span class="pull-right label label-default">:)</span></h1>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+
+      <form name="calculator">
+        <div clas="form-group">
+          <label class="col-sm-2 control-label" for="extent">Extent to digitize</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="extent" placeholder="Number of scans">
+          </div>
+        </div>
+
+        <h2>People Performing the work</h2>
+
+        <div class="form-group">
+          <label for="salary1">Salaried 1</label>
+          <input name="salary1" type="number" step="any" placeholder="Annual Salary">
+          <input name="sal-benefits1" type="number" step="any" placeholder="% Benefits">
+
+          <a href="#">add salaried staff</a>
+        </div>
+
+        <div class="form-group">
+          <label for="hourly1">Hourly 1</label>
+          <input name="salary1" type="number" step="any" placeholder="Hourly Rate">
+          <input name="sal-benefits1" type="number" step="any" placeholder="% Benefits">
+
+          <a href="#">add hourly staff</a>
+        </div>
+
+
+        <h2>Preparation of Original Materials</h2>
+
+        <div class="form-group">
+          <label for="condition">Condition Review</label>
+          <input name="materials_percentage" type="number" step="any" placeholder="% Materials">
+          <select name="materials_percentage_by">
+            <option>Performed by</option>
+          </select>
+
+        </div>
+
+        <div class="form-group">
+          <label for="disbinding">Disbinding</label>
+          <input name="disbinding_percentage" type="number" step="any" placeholder="% Materials">
+          <select name="disbinding_percentage_by">
+            <option>Performed by</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="fastener_removal">Fastener Removal</label>
+          <input name="fastener_removal_percentage" type="number" step="any" placeholder="% Materials">
+          <select name="fastener_removal_percentage_by">
+            <option>Performed by</option>
+          </select>
+        </div>
+
+        <h2>Image Capture</h2>
+
+        <div class="form-group">
+          <label for="capture_device">Capture Device</label>
+          <select name="capture_device">
+            <option>Select</option>
+          </select>
+        </div>
+
+        <h2>Image Capture</h2>
+        <div class="form-group">
+          <div class="radio">
+            <label><input type="radio" name="quality_control" id="quality_control1" value="level1" checked> Level 1</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="quality_control" id="quality_control2" value="level2"> Level 2</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="quality_control" id="quality_control3" value="level3"> Level 3</label>
+          </div>
+        </div>
+
+        <h2>Post-Processing</h2>
+
+         <div class="form-group">
+          <label for="alignment">Alignment/rotation</label>
+          <input name="alignment_percentage" type="number" step="any" placeholder="% Materials">
+          <select name="alignment_percentage_by">
+            <option>Performed by</option>
+          </select>
+         </div>
+
+         <div class="form-group">
+          <label for="background_removal">Background Removal</label>
+          <input name="background_removal_percentage" type="number" step="any" placeholder="% Materials">
+          <select name="background_removal_percentage_by">
+            <option>Performed by</option>
+          </select>
+         </div>
+
+          <h2>Local Fields</h2>
+
+         <div class="form-group">
+          <label for="localfield1">Local Field 1</label>
+          <input name="localfield1_percentage" type="number" step="any" placeholder="% Materials">
+          <select name="localfield1_percentage_by">
+            <option>Performed by</option>
+          </select>
+         </div>
+
+         <div class="form-group">
+          <label for="localfield2">Local Field 2</label>
+          <input name="localfield2_percentage" type="number" step="any" placeholder="% Materials">
+          <select name="localfield2_percentage_by">
+            <option>Performed by</option>
+          </select>
+         </div>
+
+          <button type="submit" class="btn btn-default">Confirm identity</button>
+
+      </form>
+
+
+      <!--<div class="panel with-nav-tabs panel-primary">
+        <div class="panel-heading">
+        <ul class="nav nav-tabs">
+        <li class="active"><a href="#tab1primary" data-toggle="tab">Profile</a></li>
+        <li><a href="#tab2default" data-toggle="tab">Settings</a></li>
+        </ul>
+        </div>
+        <div class="panel-body">
+        <div class="tab-content">
+        <div class="tab-pane fade in active" id="tab1primary">Profile here</div>
+        <div class="tab-pane fade" id="tab2default">Settings and DELETE account here</div>
+        </div>
+        </div>
+        </div>
+        </div>-->
+  </div>
+</div>
+

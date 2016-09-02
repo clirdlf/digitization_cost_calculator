@@ -1,0 +1,25 @@
+{
+  "name": "digitization_cost_calculator",
+  "version": "1.0.0",
+  "description": "A tool based on donated statistics that helps organizations better estimate the time and other costs related to digitization projects.",
+  "main": "gulp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clirdlf/digitization_cost_calculator.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clirdlf/digitization_cost_calculator/issues"
+  },
+  "homepage": "https://github.com/clirdlf/digitization_cost_calculator#readme",
+  "devDependencies": {
+    "browser-sync": "^2.14.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-sass": "^2.3.2"
+  }
+}
