@@ -9,8 +9,12 @@ twitter_username: clirdlf
 # Build settings
 markdown: kramdown
 exclude:
+  - config.json
+  - Gemfile*
   - gulpfile.js
   - node_modules
   - package.json
+  - Rakefile
+  - README.md
   - templates
 google-tracking-id: ''

@@ -10,8 +10,9 @@ A tool based on donated statistics that helps organizations better estimate the 
 1. Make a projects directory (`mkdir -p ~/projects`)
 2. Clone the repository to your computer (`cd ~/projects && git clone https://github.com/clirdlf/digitization_cost_calculator.git`)
 3. Change to the project directory (`cd ~/projects/digitization_cost_calculator`)
-4. Start a PHP server (`php -S localhost:8000`)
-5. Open the project in your browser at [http://localhost:8000](http://localhost:8000)
+4. Install the dependencies (`bundle && npm install`)
+5. Start the Jekyll server (`gulp`)
+5. Open the project in your browser at [http://localhost:3000](http://localhost:3000) (it should open automatically though)
 6. Celebrate :tada:
 
 ### Get Updates
