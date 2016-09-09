@@ -55,7 +55,7 @@ namespace :convert do
     (2..@ws.num_rows).each do |row|
       data = {}
 
-      
+      puts @ws[row, 1].inspect
     end
 
     puts "Rendering calculator data".green
