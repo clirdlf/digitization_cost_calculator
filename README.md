@@ -33,6 +33,7 @@ A tool based on donated statistics that helps organizations better estimate the 
 
 * [git](https://git-scm.com/)
 * [Github Account](https://www.github.com/)
+* [Jekyll](https://jekyllrb.com)
 * [npm](https://www.npmjs.com/)
 * [Ruby](https://www.ruby-lang.org/en/): Installed by default on OS X;
   for Windows users, use the [Rails Installer](http://railsinstaller.org/en)
