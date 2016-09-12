@@ -7,6 +7,10 @@ A tool based on donated statistics that helps organizations better estimate the 
 
 ### OS X
 
+All of the commands are run through the terminal. You can make this a
+nicer experience with [iTerm2](https://www.iterm2.com/) and
+[bash-it](https://github.com/Bash-it/bash-it#install).
+
 1. Make a projects directory (`mkdir -p ~/projects`)
 2. Clone the repository to your computer (`cd ~/projects && git clone https://github.com/clirdlf/digitization_cost_calculator.git`)
 3. Change to the project directory (`cd ~/projects/digitization_cost_calculator`)
