@@ -20,6 +20,23 @@ A tool based on donated statistics that helps organizations better estimate the 
 1. Make sure you're on the master branch (`git checkout master`)
 2. Pull from origin: (`git pull master origin`)
 
+### Deploying
+
+1. Commit your changes
+2. Merge to the master branch (e.g. `git checkout master && git merge
+   branch`)
+3. Push to github (`git push origin master`)
+4. Verify your update works at
+   https://clirdlf.github.io/digitization_cost_calculator
+
+## Dependencies
+
+* [git](https://git-scm.com/)
+* [Github Account](https://www.github.com/)
+* [npm](https://www.npmjs.com/)
+* [Ruby](https://www.ruby-lang.org/en/): Installed by default on OS X;
+  for Windows users, use the [Rails Installer](http://railsinstaller.org/en)
+
 ## Contributing
 
 1. [Create an issue][issues] to discuss your idea.
