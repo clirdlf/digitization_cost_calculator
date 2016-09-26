@@ -101,12 +101,58 @@ ga('send', 'pageview');
           </select>
         </div>
 
+        <div class="form-group">
+          <label for="flattening">Flattening</label>
+          <input name="flattening_percentage" type="number" step="any" placeholder="% Materials">
+          <select name="flattening_percentage_by">
+            <option>Performed by</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="rights_review">Rights Review</label>
+          <input name="rights_review_percentage" type="number" step="any" placeholder="% Materials">
+          <select name="rights_review_percentage_percentage_by">
+            <option>Performed by</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="sorting_materials">Sorting Materials Into Items</label>
+          <input name="sorting_materials_percentage" type="number" step="any" placeholder="% Materials">
+          <select name="sorting_materials_percentage_percentage_by">
+            <option>Performed by</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="supporting">Supporting</label>
+          <input name="supporting_percentage" type="number" step="any" placeholder="% Materials">
+          <select name="supporting_percentage_by">
+            <option>Performed by</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="unique_identifier">Unique Identifier Assignment</label>
+          <input name="unique_identifier_percentage" type="number" step="any" placeholder="% Materials">
+          <select name="unique_identifier_percentage_by">
+            <option>Performed by</option>
+          </select>
+        </div>
+
         <h2>Image Capture</h2>
 
         <div class="form-group">
           <label for="capture_device">Capture Device</label>
           <select name="capture_device">
             <option>Select</option>
+            <option value="film">Film or Transparency Scanner (e.g. Epson V700, Nikon Coolscan, Flextight X5)</option>
+            <option value="flatbed">Flatbed Scanner (e.g. an Epson 11000XL)</option>
+            <option value="dslr">Manual DSLR Camera (e.g. Canon EOS 5D, Nikon D7200)</option>
+            <option value="medium_format">Medium Format Camera (e.g. PhaseOne, Hasslblad)</option>
+            <option value="overhead">Overhead Scanner (e.g. Zeutschel, i25 Quartz or Digibook, Cruse)</option>
+            <option value="sheet">Sheet Feeding Scanner (e.g. a Fujitsu)</option>
           </select>
         </div>
 
@@ -125,41 +171,41 @@ ga('send', 'pageview');
 
         <h2>Post-Processing</h2>
 
-         <div class="form-group">
+        <div class="form-group">
           <label for="alignment">Alignment/rotation</label>
           <input name="alignment_percentage" type="number" step="any" placeholder="% Materials">
           <select name="alignment_percentage_by">
             <option>Performed by</option>
           </select>
-         </div>
+        </div>
 
-         <div class="form-group">
+        <div class="form-group">
           <label for="background_removal">Background Removal</label>
           <input name="background_removal_percentage" type="number" step="any" placeholder="% Materials">
           <select name="background_removal_percentage_by">
             <option>Performed by</option>
           </select>
-         </div>
+        </div>
 
-          <h2>Local Fields</h2>
+        <h2>Local Fields</h2>
 
-         <div class="form-group">
+        <div class="form-group">
           <label for="localfield1">Local Field 1</label>
           <input name="localfield1_percentage" type="number" step="any" placeholder="% Materials">
           <select name="localfield1_percentage_by">
             <option>Performed by</option>
           </select>
-         </div>
+        </div>
 
-         <div class="form-group">
+        <div class="form-group">
           <label for="localfield2">Local Field 2</label>
           <input name="localfield2_percentage" type="number" step="any" placeholder="% Materials">
           <select name="localfield2_percentage_by">
             <option>Performed by</option>
           </select>
-         </div>
+        </div>
 
-          <button type="submit" class="btn btn-default">Calculate</button>
+        <button type="submit" class="btn btn-default">Calculate</button>
 
       </form>
 
@@ -192,6 +238,7 @@ ga('send', 'pageview');
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.7.2/jquery.smooth-scroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.0/moment.min.js"></script>
 <!-- page dependencies -->
 
 <script src="/js/calculator.js"></script>

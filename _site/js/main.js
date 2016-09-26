@@ -28,7 +28,7 @@
       e.preventDefault();
       console.log($(this).serialize());
 
-      console.log(digitizationCalculator('hi'));
+      console.log(digitizationCalculator.getVariables());
       //var calculator = digitizationCalculator.getVariables();
       //console.table($(this).serializeArray());
     });

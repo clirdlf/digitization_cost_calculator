@@ -1,24 +1,31 @@
-export let digitizationCalculator = (form) => {
-  return {form};
-};
+var digitizationCalculator = (function() {
 
-export default class DigitizationCalculator {
-  constructor() {
-    
-  }
+  var salaries, hourly_rates;
 
-  get studentLabor() {
+  return {
 
-  }
+    getVariables: function() {
+      return 'hi';
+    },
 
-  get staffLabor() {
+    calculateHourlySalary: function(salary, benefits, hours = 40) {
+      // there are not always 52 weeks in a year; use the current locale to
+      // figure out how many weeks are in a year
+      return (salary * benefits) / (moment().weeksInYear() / hours);
+    },
+    calculateHourlyRate: function(rate, benefits) {
 
-  }
-}
+    }
+  };
 
+})();
 
 //var digitizationCalculator = (function () {
   //'use strict';
+
+  //var digitizationCalculator = {
+    
+  //};
 
   //// The actual calculator logic in vanilla JS
 
@@ -39,13 +46,12 @@ export default class DigitizationCalculator {
     //alignment_percentage:           0,
     //alignment_percentage_by:        '',
     //background_removal_percentage:  0,
-    //background_removal_by:          '',
+  //background_removal_by:          '',
+    //}
 
-    //getVariables: function() {
-      //return "hi";
-    //},
-
+   
   //}
 
+  //return digitizationCalculator;
 
 //})();
