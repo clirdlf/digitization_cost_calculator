@@ -17,23 +17,35 @@ javascripts:
                     <input type="text" class="form-control" id="extent" placeholder="Number of scans">
                 </div>
 
-                <h2>People Performing the work</h2>
+                <section id="people">
+                    <h2>People Performing the work</h2>
 
-                <div class="form-group">
-                    <label for="salary[]">Salaried 1</label>
-                    <input name="salary[]" type="number" step="any" placeholder="Annual Salary">
-                    <input name="salary-benefits[]" type="number" step="any" placeholder="% Benefits">
-                    <input name="salary-label[]" type="text" placeholder="Name">
-                    <a href="#" class="add_field"><i class="fa fa-plus" aria-hidden="true"></i></a>
-                </div>
+                    <p>
+                        <small>Press <span class="fa fa-plus"></span> to add another form field</small>
+                    </p>
 
-                <div class="form-group">
-                    <label for="hourly[]">Hourly</label>
-                    <input name="hourly[]" type="number" step="any" placeholder="Hourly Rate">
-                    <input name="hourly-benefits[]" type="number" step="any" placeholder="% Benefits">
-                    <input name="hourly-label[]" type="text" placeholder="Name">
-                    <a href="#" class="add_field"><i class="fa fa-plus" aria-hidden="true"></i></a>
-                </div>
+                    <div class="form-group">
+                        <div class="entry">
+                            <label for="salary[]">Salary</label>
+                            <input name="salary[]" type="number" step="any" placeholder="Annual Salary">
+                            <input name="salary-benefits[]" type="number" step="any" placeholder="% Benefits">
+                            <input name="salary-label[]" type="text" placeholder="Name">
+                            <a href="#" class="add_field"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="entry">
+                            <label for="hourly[]">Hourly</label>
+                            <input name="hourly[]" type="number" step="any" placeholder="Hourly Rate">
+                            <input name="hourly-benefits[]" type="number" step="any" placeholder="% Benefits">
+                            <input name="hourly-label[]" type="text" placeholder="Name">
+                            <a href="#" class="add_field"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+
+                </section>
 
 
                 <h2>Preparation of Original Materials</h2>
@@ -41,10 +53,9 @@ javascripts:
                 <div class="form-group">
                     <label for="condition">Condition Review</label>
                     <input name="materials_percentage" type="number" step="any" placeholder="% Materials">
-                    <select name="materials_percentage_by">
-            <option>Performed by</option>
-          </select>
-
+                    <select id="materials_percentage_by" name="materials_percentage_by">
+                        <option>Performed by</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
@@ -224,19 +235,14 @@ javascripts:
                 <h2>Local Fields</h2>
 
                 <div class="form-group">
-                    <label for="localfield1">Local Field 1</label>
-                    <input name="localfield1_percentage" type="number" step="any" placeholder="% Materials">
-                    <select name="localfield1_percentage_by">
-            <option>Performed by</option>
-          </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="localfield2">Local Field 2</label>
-                    <input name="localfield2_percentage" type="number" step="any" placeholder="% Materials">
-                    <select name="localfield2_percentage_by">
-            <option>Performed by</option>
-          </select>
+                    <div class="entry">
+                        <label for="localfield">Local Field</label>
+                        <input name="localfield_percentage[]" type="number" step="any" placeholder="% Materials">
+                        <select name="localfield_percentage_by[]">
+                            <option>Performed by</option>
+                        </select>
+                        <a href="#" class="add_field"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                    </div>
                 </div>
 
                 <button type="submit" class="btn btn-default">Calculate</button>
