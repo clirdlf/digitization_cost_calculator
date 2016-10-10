@@ -1,5 +1,8 @@
 (function($) {
-    'use strict';
+  'use strict';
+
+  // enable popovers
+  $('[data-toggle="popover"]').popover();
 
     //import * as calculator from './calculator';
 
@@ -38,24 +41,38 @@
             // This currently clones the first field to all the fields
             // which is what I'm telling it to do, but it's unexpected
             var currentEntry = $(this).parents('.form-group:first');
+            //TODO: change the label value
             var newEntry = $(currentEntry.clone());
             currentEntry.after(newEntry);
 
             newEntry.find('.add_field').removeClass('add_field').addClass('remove_field');
             newEntry.find('.fa-plus').removeClass('fa-plus').addClass('fa-minus');
-        }).on('click', '.remove_field', function(e) {
-            $(this).parents('.entry:first').remove();
 
+            // check if the slug exists
+        }).on('click', '.remove_field', function(e) {
+          var key = $(this).parent('.entry').find('field_label');
+            console.log('key', key);
+
+            $(this).parents('.entry:first').remove();
+            // TODO:remove slug
             e.preventDefault();
             return false;
         });
 
-        $('input[name="salary-label[]"]').change(function(e) {
+        $('.field_label').change(function(e) {
+
+          var slug = $(this).val().sluggify();
+
+          // check if slug exists on slugs
+          // 
+          var slug_exists = 0 != $('select option[value='+slug+']').length;
+          console.log('slug-test', slug_exists);
+
+          
             $('select').append($('<option>', {
                 value: $(this).val().sluggify(),
                 text: $(this).val()
             }));
-            console.log($(this).val());
         });
 
 
