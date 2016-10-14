@@ -12,9 +12,10 @@ javascripts:
       <h1>Inputs</h1>
       <!-- TODO: tool tips for each element -->
       <form id="calculator" name="calculator">
-        <div clas="form-group">
+        <section id="extent">
+        <div class="form-group">
           <label class="control-label" for="extent">
-            Extent to digitize 
+            Extent to digitize
             <a href="#" class="help" data-toggle="popover" title="Extent Digitize" >
               <i class="fa fa-question-circle"></i>
             </a>
@@ -25,8 +26,26 @@ javascripts:
             </div>
 
           </label>
-          <input type="text" class="form-control" id="extent" required="true" placeholder="Number of scans">
-        </div>
+          <input type="text" class="form-control" id="extent" required="true" placeholder="Number of scans (1 = 1,200 scans)">
+        </section>
+
+        <section id="image_capture">
+          <h2>Image Capture</h2>
+
+
+          <div class="form-group">
+            <label for="capture_device">Capture Device</label>
+            <select name="capture_device">
+              <option>Select</option>
+              <!-- <option value="film">Film or Transparency Scanner (e.g. Epson V700, Nikon Coolscan, Flextight X5)</option>
+              <option value="flatbed">Flatbed Scanner (e.g. an Epson 11000XL)</option>
+              <option value="dslr">Manual DSLR Camera (e.g. Canon EOS 5D, Nikon D7200)</option>
+              <option value="medium_format">Medium Format Camera (e.g. PhaseOne, Hasslblad)</option>
+              <option value="overhead">Overhead Scanner (e.g. Zeutschel, i25 Quartz or Digibook, Cruse)</option>
+              <option value="sheet">Sheet Feeding Scanner (e.g. a Fujitsu)</option> -->
+            </select>
+          </div>
+        </section>
 
         <section id="people">
           <h2>People Performing the work</h2>
@@ -69,7 +88,7 @@ javascripts:
           <div class="form-group">
             <label for="condition">Condition Review</label>
             <input name="materials_percentage" type="number" step="any" placeholder="% Materials">
-            <select id="materials_percentage_by" name="materials_percentage_by">
+            <select id="materials_percentage_by" name="materials_percentage_by" class="perfomed_by">
               <option>Performed by</option>
             </select>
           </div>
@@ -77,7 +96,7 @@ javascripts:
           <div class="form-group">
             <label for="disbinding">Disbinding</label>
             <input name="disbinding_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="disbinding_percentage_by">
+            <select name="disbinding_percentage_by" class="perfomed_by">
               <option>Performed by</option>
             </select>
           </div>
@@ -85,7 +104,7 @@ javascripts:
           <div class="form-group">
             <label for="fastener_removal">Fastener Removal</label>
             <input name="fastener_removal_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="fastener_removal_percentage_by">
+            <select name="fastener_removal_percentage_by" class="perfomed_by">
               <option>Performed by</option>
             </select>
           </div>
@@ -93,7 +112,7 @@ javascripts:
           <div class="form-group">
             <label for="flattening">Flattening</label>
             <input name="flattening_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="flattening_percentage_by">
+            <select name="flattening_percentage_by" class="perfomed_by">
               <option>Performed by</option>
             </select>
           </div>
@@ -101,7 +120,7 @@ javascripts:
           <div class="form-group">
             <label for="rights_review">Rights Review</label>
             <input name="rights_review_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="rights_review_percentage_percentage_by">
+            <select name="rights_review_percentage_percentage_by" class="perfomed_by">
               <option>Performed by</option>
             </select>
           </div>
@@ -109,7 +128,7 @@ javascripts:
           <div class="form-group">
             <label for="sorting_materials">Sorting Materials Into Items</label>
             <input name="sorting_materials_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="sorting_materials_percentage_percentage_by">
+            <select name="sorting_materials_percentage_percentage_by" class="perfomed_by">
               <option>Performed by</option>
             </select>
           </div>
@@ -117,7 +136,7 @@ javascripts:
           <div class="form-group">
             <label for="supporting">Supporting</label>
             <input name="supporting_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="supporting_percentage_by">
+            <select name="supporting_percentage_by" class="perfomed_by">
               <option>Performed by</option>
             </select>
           </div>
@@ -125,7 +144,7 @@ javascripts:
           <div class="form-group">
             <label for="unique_identifier">Unique Identifier Assignment</label>
             <input name="unique_identifier_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="unique_identifier_percentage_by">
+            <select name="unique_identifier_percentage_by" class="perfomed_by">
               <option>Performed by</option>
             </select>
           </div>
@@ -133,23 +152,6 @@ javascripts:
 
         <section id="quality_control">
           <h2>Quality Control</h2>
-
-          <div class="form-group">
-            <label for="capture_device">Capture Device</label>
-            <select name="capture_device">
-              <option>Select</option>
-              <option value="film">Film or Transparency Scanner (e.g. Epson V700, Nikon Coolscan, Flextight X5)</option>
-              <option value="flatbed">Flatbed Scanner (e.g. an Epson 11000XL)</option>
-              <option value="dslr">Manual DSLR Camera (e.g. Canon EOS 5D, Nikon D7200)</option>
-              <option value="medium_format">Medium Format Camera (e.g. PhaseOne, Hasslblad)</option>
-              <option value="overhead">Overhead Scanner (e.g. Zeutschel, i25 Quartz or Digibook, Cruse)</option>
-              <option value="sheet">Sheet Feeding Scanner (e.g. a Fujitsu)</option>
-            </select>
-          </div>
-        </section>
-
-        <section id="image_capture">
-          <h2>Image Capture</h2>
           <div class="form-group">
             <div class="radio">
               <label><input type="radio" name="quality_control" id="quality_control1" value="level1" checked> Level 1</label>
@@ -169,7 +171,7 @@ javascripts:
           <div class="form-group">
             <label for="alignment">Alignment/rotation</label>
             <input name="alignment_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="alignment_percentage_by">
+            <select name="alignment_percentage_by" class="perfomed_by">
               <option>Performed by</option>
             </select>
           </div>
@@ -177,7 +179,7 @@ javascripts:
           <div class="form-group">
             <label for="background_removal">Background Removal</label>
             <input name="background_removal_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="background_removal_percentage_by">
+            <select name="background_removal_percentage_by" class="perfomed_by">
               <option>Performed by</option>
             </select>
           </div>
@@ -185,7 +187,7 @@ javascripts:
           <div class="form-group">
             <label for="cleanup">Clean Up/Dust Removal</label>
             <input name="cleanup_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="cleanup_percentage_by">
+            <select name="cleanup_percentage_by" class="perfomed_by">
               <option>Performed by</option>
             </select>
           </div>
@@ -193,7 +195,7 @@ javascripts:
           <div class="form-group">
             <label for="color_correction">Color Correction and Tonal Adjustments</label>
             <input name="color_correction_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="color_correction_percentage_by">
+            <select name="color_correction_percentage_by" class="perfomed_by">
               <option>Performed by</option>
             </select>
           </div>
@@ -201,7 +203,7 @@ javascripts:
           <div class="form-group">
             <label for="cropping">Cropping Images</label>
             <input name="cropping_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="cropping_percentage_by">
+            <select name="cropping_percentage_by" class="perfomed_by">
               <option>Performed by</option>
             </select>
           </div>
@@ -209,7 +211,7 @@ javascripts:
           <div class="form-group">
             <label for="stitching">Stitching</label>
             <input name="stitching_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="stitching_percentage_by">
+            <select name="stitching_percentage_by" class="perfomed_by">
               <option>Performed by</option>
             </select>
           </div>
@@ -240,7 +242,7 @@ javascripts:
           <div class="form-group">
             <label for="desorting">Desorting</label>
             <input name="desorting_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="desorting_percentage_by">
+            <select name="desorting_percentage_by" class="perfomed_by">
               <option>Performed by</option>
             </select>
           </div>
@@ -248,7 +250,7 @@ javascripts:
           <div class="form-group">
             <label for="rebinding">Rebinding</label>
             <input name="rebinding_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="rebinding_percentage_by">
+            <select name="rebinding_percentage_by" class="perfomed_by">
               <option>Performed by</option>
             </select>
           </div>
@@ -256,7 +258,7 @@ javascripts:
           <div class="form-group">
             <label for="refastening">Refastening</label>
             <input name="refastening_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="refastening_percentage_by">
+            <select name="refastening_percentage_by" class="perfomed_by">
               <option>Performed by</option>
             </select>
           </div>
@@ -272,7 +274,7 @@ javascripts:
             <div class="entry">
               <label for="localfield">Local Field</label>
               <input name="localfield_percentage[]" type="number" step="any" placeholder="% Materials">
-              <select name="localfield_percentage_by[]">
+              <select name="localfield_percentage_by[]" class="perfomed_by">
                 <option>Performed by</option>
               </select>
               <a href="#" class="add_field"><i class="fa fa-plus" aria-hidden="true"></i></a>

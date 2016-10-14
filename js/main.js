@@ -1,12 +1,18 @@
 (function($) {
   'use strict';
 
-  // enable popovers
-  $('[data-toggle="popover"]').popover();
-
-    //import * as calculator from './calculator';
+    // enable popovers
+    $('[data-toggle="popover"]').popover();
 
     $(document).ready(function() {
+        // set image capture devices from available fields
+        $.each(image_capture, function(key){
+          $('select[name="capture_device"]').append($('<option>', {
+              value: key.sluggify(),
+              text: key
+          }));
+        });
+
         // app and form logic
         var counter = 1; // for adding fields
 
@@ -64,12 +70,11 @@
           var slug = $(this).val().sluggify();
 
           // check if slug exists on slugs
-          // 
-          var slug_exists = 0 != $('select option[value='+slug+']').length;
+          //
+          var slug_exists = 0 !== $('select option[value='+slug+']').length;
           console.log('slug-test', slug_exists);
 
-          
-            $('select').append($('<option>', {
+            $('select.perfomed_by').append($('<option>', {
                 value: $(this).val().sluggify(),
                 text: $(this).val()
             }));
@@ -117,8 +122,42 @@
             update_values($(this));
         });
 
+        function get_scanner_average(scanner){
+            return image_capture[scanner];
+        }
+
+        function minutes_in_hours(m) {
+          return Math.floor(m / 60);
+        }
+
+        function scan_time(){
+          var extent = parseInt($('input#extent').val());
+          // TODO: alert user that this must be a number
+          if( isNaN(extent) ){
+            extent = 0;
+          }
+          // 1 linear ft == 1,200 scans
+          // recorded as time per 100 scans
+          var scans = (extent * 1200) / 100;
+          // figure out the selected scanner
+          var scanner = $('select[name="capture_device"] option:selected').text();
+
+          if(scanner !== 'Select'){
+            var device = get_scanner_average(scanner);
+            var minutes = scans * device.average;
+            var time = minutes_in_hours(minutes);
+            total_digitization_time = time;
+            set_values();
+          }
+
+          // console.log(scanner);
+        }
+
         function update_values(form) {
             var values = {};
+            scan_time();
+            // values.extent = "";
+            total_digitization_time = '';
             // extant = $('#extent').val();
             $.each($('#calculator').serializeArray(), function(i, field) {
                 // console.log(field);
@@ -172,10 +211,27 @@ String.prototype.sluggify = function() {
 Number.prototype.formatCurrency = function(c, d, t) {
     var n = this,
         c = isNaN(c = Math.abs(c)) ? 2 : c,
-        d = d == undefined ? "." : d,
-        t = t == undefined ? "," : t,
+        d = d === undefined ? "." : d,
+        t = t === undefined ? "," : t,
         s = n < 0 ? "-" : "",
         i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))),
         j = (j = i.length) > 3 ? j % 3 : 0;
     return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
 };
+
+// Polyfill for string.includes method
+// @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
+if (!String.prototype.includes) {
+  String.prototype.includes = function(search, start) {
+    'use strict';
+    if (typeof start !== 'number') {
+      start = 0;
+    }
+
+    if (start + search.length > this.length) {
+      return false;
+    } else {
+      return this.indexOf(search, start) !== -1;
+    }
+  };
+}
