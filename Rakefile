@@ -57,6 +57,41 @@ def clean_scanner_header(header)
   header.gsub(/Image Capture-/,'').gsub(/-Minutes per 100 scans/,'')
 end
 
+def clean_prep_header(header)
+  header.gsub!(/Preparation of original materials -/,'')
+  header.gsub!(/ per 100 scans/, '')
+  header.gsub!(/ of materials on which process was performed \(i.e., "20" do not use the \% sign\)/,'')
+  header
+end
+
+def prep_times
+  @prep_times ||= {}
+  # 24 condition review % processed
+  # 25 condition review time (per 100 scans)
+  # 26 Disbinding-Percent
+  # 27 Disbinding time
+  # 28 Fastener removal %
+  # 29 Fastener removal time
+  # 30 Flattening %
+  # 31 Flattening time
+  # 32 Right review %
+  # 33 Rights review time
+  # 34 Sort Material %
+  # 35 Sort Material Time
+  # 34 Supporting Material %
+  # 35 Supporting Material Time
+  # 36 uuid %
+  # 35 uuid time
+  (24..35).each do |column|
+    # Preparation of original materials -Flattening-Percent of materials on which process was performed (i.e., "20" do not use the % sign)
+    # Preparation of original materials -Flattening-Minutes per 100 scans
+    raw_header = clean_prep_header(@ws[1, column])
+    # split on -; [0] is the key
+    key = raw_header.split('-')[0]
+    @prep_times.merge!("#{key}" => {'average' => 0, 'raw_times' => []})
+  end
+end
+
 ##
 # Create a hash of scanner types from the values in the spreadsheet
 
@@ -68,7 +103,6 @@ def scanner_types
     header = clean_scanner_header(@ws[row, col])
     # @scanner_types.merge!("#{header}" => {'min'=>0, 'max'=> 0, 'average' => 0,'median'=>0, 'raw_times' => []}) unless @ws[row,col].empty?
     @scanner_types.merge!("#{header}" => {'raw_times' => []}) unless @ws[row,col].empty?
-
   end
 end
 
@@ -103,6 +137,67 @@ def render_vals(hash)
   contents = render('templates/calculator_data.js.erb')
   write_file('./data/calculator_data.js', contents)
 
+end
+
+def preparation_stats
+  prep_times
+
+  # 24 condition review % processed
+  # 25 condition review time (per 100 scans)
+  # 26 Disbinding-Percent
+  # 27 Disbinding time
+  # 28 Fastener removal %
+  # 29 Fastener removal time
+  # 30 Flattening %
+  # 31 Flattening time
+  # 32 Right review %
+  # 33 Rights review time
+  # 34 Sort Material %
+  # 35 Sort Material Time
+  # 34 Supporting Material %
+  # 35 Supporting Material Time
+  # 36 uuid %
+  # 37 uuid time
+  (2..@ws.num_rows).each do |row|
+    (24..37).step(2) do |column|
+      raw_header = clean_prep_header(@ws[1, column])
+      # hash to put these values in
+      values = {}
+
+      key = raw_header.split('-')[0]
+      value = raw_header.split('-')[1] # percentage or minutes
+
+      values = {
+        percentage: @ws[row,column],
+        time: @ws[row,column + 1],
+        regularized: regularize_time(@ws[row,column], @ws[row,column + 1])
+      } unless @ws[row,column].empty?
+
+      @prep_times[key]['raw_times'] << values unless values.empty?
+    end
+  end
+  # calculate average times from raw_times
+end
+
+
+
+def calculate_prep_averages
+  @prep_times.each do |key,value|
+      sum = 0
+      average = 0
+      value['raw_times'].each do |instance|
+        sum += instance[:regularized]
+        # puts instance[:regularized]
+      end
+      average = sum / value['raw_times'].length unless value['raw_times'].length == 0
+      puts average
+      @prep_times[average] = average
+  end
+
+end
+
+def regularize_time(percentage, time)
+  100.0 * time.to_f / percentage.to_f
 end
 
 ##
@@ -146,8 +241,8 @@ namespace :convert do
     puts "Generating Image Capture stats file".yellow
     image_capture_stats
 
-    # puts @scanner_types
-
+    puts "Generating Preparation of Materials data".yellow
+    preparation_stats
     # puts "Rendering calculator data".green
     #contents = render('templates/calculator_data.js.erb')
     #write_file('./data/calculator_data.js', contents)

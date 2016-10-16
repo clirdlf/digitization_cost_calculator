@@ -27,6 +27,12 @@
             total_metadata = 0,
             total_staff_digization_cost = 0,
             total_hourly_digization_cost = 0,
+            total_preperation_time = 0,
+            total_staff_preperation_cost = 0,
+            total_hourly_preperation_cost = 0,
+            total_post_processing_time = 0,
+            total_staff_post_processing_cost = 0,
+            total_hourly_post_processing_cost = 0,
             total_quality_control_time = 0,
             total_metadata_hourly_cost = 0,
             total_quality_control_staff_cost = 0,
@@ -105,13 +111,17 @@
             $('.total-quality-control-staff-cost').html((total_quality_control_staff_cost).formatCurrency(2));
             $('.total-quality-control-hourly-cost').html((total_quality_control_hourly_cost).formatCurrency(2));
 
-            $('.total-quality-control-time').html(total_quality_control_time);
-            $('.total-quality-control-staff-cost').html((total_quality_control_staff_cost).formatCurrency(2));
-            $('.total-quality-control-hourly-cost').html((total_quality_control_hourly_cost).formatCurrency(2));
+            $('.total-preperation-time').html(total_preperation_time);
+            $('.total-staff-preperation-cost').html((total_staff_preperation_cost).formatCurrency(2));
+            $('.total-hourly-preperation-cost').html((total_hourly_preperation_cost).formatCurrency(2));
 
             $('.total-metadata-time').html(total_metadata_time);
             $('.total-metadata-staff-cost').html((total_metadata_staff_cost).formatCurrency(2));
             $('.total-metadata-hourly-cost').html((total_metadata_hourly_cost).formatCurrency(2));
+
+            $('.total-post-processing-time').html(total_post_processing_time);
+            $('.total-staff-post-processing-cost ').html((total_staff_post_processing_cost).formatCurrency(2));
+            $('.total-hourly-post-processing-cost').html((total_hourly_post_processing_cost).formatCurrency(2));
 
             $('.total-time').html(total_time);
             $('.total-staff-cost').html((total_staff_cost).formatCurrency(2));
@@ -143,9 +153,9 @@
           var scanner = $('select[name="capture_device"] option:selected').text();
 
           if(scanner !== 'Select'){
-            var device = get_scanner_average(scanner);
+            var device  = get_scanner_average(scanner);
             var minutes = scans * device.average;
-            var time = minutes_in_hours(minutes);
+            var time    = minutes_in_hours(minutes);
             total_digitization_time = time;
             set_values();
           }
