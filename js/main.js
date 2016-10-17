@@ -39,9 +39,16 @@
             total_quality_control_hourly_cost = 0,
             total_metadata_time = 0,
             total_metadata_staff_cost = 0,
+            total_post_preparation_time = 0,
+            total_staff_post_preparation_cost = 0,
+            total_hourly_post_preparation_cost = 0,
+            total_post_staff_preparation_cost = 0,
+            total_post_hourly_preparation_cost = 0,
             total_time = 0,
             total_staff_cost = 0,
             total_hourly_cost = 0;
+
+
 
         // set initial values
         set_values();
@@ -103,6 +110,11 @@
         }
 
         function set_values() {
+
+          total_time = total_digitization_time + total_preperation_time +
+            total_post_processing_time + total_quality_control_time +
+            total_metadata_time + total_post_staff_preparation_cost;
+
             $('.total-digitization-time').html(total_digitization_time);
             $('.total-staff-digization-cost').html((total_staff_digization_cost).formatCurrency(2));
             $('.total-hourly-digization-cost').html((total_hourly_digization_cost).formatCurrency(2));
@@ -122,6 +134,10 @@
             $('.total-post-processing-time').html(total_post_processing_time);
             $('.total-staff-post-processing-cost ').html((total_staff_post_processing_cost).formatCurrency(2));
             $('.total-hourly-post-processing-cost').html((total_hourly_post_processing_cost).formatCurrency(2));
+
+            $('.total-post-preparation-time').html(total_post_preparation_time);
+            $('.total-staff-post-preparation-cost').html((total_staff_post_preparation_cost).formatCurrency(2));
+            $('.total-hourly-post-processing-cost').html((total_hourly_post_preparation_cost).formatCurrency(2));
 
             $('.total-time').html(total_time);
             $('.total-staff-cost').html((total_staff_cost).formatCurrency(2));
@@ -201,6 +217,7 @@
     });
 })(jQuery);
 
+// @see http://stackoverflow.com/questions/196972/convert-string-to-title-case-with-javascript
 String.prototype.toProperCase = function() {
     return this.replace(/\w\S*/g, function(txt) {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
@@ -218,6 +235,7 @@ String.prototype.sluggify = function() {
     return str;
 };
 
+// @see http://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-money-in-javascript
 Number.prototype.formatCurrency = function(c, d, t) {
     var n = this,
         c = isNaN(c = Math.abs(c)) ? 2 : c,

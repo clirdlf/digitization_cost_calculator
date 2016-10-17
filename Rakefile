@@ -386,6 +386,59 @@ def image_capture_stats
   render_vals(@scanner_types)
 end
 
+def metadata_times
+  values = {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []}
+
+  @metadata_times ||= {
+    'level_1' => values.clone,
+    'level_2' => values.clone,
+    'level_3' => values.clone
+  }
+end
+
+def metadata_stats
+  metadata_times
+
+  # 88: Descriptive metadata creation -I'm not submitting metadata data
+  # 89: Descriptive metadata creation -Level 1
+  # 90: Descriptive metadata creation -Level 2
+  # 91: Descriptive metadata creation -Level 3
+  # 92: Descriptive metadata creation-I'm not submitting metadata data-Percent of scans on which process was performed (i.e., "20"; do not use the % sign)
+  # 93: Descriptive metadata creation-I'm not submitting metadata data-Minutes per 100 scans
+  # 94: Descriptive metadata creation -Level 1-Percent of scans on which process was performed (i.e., "20"; do not use the % sign)
+  # 95: Descriptive metadata creation -Level 1-Minutes per 100 scans
+  # 96: Descriptive metadata creation-Level 2-Percent of scans on which process was performed (i.e., "20"; do not use the % sign)
+  # 97: Descriptive metadata creation-Level 2-Minutes per 100 scans
+  # 98: Descriptive metadata creation-Level 3-Percent of scans on which process was performed (i.e., "20"; do not use the % sign)
+  # 99: Descriptive metadata -Level 3-Minutes per 100 scans
+
+  (2..@ws.num_rows).each do |row|
+    (94..99).step(2).each do |column|
+      unless @ws[row, column].empty?
+        v = {
+          insitution: @ws[row,2],
+          percentage: @ws[row, column],
+          time: @ws[row, column + 1],
+          normalized: normalize_time(@ws[row, column], @ws[row, column + 1])
+        }
+
+        case column
+        when 94
+          @metadata_times['level_1']['raw_times'] << v
+        when 96
+          @metadata_times['level_2']['raw_times'] << v
+        when 98
+          @metadata_times['level_3']['raw_times'] << v
+        end
+      end
+    end
+  end
+
+  sub_hash_stats(@metadata_times)
+  # TODO: write to JS
+  # puts @metadata_times
+end
+
 task default: 'convert:all'
 
 desc "List all header fields"
@@ -418,7 +471,7 @@ namespace :convert do
     post_processing_stats
 
     puts "Generaging Metadata Creation data".yellow
-    # metadata_stats
+    metadata_stats
 
     puts "Writing data to file".yellow
 
