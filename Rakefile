@@ -92,6 +92,84 @@ def prep_times
   end
 end
 
+def quality_control_stats
+  @quality_control_stats ||= {}
+
+  (1..3).each do |i|
+    @quality_control_stats.merge!("level_#{i}" => {'average' => 0, 'raw_times' => []})
+  end
+  # @prep_times.merge!("#{key}" => {'average' => 0, 'raw_times' => []})
+
+  # Quality Control fields
+  # 49: Quality control -I'm not submitting quality control data
+  # 50: Quality control -Level 1
+  # 51: Quality control -Level 2
+  # 52: Quality control -Level 3
+  # 53: Quality control-I'm not submitting quality control data-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)
+  # 54: Quality control-I'm not submitting quality control data-Minutes per 100 scans
+  # 55: Quality control-Level 1-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)
+  # 56: Quality control-Level 1-Minutes per 100 scans
+  # 57: Quality control-Level 2-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)
+  # 58: Quality control-Level 2-Minutes per 100 scans
+  # 59: Quality control-Level 3-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)
+  # 60: Quality control-Level 3-Minutes per 100 scans
+
+  # skip 49, 53 and 55 (no data)
+  # 50 => 55, 56
+  # 51 => 57, 58
+  # 52 => 59, 60
+
+  (2..@ws.num_rows).each do |row|
+
+    (55..59).step(2) do |column|
+      unless @ws[row, column].empty?
+        v = {
+          institution: @ws[row, 2],
+          percentage: @ws[row, column],
+          time:  @ws[row, column + 1],
+          normalized: normalize_time(@ws[row, column], @ws[row, column + 1])
+        }
+
+        case column
+        when 55
+          @quality_control_stats['level_1']['raw_times'] << v
+        when 57
+          @quality_control_stats['level_2']['raw_times'] << v
+        when 59
+          @quality_control_stats['level_3']['raw_times'] << v
+        end
+      end
+
+      # puts v
+    end
+  end
+  # calculate_normalized_average @quality_control_stats
+  @quality_control_stats.each do |key, value|
+    sum = 0
+    average = 0
+    @quality_control_stats[key]['raw_times'].each do |instance|
+      sum += instance[:normalized]
+    end
+    average = sum / @quality_control_stats[key]['raw_times'].length unless @quality_control_stats[key]['raw_times'].length == 0
+    @quality_control_stats[key]['average'] = average
+
+  end
+  # TODO: write to js file
+end
+
+def sub_hash_stats(hash)
+  hash.each do |key, value|
+    sum = 0
+    average = 0
+    hash[key]['raw_times'].each do |instance|
+      sum += instance[:normalized]
+    end
+    average = sum / value['raw_times'].length unless value['raw_times'].length == 0
+    hash[key]['average'] = average
+    # hash['average'] = average
+  end
+end
+
 ##
 # Create a hash of scanner types from the values in the spreadsheet
 
@@ -168,9 +246,10 @@ def preparation_stats
       value = raw_header.split('-')[1] # percentage or minutes
 
       values = {
+        institution: @ws[row, 2],
         percentage: @ws[row,column],
         time: @ws[row,column + 1],
-        regularized: regularize_time(@ws[row,column], @ws[row,column + 1])
+        normalized: normalize_time(@ws[row,column], @ws[row,column + 1])
       } unless @ws[row,column].empty?
 
       @prep_times[key]['raw_times'] << values unless values.empty?
@@ -179,25 +258,105 @@ def preparation_stats
   # calculate average times from raw_times
 end
 
-
+# def calculate_normalized_average(hash)
+#   hash.each do |key,value|
+#     hash[key].each do |k,v|
+#     sum = 0
+#     average = 0
+#     v['raw_times'].each do |instance|
+#       sum += instance[:normalized]
+#     end
+#     average = sum / value['raw_times'].length unless value['raw_times'].length == 0
+#       hash['key']['average'] = average
+#     end
+#   end
+# end
 
 def calculate_prep_averages
   @prep_times.each do |key,value|
       sum = 0
       average = 0
       value['raw_times'].each do |instance|
-        sum += instance[:regularized]
+        sum += instance[:normalized]
         # puts instance[:regularized]
       end
       average = sum / value['raw_times'].length unless value['raw_times'].length == 0
-      puts average
       @prep_times[average] = average
   end
 
 end
 
-def regularize_time(percentage, time)
+def normalize_time(percentage, time)
   100.0 * time.to_f / percentage.to_f
+end
+
+def post_processing_times
+
+  values = {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []}
+
+  @post_processing_times ||= {
+    'alignment' => values.clone,
+    'background_removal' => values.clone,
+    'clean_up' => values.clone,
+    'color_correction' => values.clone,
+    'cropping' => values.clone,
+    'stitching' => values.clone,
+  }
+end
+
+def post_processing_stats
+  post_processing_times
+
+  # 61: Post-processing -Alignment/rotation
+  # 62: Post-processing -Background removal (books/texts)
+  # 63: Post-processing -Clean up/dust removal
+  # 64: Post-processing -Color correction and tonal adjustment
+  # 65: Post-processing -Cropping
+  # 66: Post-processing -Stitching
+  # 67: Post-processing-Alignment/rotation-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)
+  # 68: Post-processing-Alignment/rotation-Minutes per 100 scans
+  # 69: Post-processing-Background removal (books/texts)-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)
+  # 70: Post-processing-Background removal (books/texts)-Minutes per 100 scans
+  # 71: Post-processing-Clean up/dust removal-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)
+  # 72: Post-processing-Clean up/dust removal-Minutes per 100 scans
+  # 73: Post-processing-Color correction and tonal adjustment-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)
+  # 74: Post-processing-Color correction and tonal adjustment-Minutes per 100 scans
+  # 75: Post-processing-Cropping-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)
+  # 76: Post-processing-Cropping-Minutes per 100 scans
+  # 77: Post-processing-Stitching-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)
+  # 78: Post-processing-Stitching-Minutes per 100 scans
+
+  (2..@ws.num_rows).each do |row|
+    (67..78).step(2).each do |column|
+      unless @ws[row, column].empty?
+        v = {
+          institution: @ws[row, 2],
+          percentage: @ws[row, column],
+          time: @ws[row, column + 1],
+          normalized: normalize_time(@ws[row, column], @ws[row, column + 1])
+        }
+
+        case column
+        when 67
+          @post_processing_times['alignment']['raw_times'] << v
+        when 69
+          @post_processing_times['background_removal']['raw_times'] << v
+        when 71
+          @post_processing_times['clean_up']['raw_times'] << v
+        when 73
+          @post_processing_times['color_correction']['raw_times'] << v
+        when 75
+          @post_processing_times['cropping']['raw_times'] << v
+        when 77
+          @post_processing_times['stitching']['raw_times'] << v
+        end
+      end
+    end
+  end
+
+  # todo: write to file
+  sub_hash_stats(@post_processing_times)
+
 end
 
 ##
@@ -229,6 +388,14 @@ end
 
 task default: 'convert:all'
 
+desc "List all header fields"
+task headers: :dotenv do
+  login
+  (1..@ws.num_cols).each do |c|
+    puts "#{c}: #{@ws[1,c]}"
+  end
+end
+
 namespace :convert do
   desc 'Run all conversions'
   task :all => [:data]
@@ -243,6 +410,18 @@ namespace :convert do
 
     puts "Generating Preparation of Materials data".yellow
     preparation_stats
+
+    puts "Generating Quality Control data".yellow
+    quality_control_stats
+
+    puts "Generating Post Processing data".yellow
+    post_processing_stats
+
+    puts "Generaging Metadata Creation data".yellow
+    # metadata_stats
+
+    puts "Writing data to file".yellow
+
     # puts "Rendering calculator data".green
     #contents = render('templates/calculator_data.js.erb')
     #write_file('./data/calculator_data.js', contents)
