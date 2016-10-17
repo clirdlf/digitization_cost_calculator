@@ -16,11 +16,16 @@
         // app and form logic
         var counter = 1; // for adding fields
 
+        var scans = 0;
+
         var wrapper = $('.form-group');
         var add_button = $('.add_field'); // add salary? add_wage?
         var form_wrapper = $('form#calculator');
 
         var extant = 0;
+        var hourly = [], staff = [];
+
+        var preparation = [];
 
         var total_digitization_time = 0,
             total_quality_control = 0,
@@ -109,11 +114,47 @@
             }));
         }
 
-        function set_values() {
+        function update_preparation_time(){
+            
+        }
+
+        function update_post_processing_time(){
+
+        }
+
+        function update_metadata_time(){
+          var level = $('input:radio[name="descriptive_medatadata"]:checked').val();
+          total_metadata_time = Math.floor((metadata_stats[level].average * scans) / 100);
+        }
+
+        function update_quality_control(){
+          var qc_level = $('input:radio[name="quality_control"]:checked').val();
+          // TODO: ask about precision
+          total_quality_control_time = Math.floor(quality_control_stats[qc_level].average * scans / 100);
+        }
+
+        function update_post_preperation_time(){
+
+        }
+
+        function update_totals() {
+          update_preparation_time();
+          update_post_processing_time();
+          update_quality_control();
+          update_metadata_time();
+          update_post_preperation_time();
 
           total_time = total_digitization_time + total_preperation_time +
             total_post_processing_time + total_quality_control_time +
             total_metadata_time + total_post_staff_preparation_cost;
+          total_staff_cost = total_staff_digization_cost + 0;
+          total_hourly_cost = total_hourly_digization_cost;
+
+
+        }
+
+        function set_values() {
+            update_totals();
 
             $('.total-digitization-time').html(total_digitization_time);
             $('.total-staff-digization-cost').html((total_staff_digization_cost).formatCurrency(2));
@@ -164,7 +205,7 @@
           }
           // 1 linear ft == 1,200 scans
           // recorded as time per 100 scans
-          var scans = (extent * 1200) / 100;
+          scans = (extent * 1200) / 100;
           // figure out the selected scanner
           var scanner = $('select[name="capture_device"] option:selected').text();
 
@@ -182,6 +223,7 @@
         function update_values(form) {
             var values = {};
             scan_time();
+            update_quality_control();
             // values.extent = "";
             total_digitization_time = '';
             // extant = $('#extent').val();
