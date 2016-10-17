@@ -119,7 +119,7 @@ def quality_control_stats
   # 51 => 57, 58
   # 52 => 59, 60
 
-  (2..@ws.num_rows).each do |row|
+  (2..@ws.num_rows - 1).each do |row|
 
     (55..59).step(2) do |column|
       unless @ws[row, column].empty?
@@ -211,10 +211,13 @@ def render_vals(hash)
     val['average'] = average(val['raw_times'])
     val['median'] = median(val['raw_times'])
   end
+  # contents = render('templates/calculator_data.js.erb')
+  # write_file('./data/calculator_data.js', contents)
+end
 
+def write_js
   contents = render('templates/calculator_data.js.erb')
   write_file('./data/calculator_data.js', contents)
-
 end
 
 def preparation_stats
@@ -236,7 +239,7 @@ def preparation_stats
   # 35 Supporting Material Time
   # 36 uuid %
   # 37 uuid time
-  (2..@ws.num_rows).each do |row|
+  (2..@ws.num_rows - 1).each do |row|
     (24..37).step(2) do |column|
       raw_header = clean_prep_header(@ws[1, column])
       # hash to put these values in
@@ -278,7 +281,6 @@ def calculate_prep_averages
       average = 0
       value['raw_times'].each do |instance|
         sum += instance[:normalized]
-        # puts instance[:regularized]
       end
       average = sum / value['raw_times'].length unless value['raw_times'].length == 0
       @prep_times[average] = average
@@ -288,6 +290,15 @@ end
 
 def normalize_time(percentage, time)
   100.0 * time.to_f / percentage.to_f
+end
+
+def post_preparation_stats
+  values = {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []}
+  @post_preparation_stats ||= {
+    'desorting' => values.clone,
+    'rebinding' => values.clone,
+    'refastening' => values.clone
+  }
 end
 
 def post_processing_times
@@ -326,7 +337,7 @@ def post_processing_stats
   # 77: Post-processing-Stitching-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)
   # 78: Post-processing-Stitching-Minutes per 100 scans
 
-  (2..@ws.num_rows).each do |row|
+  (2..@ws.num_rows - 1).each do |row|
     (67..78).step(2).each do |column|
       unless @ws[row, column].empty?
         v = {
@@ -354,9 +365,7 @@ def post_processing_stats
     end
   end
 
-  # todo: write to file
   sub_hash_stats(@post_processing_times)
-
 end
 
 ##
@@ -412,7 +421,7 @@ def metadata_stats
   # 98: Descriptive metadata creation-Level 3-Percent of scans on which process was performed (i.e., "20"; do not use the % sign)
   # 99: Descriptive metadata -Level 3-Minutes per 100 scans
 
-  (2..@ws.num_rows).each do |row|
+  (2..@ws.num_rows - 1).each do |row|
     (94..99).step(2).each do |column|
       unless @ws[row, column].empty?
         v = {
@@ -473,10 +482,11 @@ namespace :convert do
     puts "Generaging Metadata Creation data".yellow
     metadata_stats
 
-    puts "Writing data to file".yellow
+    puts "Generating Post-Preparation data".yellow
+    post_preparation_stats
 
-    # puts "Rendering calculator data".green
-    #contents = render('templates/calculator_data.js.erb')
-    #write_file('./data/calculator_data.js', contents)
+    puts "Rendering calculator data".green
+    contents = render('templates/calculator_data.js.erb')
+    write_file('./data/calculator_data.js', contents)
   end
 end
