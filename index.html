@@ -1,6 +1,7 @@
 ---
 layout: default
 javascripts:
+- /js/person.js
 - /js/calculator.js
 ---
 <div class="container">
@@ -11,7 +12,8 @@ javascripts:
     <div class="col-md-6">
       <h1>Inputs</h1>
       <!-- TODO: tool tips for each element -->
-      <form id="calculator" name="calculator">
+      <form id="calculator" name="calculator" autocomplete="off" data-toggle="validator">
+
         <section id="extent">
         <div class="form-group">
           <label class="control-label" for="extent">
@@ -32,7 +34,6 @@ javascripts:
         <section id="image_capture">
           <h2>Image Capture</h2>
 
-
           <div class="form-group">
             <label for="capture_device">Capture Device</label>
             <select name="capture_device">
@@ -49,8 +50,14 @@ javascripts:
 
         <section id="people">
           <h2>People Performing the work</h2>
-
           <p>A blurb about the people performing the work</p>
+          <p>
+            <small>Press <span class="fa fa-plus"></span> to add another form field</small>
+          </p>
+
+          {% include people_form.html %}
+
+<!--
 
           <p>
           <small>Press <span class="fa fa-plus"></span> to add another form field</small>
@@ -63,7 +70,7 @@ javascripts:
               <input name="salary-benefits[]" type="number" step="any" placeholder="% Benefits">
               <input name="salary-label[]" class="field_label" required="true" type="text" placeholder="Name">
               <!-- <button id="b1" class="btn add-more add_field" type="button">+</button> -->
-              <a href="#" class="add_field"><i class="fa fa-plus" aria-hidden="true"></i></a>
+              <!-- <a href="#" class="add_field"><i class="fa fa-plus" aria-hidden="true"></i></a>
             </div>
           </div>
 
@@ -76,7 +83,7 @@ javascripts:
               <input name="hourly-label[]" class="field_label" type="text" placeholder="Name">
               <a href="#" class="add_field"><i class="fa fa-plus" aria-hidden="true"></i></a>
             </div>
-          </div>
+          </div> -->
 
         </section>
 
