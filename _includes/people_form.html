@@ -1,0 +1,23 @@
+<section id="people">
+    <div class="container">
+        <div class="form-group staff">
+            <label for="staff">Staffing</label>
+            <div class="person" data-id="0">
+                <input type="text" class="staff_name" name="name[]" placeholder="Name" required />
+                <select class="type" name="type[]">
+                        <option>Staff Type</option>
+                        <option value="salaried">Salaried</option>
+                        <option value="hourly">Hourly</option>
+                </select>
+                <input type="number" class="rate" name="rate[]" placeholder="Salary/Hourly Rate" required />
+                <input type="number" class="benefits" name="benefits[]" placeholder="Benefits %" required />
+
+                <span class="input-group-btn">
+                    <button class="btn btn-success btn-add" type="button">
+                        <span class="glyphicon glyphicon-plus"></span>
+                </button>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
