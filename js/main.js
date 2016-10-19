@@ -5,6 +5,17 @@
     $('[data-toggle="popover"]').popover();
 
     $(document).ready(function() {
+
+        var people = [];
+        // pre-populate first object in array
+        var empty_person = new Person(0, '', '', 0, 0);
+        people.push(empty_person);
+        // add a default empty option for performed_by
+        $('select[name!="capture_device"]').append($('<option>', {
+            value: 0,
+            text: ''
+        }));
+
         // set image capture devices from available fields
         $.each(image_capture, function(key){
           $('select[name="capture_device"]').append($('<option>', {
@@ -26,6 +37,50 @@
         var hourly = [], staff = [];
 
         var preparation = [];
+
+        function JobEstimate(label, percentage, performed_by, extent) {
+          this.label = label;
+          this.extent = 0;
+          this.average = 0; // look up from
+          this.percentage = parseFloat(percentage) / 100;
+          this.performed_by = performed_by;
+          this.type = performed_by.type;
+          this.cost = this.percentage * this.extent * performed_by.total_hourly_rate;
+        }
+
+        var preparation_times = {
+          'condition_review': new JobEstimate('condition_review', 0, empty_person),
+          'disbinding': new JobEstimate('condition_review', 0, empty_person),
+          'fastener_removal': new JobEstimate('condition_review', 0, empty_person),
+          'flattening': new JobEstimate('condition_review', 0, empty_person),
+          'rights_review': new JobEstimate('condition_review', 0, empty_person),
+          'supporting_materials': new JobEstimate('condition_review', 0, empty_person),
+          'supporting': new JobEstimate('condition_review', 0, empty_person),
+          'unique_id': new JobEstimate('condition_review', 0, empty_person)
+        };
+
+        var preparation_costs = {};
+
+        function sum_hash_costs(hash) {
+          var costs = { salaried: 0, hourly: 0, total: 0};
+          $.each(hash, function(key, value) {
+            console.log(value);
+            switch(value.performed_by.type) {
+              case 'hourly':
+                costs.hourly += parseFloat(value.performed_by.cost) || 0;
+                break;
+              case 'salaried':
+                costs.salaried += parseFloat(value.performed_by.cost) || 0;
+                break;
+            }
+
+            costs.total = costs.salaried + costs.hourly;
+          });
+          return costs;
+        }
+
+        var post_processing_times = {};
+        var post_preparation_times = {};
 
         var total_digitization_time = 0,
             total_quality_control = 0,
@@ -53,69 +108,133 @@
             total_staff_cost = 0,
             total_hourly_cost = 0;
 
+        // individual fields
+        // preparation of original materials
+        var condition_review = 0,
+          disbanding = 0,
+          fastener_removal = 0,
+          flattening = 0,
+          rights_review = 0,
+          sorting_items = 0,
+          supporting = 0,
+          unique_id = 0;
 
+          // post-processing
+
+        var alignment = 0,
+          background_removal = 0,
+          clean_up = 0,
+          color_correction = 0,
+          cropping = 0,
+          stitching = 0;
+          // post-preparation
+        var desorting = 0,
+          rebinding = 0,
+          refastening = 0;
 
         // set initial values
         set_values();
 
-        // add/remove fields by cloning entries and replacing classes
-        // $(document).on('click', '.add_field', function(e) {
-        //     e.preventDefault();
-        //
-        //     // This currently clones the first field to all the fields
-        //     // which is what I'm telling it to do, but it's unexpected
-        //     var currentEntry = $(this).parents('.form-group:first');
-        //     //TODO: change the label value
-        //     var newEntry = $(currentEntry.clone());
-        //     currentEntry.after(newEntry);
-        //
-        //     newEntry.find('.add_field').removeClass('add_field').addClass('remove_field');
-        //     newEntry.find('.fa-plus').removeClass('fa-plus').addClass('fa-minus');
-        //
-        //     // check if the slug exists
-        // }).on('click', '.remove_field', function(e) {
-        //   var key = $(this).parent('.entry').find('field_label');
-        //     console.log('key', key);
-        //
-        //     $(this).parents('.entry:first').remove();
-        //     // TODO:remove slug
-        //     e.preventDefault();
-        //     return false;
-        // });
+        $('form').on('change', set_values);
 
-        // $('.field_label').change(function(e) {
-        //
-        //   var slug = $(this).val().sluggify();
-        //
-        //   // check if slug exists on slugs
-        //   //
-        //   var slug_exists = 0 !== $('select option[value='+slug+']').length;
-        //   console.log('slug-test', slug_exists);
-        //
-        //     $('select.perfomed_by').append($('<option>', {
-        //         value: $(this).val().sluggify(),
-        //         text: $(this).val()
-        //     }));
-        // });
+        $(document).on('click', '.btn-add', function(e) {
+            e.preventDefault();
 
+            var newid = 0;
+            $.each($('.person'), function() {
+                if (parseInt($(this).data('id')) > newid) {
+                    newid = parseInt($(this).data('id'));
+                }
+            });
+            newid++;
 
-        // definately need the counter for this...
-        // $("input[name='salary-label[]']").change(function() {
-        //     // this will fail, as it needs to fire when someone adds, not when there's a change
-        //     add_name('1', $(this).val());
-        //     console.log($(this).val());
-        // });
+            var staff_div = $('.staff:first'),
+                currentEntry = $(this).parents('.person:first'),
+                newEntry = $(currentEntry.clone()).appendTo(staff_div);
 
-        // Appends names to "Performed By" labels
-        function add_name(val, label) {
-            $('select').append($('<option>', {
-                value: val,
-                text: label
+            newEntry.attr('data-id', newid); // increment the data-id value
+            newEntry.find('input').val(''); // reset values in input
+
+            // add a new row and update the classes
+            staff_div.find('.person:not(:last) .btn-add')
+                .removeClass('btn-add').addClass('btn-remove')
+                .removeClass('btn-success').addClass('btn-danger')
+                .html('<span class="glyphicon glyphicon-minus"></span>');
+
+            // add to select options
+            // TODO: need to also exclude from 'staff_type'
+            $('select[name!="capture_device"]').append($('<option>', {
+            // $('.performed_by').append($('<option>', {
+                value: newid,
+                text: name
             }));
+
+        }).on('change', '.person', function(e) {
+            // change on the actual form name?
+            var currentEntry = $(this);
+
+            // read the values
+            var id = $(this).data('id'),
+                name = currentEntry.children('.staff_name').val(),
+                type = currentEntry.children('select.type').find(":selected").val(),
+                rate = currentEntry.children('.rate').val(),
+                benefits = currentEntry.children('.benefits').val();
+            // Set the Person object
+            var person = new Person(id, name, type, rate, benefits);
+            // Add/edit person in array
+            people[id] = person;
+
+            var current_option = 'select option[value="' + id + '"]';
+            var new_option = $('<option>', {
+                value: id, text: name
+            });
+
+            $(current_option).replaceWith(new_option);
+
+            e.preventDefault();
+        }).on('click', '.btn-remove', function(e) {
+            e.preventDefault();
+
+            var obj = $(this).parents('.person:first');
+            obj.remove();
+
+            // remove the person from the array
+            people.splice(obj.data('id'), 1);
+
+            // remove the option from the selects
+            var id = obj.data('id');
+            var current_option = 'select option[value="' + id + '"]';
+            $(current_option).remove();
+
+            return false;
+        });
+
+        function update_condition_review(){
+            var percent = parseFloat($('#condition_review_percentage').val() || 0);
+            var performed_by = parseInt($('#condition_review_by').val()) || 0;
+            var p = people[performed_by];
+            var extent = parseFloat($('input#extent').val()) || 0;
+            // var extent = parseFloat($('#extent').val()) || 0.0;
+            var estimate = new JobEstimate('condition_review', percent, p, extant);
+            preparation_times.condition_review = estimate;
+            preparation_costs = sum_hash_costs(preparation_times);
+
+            console.log('preparation_times', preparation_times);
+            console.log('preparation_costs', preparation_costs);
         }
 
-        function update_preparation_time(){
+        // function calculate_step_hourly_rate( field_prefix ){
+        //   var percent_field = field_prefix + "_percentage";
+        //   var performed_field = field_prefix + "_reviewed_by";
+        //   var percent = parseFloat($(percent_field).val() || 0);
+        //   var perfomed_by = parseInt($(performed_field).val() || 0);
+        //   var person = people[performed_by];
+        //
+        //   return new JobEstimate('condition_review', percent, person);
+        // }
 
+        function update_preparation_time(){
+          update_condition_review();
         }
 
         function update_post_processing_time(){
@@ -229,7 +348,6 @@
             // extant = $('#extent').val();
             $.each($('#calculator').serializeArray(), function(i, field) {
                 // console.log(field);
-
                 values[field.name] = field.value;
             });
 
@@ -277,31 +395,29 @@ String.prototype.sluggify = function() {
     return str;
 };
 
-// @see http://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-money-in-javascript
-Number.prototype.formatCurrency = function(c, d, t) {
-    var n = this,
-        c = isNaN(c = Math.abs(c)) ? 2 : c,
-        d = d === undefined ? "." : d,
-        t = t === undefined ? "," : t,
-        s = n < 0 ? "-" : "",
-        i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))),
-        j = (j = i.length) > 3 ? j % 3 : 0;
-    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
-};
 
-// Polyfill for string.includes method
-// @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
-if (!String.prototype.includes) {
-  String.prototype.includes = function(search, start) {
-    'use strict';
-    if (typeof start !== 'number') {
-      start = 0;
-    }
+// Calculate the hourly rate for salaried employee calculations
+// This current
+function calculate_hourly_rate(salary, hours_per_week) {
+    var hpw = (typeof hours_per_week !== 'undefined') ? hours_per_week : 40;
+    return parseFloat(salary) / 52 / parseFloat(hpw);
+}
 
-    if (start + search.length > this.length) {
-      return false;
+function Person(id, name, type, rate, benefits, hours_per_week) {
+    // sets the hours_per_week to 40
+    var hpw = (typeof hours_per_week !== 'undefined') ? hours_per_week : 40;
+    this.id = parseInt(id);
+    this.name = name;
+    this.type = type;
+    this.slug = name.sluggify();
+    this.benefits_percent = benefits;
+
+    if (this.type === 'salaried') {
+        this.rate = calculate_hourly_rate(rate, hpw);
     } else {
-      return this.indexOf(search, start) !== -1;
+        this.rate = parseFloat(rate);
     }
-  };
+
+    this.benefits = calculate_hourly_rate(this.benefits_percent * this.rate);
+    this.total_hourly_rate = (this.rate + this.benefits).toFixed(2);
 }

@@ -1,6 +1,7 @@
 ---
 layout: default
 javascripts:
+- /js/utilities.js
 - /js/person.js
 - /js/calculator.js
 ---
@@ -17,7 +18,7 @@ javascripts:
         <section id="extent">
         <div class="form-group">
           <label class="control-label" for="extent">
-            Extent to digitize
+            Extent to digitize (in linear feet)
             <a href="#" class="help" data-toggle="popover" title="Extent Digitize" >
               <i class="fa fa-question-circle"></i>
             </a>
@@ -57,34 +58,6 @@ javascripts:
 
           {% include people_form.html %}
 
-<!--
-
-          <p>
-          <small>Press <span class="fa fa-plus"></span> to add another form field</small>
-          </p>
-
-          <div class="form-group">
-            <div class="entry">
-              <label for="salary[]">Salary</label>
-              <input name="salary[]" type="number" step="any" placeholder="Annual Salary">
-              <input name="salary-benefits[]" type="number" step="any" placeholder="% Benefits">
-              <input name="salary-label[]" class="field_label" required="true" type="text" placeholder="Name">
-              <!-- <button id="b1" class="btn add-more add_field" type="button">+</button> -->
-              <!-- <a href="#" class="add_field"><i class="fa fa-plus" aria-hidden="true"></i></a>
-            </div>
-          </div>
-
-
-          <div class="form-group">
-            <div class="entry">
-              <label for="hourly[]">Hourly</label>
-              <input name="hourly[]" type="number" step="any" placeholder="Hourly Rate">
-              <input name="hourly-benefits[]" type="number" step="any" placeholder="% Benefits">
-              <input name="hourly-label[]" class="field_label" type="text" placeholder="Name">
-              <a href="#" class="add_field"><i class="fa fa-plus" aria-hidden="true"></i></a>
-            </div>
-          </div> -->
-
         </section>
 
 
@@ -95,8 +68,8 @@ javascripts:
 
           <div class="form-group">
             <label for="condition">Condition Review</label>
-            <input name="materials_percentage" type="number" step="any" placeholder="% Materials">
-            <select id="materials_percentage_by" name="materials_percentage_by" class="perfomed_by">
+            <input name="condition_review_percentage" id="condition_review_percentage" type="number" step="any" placeholder="% Materials">
+            <select id="condition_review_by" name="condition_review_by" class="perfomed_by">
               <option>Performed by</option>
             </select>
           </div>
