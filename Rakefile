@@ -61,7 +61,8 @@ def clean_prep_header(header)
   header.gsub!(/Preparation of original materials -/,'')
   header.gsub!(/ per 100 scans/, '')
   header.gsub!(/ of materials on which process was performed \(i.e., "20" do not use the \% sign\)/,'')
-  header
+  header.gsub!(/ /, '_')
+  header.downcase
 end
 
 def prep_times
@@ -98,7 +99,6 @@ def quality_control_stats
   (1..3).each do |i|
     @quality_control_stats.merge!("level_#{i}" => {'average' => 0, 'raw_times' => []})
   end
-  # @prep_times.merge!("#{key}" => {'average' => 0, 'raw_times' => []})
 
   # Quality Control fields
   # 49: Quality control -I'm not submitting quality control data
@@ -246,6 +246,7 @@ def preparation_stats
       values = {}
 
       key = raw_header.split('-')[0]
+      key.downcase.gsub!(/ /, '_') # clean up the parameters
       value = raw_header.split('-')[1] # percentage or minutes
 
       values = {
@@ -258,7 +259,8 @@ def preparation_stats
       @prep_times[key]['raw_times'] << values unless values.empty?
     end
   end
-  # calculate average times from raw_times
+  # TODO: calculate average times from raw_times
+  calculate_prep_averages
 end
 
 # def calculate_normalized_average(hash)
@@ -276,14 +278,14 @@ end
 # end
 
 def calculate_prep_averages
-  @prep_times.each do |key,value|
+  @prep_times.each do |key, value|
       sum = 0
       average = 0
       value['raw_times'].each do |instance|
         sum += instance[:normalized]
       end
       average = sum / value['raw_times'].length unless value['raw_times'].length == 0
-      @prep_times[average] = average
+      value['average'] = average
   end
 
 end
