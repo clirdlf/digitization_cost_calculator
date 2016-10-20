@@ -1,5 +1,9 @@
 people = [];
+console.log(prep_times);
 
+var average = 0;
+
+/**
 $(function()
 {
     people = [];

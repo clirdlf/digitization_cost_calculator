@@ -38,33 +38,46 @@
 
         var preparation = [];
 
-        function JobEstimate(label, percentage, performed_by, extent) {
+        function JobEstimate(label, percentage, performed_by, extent, lookup) {
           this.label = label;
           this.extent = 0;
-          this.average = 0; // look up from
+          // this.average_time = 0; // look up from var object
+          this.lookup = lookup; // why is this undefined?
+
+          // this.lookup = 'preparation_stats';
+          if ( preparation_stats[label] === 'undefined') {
+            this.average_time = 0;
+          }
+          console.log('label', label);
+          console.log('lookup', this.average_time);
+
+          // console.log(lookup[label].average);
+
           this.percentage = parseFloat(percentage) / 100;
           this.performed_by = performed_by;
           this.type = performed_by.type;
-          this.cost = this.percentage * this.extent * performed_by.total_hourly_rate;
+          this.cost = this.percentage * this.extent * this.average_time * performed_by.total_hourly_rate;
         }
 
         var preparation_times = {
-          'condition_review': new JobEstimate('condition_review', 0, empty_person),
-          'disbinding': new JobEstimate('condition_review', 0, empty_person),
-          'fastener_removal': new JobEstimate('condition_review', 0, empty_person),
-          'flattening': new JobEstimate('condition_review', 0, empty_person),
-          'rights_review': new JobEstimate('condition_review', 0, empty_person),
-          'supporting_materials': new JobEstimate('condition_review', 0, empty_person),
-          'supporting': new JobEstimate('condition_review', 0, empty_person),
-          'unique_id': new JobEstimate('condition_review', 0, empty_person)
+          'condition_review': new JobEstimate('condition_review', 0, empty_person, preparation_stats),
+          'disbinding': new JobEstimate('disbinding', 0, empty_person, preparation_stats),
+          'fastener_removal': new JobEstimate('fastener_removal', 0, empty_person, preparation_stats),
+          'flattening': new JobEstimate('flattening', 0, empty_person, preparation_stats),
+          'rights_review': new JobEstimate('rights_review', 0, empty_person, preparation_stats),
+          'supporting_materials': new JobEstimate('supporting_materials', 0, empty_person, preparation_stats),
+          'supporting': new JobEstimate('supporting', 0, empty_person, preparation_stats),
+          'unique_id': new JobEstimate('unique_id', 0, empty_person, preparation_stats)
         };
+
+        // console.log('preparation_stats', preparation_stats);
 
         var preparation_costs = {};
 
         function sum_hash_costs(hash) {
           var costs = { salaried: 0, hourly: 0, total: 0};
           $.each(hash, function(key, value) {
-            console.log(value);
+            // console.log(value);
             switch(value.performed_by.type) {
               case 'hourly':
                 costs.hourly += parseFloat(value.performed_by.cost) || 0;
@@ -215,10 +228,10 @@
             var p = people[performed_by];
             var extent = parseFloat($('input#extent').val()) || 0;
             // var extent = parseFloat($('#extent').val()) || 0.0;
-            var estimate = new JobEstimate('condition_review', percent, p, extant);
+            var estimate = new JobEstimate('condition_review', percent, p, extant, preparation_stats);
             preparation_times.condition_review = estimate;
             preparation_costs = sum_hash_costs(preparation_times);
-
+            // console.log(preparation_stats[label].average);
             console.log('preparation_times', preparation_times);
             console.log('preparation_costs', preparation_costs);
         }
