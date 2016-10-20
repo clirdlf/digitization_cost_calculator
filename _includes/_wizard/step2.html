@@ -1,0 +1,65 @@
+<div class="tab-pane" role="tabpanel" id="step2">
+    <h3>Staffing</h3>
+    <p>Tell us a bit about the people working on the project</p>
+    <!-- TODO: refactor to make it look like the prettier version below -->
+    {% include people_form.html %}
+
+    <hr />
+    <p>
+        Refactor JS to make the below style work like above
+    </p>
+    <fieldset>
+        <legend>
+            Project Staff
+        </legend>
+        <section id="people">
+            <div class="container">
+                <div class="person" data-id="0">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control staff_name input-lg" name="name[]" placeholder="Name" required="">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <select class="type form-control" name="type[]">
+                                <option>Staff Type</option>
+                                <option value="salaried">Salaried</option>
+                                <option value="hourly">Hourly</option>
+                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <input type="number" class="rate form-control input-lg" name="rate[]" placeholder="Salary/Hourly Rate" required="">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <input type="number" class="benefits form-control input-lg" name="benefits[]" placeholder="Benefits %" required="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <button class="btn btn-success btn-add" type="button">
+                        <span class="glyphicon glyphicon-plus"></span> Add Staff
+                    </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </fieldset>
+
+    <ul class="list-inline pull-right">
+        <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+        <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+    </ul>
+
+</div>

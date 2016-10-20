@@ -1,0 +1,55 @@
+<div class="tab-pane active" role="tabpanel" id="step1">
+    <h3>Digitization Project</h3>
+    <p>
+        Describe a bit about your digitization project
+    </p>
+
+    <fieldset>
+        <legend>
+            Project Parameters
+        </legend>
+
+        <div class="form-group col-md-12">
+            <label class="col-md-4 control-label" for="extent">
+            Extent to digitize (in linear feet)
+            <a href="#" class="help" data-toggle="popover" title="" data-original-title="Extent Digitize">
+              <i class="fa fa-question-circle" aria-hidden="true"></i>
+            </a>
+            <div class="popover" role="tooltip">
+              <div class="arrow"></div>
+              <h3 class="popover-title">Extent to Digitized</h3>
+              <div class="popover-content">A helpful note about the extent</div>
+            </div>
+          </label>
+            <div class="col-md-8">
+                <input type="text" class="form-control input-md" id="extent" required="required" placeholder="Extent in linear feet (1 = 1,200 scans)">
+            </div>
+        </div>
+
+        <div class="form-group col-md-12">
+            <label class="col-md-4 control-label" for="capture_device">Capture Device</label>
+            <div class="col-md-8">
+                <select id="capture_device" name="capture_device" class="form-control">
+                <option>Select Your Capture Device</option>
+            </select>
+            </div>
+        </div>
+    </fieldset>
+
+    <!-- <section id="image_capture">
+        <h2>Image Capture</h2>
+        <p>
+            What type of capture device will you be using?
+        </p>
+        <div class="form-group">
+            <label for="capture_device">Capture Device</label>
+            <select name="capture_device" class="form-control">
+              <option>Select</option>
+        </div>
+    </section> -->
+
+
+    <ul class="list-inline pull-right">
+        <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+    </ul>
+</div>
