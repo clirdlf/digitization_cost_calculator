@@ -1,6 +1,6 @@
 var estimate = {
   "extent": 0,
-  "total_scans": function(){ return parseFloat(this.extent) * 1200; },
+  "total_scans": function(){ return (parseFloat(this.extent) * 1200) / 100; },
   "capture_device": '',
   "capture_average": function(){
     var average = 0;
@@ -9,12 +9,37 @@ var estimate = {
     }
     return average;
   },
-  // "staff": function(){ return people; },
-  total_preperation_time: function(){
-    costs = { total: 0, salaried: 0, hourly: 0 };
-    $.each(this.preparation_of_materials, function(key, value){
-      console.log(key);
+  task_group_estimate: function(generic){
+    var costs = { total_time: 0, total: 0, salaried: 0, hourly: 0 };
+    $.each(generic, function(task, obj){
+      if(obj.by && obj.by.total_hourly_rate) {
+        var hourly_rate = obj.by.total_hourly_rate;
+        switch(obj.by.type) {
+          case 'hourly':
+            costs.hourly += (obj.average);
+            break;
+          case 'salaried':
+            costs.hourly += (obj.average);
+            break;
+        }
+      }
     });
+    costs.total = costs.hourly + costs.salaried;
+    return costs;
+  },
+  // "staff": function(){ return people; },
+  preparation_estimate: function(){
+    return this.task_group_estimate(this.preparation_of_materials);
+  },
+  "quality_control": 'level_1',
+  quality_control_estimate: function(){
+    var costs = { total_time: 0, total: 0, salaried: 0, hourly: 0 };
+    if(quality_control_stats[this.quality_control] && quality_control_stats[this.quality_control].average){
+      var average = quality_control_stats[this.quality_control].average;
+      costs.total_time = average * this.extent;
+      // are these salaried? and if so, which one?
+    }
+
     return costs;
   },
   "preparation_of_materials": {
@@ -83,19 +108,66 @@ var estimate = {
     // 'unique_id_average': 0, // no data
   },
   // post-processing
-  'alignment_percent': 0,
-  'alignment_average': 0,
-  'alignment_by': 0,
-  'background_removal_percent': 0,
-  'background_removal_by': 0,
-  'clean_up_percent': 0,
-  'clean_up_by': 0,
-  'color_correction_percent': 0,
-  'color_correction_by': 0,
-  'cropping_percent': 0,
-  'cropping_by': 0,
-  'stitching_percent': 0,
-  'stitching_by': 0,
+  "post_processing": {
+    // ["alignment", "background_removal", "clean_up", "color_correction", "cropping", "stitching"]
+    'alignment': {
+      percentage: 0,
+      by: '',
+      average: post_processing_stats.alignment.average,
+    },
+    'background_removal': {
+      percentage: 0,
+      by: '',
+      average: post_processing_stats.background_removal.average,
+    },
+    'clean_up': {
+      percentage: 0,
+      by: '',
+      average: post_processing_stats.clean_up.average,
+    },
+    'color_correction': {
+      percentage: 0,
+      by: '',
+      average: post_processing_stats.color_correction.average,
+    },
+    'cropping': {
+      percentage: 0,
+      by: '',
+      average: post_processing_stats.cropping.average,
+    },
+    'stitching': {
+      percentage: 0,
+      by: '',
+      average: post_processing_stats.stitching.average,
+    },
+  },
+  post_processing_estimate: function(){
+    return this.task_group_estimate(this.post_processing);
+  },
+  "post_preparation": {
+      "desorting":{
+        percentage: 0,
+        by: '',
+        average: post_preparation_stats.desorting.average,
+      },
+      "rebinding":{
+        percentage: 0,
+        by: '',
+        average: post_preparation_stats.rebinding.average,
+      },
+      "refastening":{
+        percentage: 0,
+        by: '',
+        average: post_preparation_stats.refastening.average,
+      },
+  },
+  post_preparation_estimate: function() {
+      return this.task_group_estimate(this.post_preparation);
+  },
+  "metadata": 'level_1',
+  "metadata_estimate": function(){
+
+  },
   "total_digitization_time": function(){
     return minutes_in_hours(this.total_scans() * this.capture_average());
   },
