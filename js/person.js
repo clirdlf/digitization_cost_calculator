@@ -1,7 +1,7 @@
 // Calculate the hourly rate for salaried employee calculations
 function calculate_hourly_rate(salary, hours_per_week) {
     var hpw = (typeof hours_per_week !== 'undefined') ? hours_per_week : 40;
-    return parseFloat(salary) / 52 / parseFloat(hpw);
+    return (parseFloat(salary) / 52.0 / parseFloat(hpw)).toFixed(2);
 }
 
 function Person(id, name, type, rate, benefits, hours_per_week) {
@@ -11,14 +11,15 @@ function Person(id, name, type, rate, benefits, hours_per_week) {
     this.name = name;
     this.type = type;
     this.slug = name.sluggify();
-    this.benefits_percent = benefits;
+    this.benefits_percent = benefits / 100;
+    this.hours_per_week = hpw;
 
     if (this.type === 'salaried') {
-        this.rate = calculate_hourly_rate(rate, hpw);
+        this.rate = parseFloat(calculate_hourly_rate(rate, hpw));
     } else {
         this.rate = parseFloat(rate);
     }
 
-    this.benefits = calculate_hourly_rate(this.benefits_percent * this.rate);
-    this.total_hourly_rate = (this.rate + this.benefits).toFixed(2);
+    this.hourly_benefits = (this.rate * this.benefits_percent).toFixed(2);
+    this.total_hourly_rate = parseFloat(this.rate) + parseFloat(this.hourly_benefits);
 }
