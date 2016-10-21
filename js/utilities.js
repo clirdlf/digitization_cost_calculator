@@ -1,3 +1,14 @@
+var dlf = [
+' _____   _       _______',
+'(____ \\ | |     (_______)',
+' _   \\ \\| |      _____',
+'| |   | | |     |  ___)',
+'| |__/ /| |_____| |',
+'|_____/ |_______)_|'
+].join('\n');
+
+console.log(dlf);
+
 // @see http://stackoverflow.com/questions/45888/what-is-the-most-efficient-way-to-sort-an-html-selects-options-by-value-while
 // TODO: only sort things that have value in the select box; may be better to do in the Rakefile...
 $.fn.sort_select_box = function(){

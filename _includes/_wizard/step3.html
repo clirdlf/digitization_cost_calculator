@@ -131,9 +131,9 @@
                     </div>
                 </div>
             </div>
-
-            <!-- quality control -->
-            <div class="panel panel-default">
+        </div>
+        <!-- quality control -->
+        <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
@@ -156,6 +156,17 @@
                                         </div>
                                     </div>
 
+                                </div>
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+                                        <label for="quality_control_by">Performed By</label>
+                                        <select id="quality_control_by" class="form-control performed_by">
+                                            <option>
+                                                Performed By
+                                            </option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -270,7 +281,6 @@
                     </div>
                 </div>
             </div>
-        </div>
 
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -285,108 +295,147 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="grantpo">Grant PO</label>
-                                    <select class="form-control" id="grantpo">
-                                        <option>Data1772457</option>
-                                        <option>Data4516</option>
-                                        <option>Data24572457</option>
-                                    </select>
+                                    <div class="radio">
+                                        <label><input type="radio" name="descriptive_medatadata" id="descriptive_medatadata1" value="level_1" checked=""> Level 1</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio" name="descriptive_medatadata" id="descriptive_medatadata2" value="level_2"> Level 2</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio" name="descriptive_medatadata" id="descriptive_medatadata3" value="level_3"> Level 3</label>
+                                    </div>
                                 </div>
+
                             </div>
                             <div class="col-md-6">
-                                <div class="well well-sm well-primary">
-                                    <label for="grantor">Grantor</label>
-                                    <select class="form-control" id="grantor">
-                                        <option>Data1772457</option>
-                                        <option>Data4516</option>
-                                        <option>Data24572457</option>
+                                <div class="form-group">
+                                    <label for="metadata_by">Performed By</label>
+                                    <select id="metadata_by" class="form-control performed_by">
+                                        <option>
+                                            Performed By
+                                        </option>
+                                    </select>
+                                </div>
+                                <!-- <div class="well well-sm well-primary">
+                                <label for="grantor">Grantor</label>
+                                <select class="form-control" id="grantor">
+                                <option>Data1772457</option>
+                                <option>Data4516</option>
+                                <option>Data24572457</option>
+                            </select>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>  
+        <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                    <span class="fa fa-folder-open-o">
+                    </span> Post-Preparation</a>
+                </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="desorting_percent">Desorting</label>
+                                <input type="number" class="form-control" id='desorting_percent' placeholder="% Materials" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="rebinding_percent">Rebinding</label>
+                                <input type="number" class="form-control" id='rebinding_percent' placeholder="% Materials" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="refastening_percent">Refastening</label>
+                                <input type="number" class="form-control" id='refastening_percent' placeholder="% Materials" />
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="desorting_by">Performed By</label>
+                                <select id="desorting_by" class="form-control performed_by">
+                                    <option>
+                                        Performed By
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="rebinding_by">Performed By</label>
+                                <select id="rebinding_by" class="form-control performed_by">
+                                    <option>
+                                        Performed By
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="refastening_by">Performed By</label>
+                                <select id="refastening_by" class="form-control performed_by">
+                                    <option>
+                                        Performed By
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+                        <span class="fa fa-random">
+                        </span> Other</a>
+                    </h4>
+                </div>
+                <div id="collapseSix" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="row additional-work">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="additional_work[]">Additional Work</label>
+                                    <input type="number" class="form-control" id='additional_work[]' placeholder="% Materials" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="additional_work_time[]">Time per 100 items</label>
+                                    <input type="number" class="form-control" id='additional_work[]' placeholder="Time in minues" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="custom_by[]">Perfomed By</label>
+                                    <select class="form-control performed_by" id="custom_by[]">
                                     </select>
                                 </div>
                             </div>
+                            <div class="col-md-12">
+                                <button class="btn btn-success btn-add" type="button">
+                                    <span class="glyphicon glyphicon-plus"></span> Add Additional Work
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-                            <span class="fa fa-folder-open-o">
-                            </span> Post-Preparation</a>
-                        </h4>
-                    </div>
-                    <div id="collapseFive" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="grantpo">Grant PO</label>
-                                        <select class="form-control" id="grantpo">
-                                            <option>Data1772457</option>
-                                            <option>Data4516</option>
-                                            <option>Data24572457</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="well well-sm well-primary">
-                                        <label for="grantor">Grantor</label>
-                                        <select class="form-control" id="grantor">
-                                            <option>Data1772457</option>
-                                            <option>Data4516</option>
-                                            <option>Data24572457</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
-                                <span class="fa fa-random">
-                                </span> Other</a>
-                            </h4>
-                        </div>
-                        <div id="collapseSix" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="grantpo">Grant PO</label>
-                                            <select class="form-control" id="grantpo">
-                                                <option>Data1772457</option>
-                                                <option>Data4516</option>
-                                                <option>Data24572457</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="well well-sm well-primary">
-                                            <label for="grantor">Grantor</label>
-                                            <select class="form-control" id="grantor">
-                                                <option>Data1772457</option>
-                                                <option>Data4516</option>
-                                                <option>Data24572457</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        </div>
 
 
-                </div>
-
-
-                <ul class="list-inline pull-right">
-                    <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                    <li><button type="button" class="btn btn-default next-step">Skip</button></li>
-                    <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
-                </ul>
-            </div>
+        <ul class="list-inline pull-right">
+            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+            <li><button type="button" class="btn btn-default next-step">Skip</button></li>
+            <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
+        </ul>
+    </div>

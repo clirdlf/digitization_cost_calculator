@@ -1,6 +1,4 @@
 (function($) {
-  console.log('people_adder loaded');
-
   // add a default option for the performed_by drop downs
   $('.performed_by').append($('<option>', { value: 0, text: '' }));
 
