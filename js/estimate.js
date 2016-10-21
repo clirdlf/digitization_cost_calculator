@@ -35,8 +35,6 @@ var estimate = {
     costs.total = costs.hourly + costs.salaried;
     return costs;
   },
-  // "staff": function(){ return people; },
-
   "quality_control": 'level_1',
   quality_control_estimate: function(){
     var costs = { total_time: 0, total: 0, salaried: 0, hourly: 0 };
