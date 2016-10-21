@@ -40,8 +40,7 @@ var estimate = {
     var costs = { total_time: 0, total: 0, salaried: 0, hourly: 0 };
     if(quality_control_stats[this.quality_control] && quality_control_stats[this.quality_control].average){
       var average = quality_control_stats[this.quality_control].average;
-      costs.total_time = average * this.extent;
-      // are these salaried? and if so, which one?
+      costs.total_time = average * this.scans_per_hundred();
     }
 
     return costs;
@@ -153,7 +152,15 @@ var estimate = {
   },
   "metadata": 'level_1',
   "metadata_estimate": function(){
+    var costs = { total_time: 0, total: 0, salaried: 0, hourly: 0 };
+    console.log('key', metadata_stats[this.metadata]);
+    if(metadata_stats[this.metadata] && metadata_stats[this.metadata].average){
+      var average = metadata_stats[this.metadata].average;
+      costs.total_time = average * this.scans_per_hundred();
+      // are these salaried? and if so, which one?
+    }
 
+    return costs;
   },
   "total_digitization_time": function(){
     return minutes_in_hours(this.total_scans() * this.capture_average());
