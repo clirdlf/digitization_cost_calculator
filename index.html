@@ -1,392 +1,66 @@
 ---
 layout: default
 javascripts:
+- /data/calculator_data.js
 - /js/utilities.js
 - /js/person.js
-- /js/calculator.js
-- /js/main.js
+- /js/estimate.js
+- /js/wizard.js
+- /js/people_adder.js
+- /js/main_refactor.js
 ---
+
 <div class="container">
-  <div class="page-header">
-    <h1>Digitization Calculator <span class="pull-right label label-default">:)</span></h1>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <h1>Inputs</h1>
-      <!-- TODO: tool tips for each element -->
-      <form id="calculator" name="calculator" autocomplete="off" data-toggle="validator">
+	<div class="row">
+		<section>
+        <div class="wizard">
+            <div class="wizard-inner">
+                <div class="connecting-line"></div>
+                <ul class="nav nav-tabs" role="tablist">
 
-        <section id="extent">
-        <div class="form-group">
-          <label class="control-label" for="extent">
-            Extent to digitize (in linear feet)
-            <a href="#" class="help" data-toggle="popover" title="Extent Digitize" >
-              <i class="fa fa-question-circle"></i>
-            </a>
-            <div class="popover" role="tooltip">
-              <div class="arrow"></div>
-              <h3 class="popover-title">Extent to Digitized</h3>
-              <div class="popover-content">A helpful note about the extent</div>
+                    <li role="presentation" class="active">
+                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-folder-open"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="disabled">
+                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-picture"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
             </div>
 
-          </label>
-          <input type="text" class="form-control" id="extent" required="true" placeholder="Number of scans (1 = 1,200 scans)">
-        </section>
-
-        <section id="image_capture">
-          <h2>Image Capture</h2>
-
-          <div class="form-group">
-            <label for="capture_device">Capture Device</label>
-            <select name="capture_device">
-              <option>Select</option>
-              <!-- <option value="film">Film or Transparency Scanner (e.g. Epson V700, Nikon Coolscan, Flextight X5)</option>
-              <option value="flatbed">Flatbed Scanner (e.g. an Epson 11000XL)</option>
-              <option value="dslr">Manual DSLR Camera (e.g. Canon EOS 5D, Nikon D7200)</option>
-              <option value="medium_format">Medium Format Camera (e.g. PhaseOne, Hasslblad)</option>
-              <option value="overhead">Overhead Scanner (e.g. Zeutschel, i25 Quartz or Digibook, Cruse)</option>
-              <option value="sheet">Sheet Feeding Scanner (e.g. a Fujitsu)</option> -->
-            </select>
-          </div>
-        </section>
-
-        <section id="people">
-          <h2>People Performing the work</h2>
-          <p>A blurb about the people performing the work</p>
-          <p>
-            <small>Press <span class="fa fa-plus"></span> to add another form field</small>
-          </p>
-
-          {% include people_form.html %}
-
-        </section>
-
-
-        <section id="preparation">
-          <h2>Preparation of Original Materials</h2>
-
-          <p>A blurb about preperation</p>
-
-          <div class="form-group">
-            <label for="condition">Condition Review</label>
-            <input name="condition_review_percentage" id="condition_review_percentage" type="number" step="any" placeholder="% Materials">
-            <select id="condition_review_by" name="condition_review_by" class="perfomed_by">
-              <option>Performed by</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="disbinding">Disbinding</label>
-            <input name="disbinding_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="disbinding_percentage_by" class="perfomed_by">
-              <option>Performed by</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="fastener_removal">Fastener Removal</label>
-            <input name="fastener_removal_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="fastener_removal_percentage_by" class="perfomed_by">
-              <option>Performed by</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="flattening">Flattening</label>
-            <input name="flattening_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="flattening_percentage_by" class="perfomed_by">
-              <option>Performed by</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="rights_review">Rights Review</label>
-            <input name="rights_review_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="rights_review_percentage_percentage_by" class="perfomed_by">
-              <option>Performed by</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="sorting_materials">Sorting Materials Into Items</label>
-            <input name="sorting_materials_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="sorting_materials_percentage_percentage_by" class="perfomed_by">
-              <option>Performed by</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="supporting">Supporting</label>
-            <input name="supporting_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="supporting_percentage_by" class="perfomed_by">
-              <option>Performed by</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="unique_identifier">Unique Identifier Assignment</label>
-            <input name="unique_identifier_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="unique_identifier_percentage_by" class="perfomed_by">
-              <option>Performed by</option>
-            </select>
-          </div>
-        </section>
-
-        <section id="quality_control">
-          <h2>Quality Control</h2>
-          <div class="form-group">
-            <div class="radio">
-              <label><input type="radio" name="quality_control" id="quality_control1" value="level_1" checked="true"> Level 1</label>
-            </div>
-            <div class="radio">
-              <label><input type="radio" name="quality_control" id="quality_control2" value="level_2"> Level 2</label>
-            </div>
-            <div class="radio">
-              <label><input type="radio" name="quality_control" id="quality_control3" value="level_3"> Level 3</label>
-            </div>
-          </div>
-        </section>
-
-        <section id="image_capture">
-          <h2>Post-Processing</h2>
-
-          <div class="form-group">
-            <label for="alignment">Alignment/rotation</label>
-            <input name="alignment_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="alignment_percentage_by" class="perfomed_by">
-              <option>Performed by</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="background_removal">Background Removal</label>
-            <input name="background_removal_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="background_removal_percentage_by" class="perfomed_by">
-              <option>Performed by</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="cleanup">Clean Up/Dust Removal</label>
-            <input name="cleanup_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="cleanup_percentage_by" class="perfomed_by">
-              <option>Performed by</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="color_correction">Color Correction and Tonal Adjustments</label>
-            <input name="color_correction_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="color_correction_percentage_by" class="perfomed_by">
-              <option>Performed by</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="cropping">Cropping Images</label>
-            <input name="cropping_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="cropping_percentage_by" class="perfomed_by">
-              <option>Performed by</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="stitching">Stitching</label>
-            <input name="stitching_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="stitching_percentage_by" class="perfomed_by">
-              <option>Performed by</option>
-            </select>
-          </div>
-        </section>
-
-        <section id="metadata">
-          <h2>Descriptive Metadata Creation</h2>
-
-          <p>A blurb about metadata creation</p>
-          <div class="form-group">
-            <div class="radio">
-              <label><input type="radio" name="descriptive_medatadata" id="descriptive_medatadata1" value="level_1" checked> Level 1</label>
-            </div>
-            <div class="radio">
-              <label><input type="radio" name="descriptive_medatadata" id="descriptive_medatadata2" value="level_2"> Level 2</label>
-            </div>
-            <div class="radio">
-              <label><input type="radio" name="descriptive_medatadata" id="descriptive_medatadata3" value="level_3"> Level 3</label>
-            </div>
-          </div>
-        </section>
-
-        <section id="post_preparation">
-          <h2>Post-Preparation</h2>
-
-          <p>A blurb about Post-Preparation</p>
-
-          <div class="form-group">
-            <label for="desorting">Desorting</label>
-            <input name="desorting_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="desorting_percentage_by" class="perfomed_by">
-              <option>Performed by</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="rebinding">Rebinding</label>
-            <input name="rebinding_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="rebinding_percentage_by" class="perfomed_by">
-              <option>Performed by</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="refastening">Refastening</label>
-            <input name="refastening_percentage" type="number" step="any" placeholder="% Materials">
-            <select name="refastening_percentage_by" class="perfomed_by">
-              <option>Performed by</option>
-            </select>
-          </div>
-
-        </section>
-
-        <section id="local_fields">
-
-          <h2>Local Fields</h2>
-          <p>a blurb about local fields</p>
-
-          <div class="form-group">
-            <div class="entry">
-              <label for="localfield">Local Field</label>
-              <input name="localfield_percentage[]" type="number" step="any" placeholder="% Materials">
-              <select name="localfield_percentage_by[]" class="perfomed_by">
-                <option>Performed by</option>
-              </select>
-              <a href="#" class="add_field"><i class="fa fa-plus" aria-hidden="true"></i></a>
-            </div>
-          </div>
-        </section>
-        <button type="submit" class="btn btn-default">Calculate</button>
-      </form>
-    </div>
-    <div class="col-md-6">
-      <aside id="digitization_report" data-spy="affix" data-offset-top="60">
-        <h1>Costs</h1>
-        <table class="table table-strapped">
-        <thead>
-          <tr>
-            <th>
-              Activity
-            </th>
-            <th>
-              Time (in hours)
-            </th>
-            <th>
-              Staff Costs
-            </th>
-            <th>
-              Student Costs
-            </th>
-          </tr>
-        </thead>
-        <tr>
-          <td>
-            Digitization
-          </td>
-          <td>
-            <span class="total-digitization-time"></span>
-          </td>
-          <td>
-            <span class="total-staff-digization-cost"></span>
-          </td>
-          <td>
-            <span class="total-hourly-digization-cost"></span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Preparation of Materials
-          </td>
-          <td>
-            <span class="total-preperation-time"></span>
-          </td>
-          <td>
-            <span class="total-staff-preperation-cost"></span>
-          </td>
-          <td>
-            <span class="total-hourly-preperation-cost"></span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Quality control
-          </td>
-          <td>
-            <span class="total-quality-control-time"></span>
-          </td>
-          <td>
-            <span class="total-quality-control-staff-cost"></span>
-          </td>
-          <td>
-            <span class="total-quality-control-hourly-cost"></span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Post Processing
-          </td>
-          <td>
-            <span class="total-post-processing-time"></span>
-          </td>
-          <td>
-            <span class="total-staff-post-processing-cost"></span>
-          </td>
-          <td>
-            <span class="total-hourly-post-processing-cost"></span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Metadata Creation
-          </td>
-          <td>
-            <span class="total-metadata-time"></span>
-          </td>
-          <td>
-            <span class="total-metadata-staff-cost"></span>
-          </td>
-          <td>
-            <span class="total-metadata-hourly-cost"></span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Post-Preparation
-          </td>
-          <td>
-            <span class="total-post-preparation-time"></span>
-          </td>
-          <td>
-            <span class="total-staff-post-preparation-cost"></span>
-          </td>
-          <td>
-            <span class="total-hourly-post-processing-cost"></span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <strong>Total</strong>
-          </td>
-          <td>
-            <span class="total-time"></span>
-          </td>
-          <td>
-            <span class="total-staff-cost"></span>
-          </td>
-          <td>
-            <span class="total-hourly-cost"></span>
-          </td>
-        </tr>
-      </table>
-    </aside>
-    </div>
-  </div>
-
+            <form id="digization_calculator" role="form" autocomplete="off">
+                <div class="tab-content">
+                    {% include _wizard/step1.html %}
+						  {% include _wizard/step2.html %}
+                    {% include _wizard/step3.html %}
+                    {% include _wizard/final.html %}
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+        </div>
+    </section>
+   </div>
 </div>
