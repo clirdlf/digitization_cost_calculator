@@ -22,4 +22,5 @@ function Person(id, name, type, rate, benefits, hours_per_week) {
 
     this.hourly_benefits = (this.rate * this.benefits_percent).toFixed(2);
     this.total_hourly_rate = parseFloat(this.rate) + parseFloat(this.hourly_benefits);
+    this.total_minute_rate = (this.total_hourly_rate / 60.0).toFixed(2);
 }
