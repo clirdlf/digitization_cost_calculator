@@ -1,6 +1,7 @@
 var estimate = {
   "extent": 0,
-  "total_scans": function(){ return (parseFloat(this.extent) * 1200); },
+  //"total_scans": function(){ return (parseFloat(this.extent) * 1200); },
+  "total_scans": function(){ return this.extent; },
   "scans_per_hundred": function(){ return (this.total_scans() / 100.0); },
   "capture_device": '',
   "capture_estimate": function(){

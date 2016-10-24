@@ -1,11 +1,9 @@
 (function($) {
   'use strict';
-
-    // enable popovers
-    $('[data-toggle="popover"]').popover();
-
     $(document).ready(function() {
-
+        // enable popovers
+        $('i[data-toggle="popover"]').popover();
+        // $('[data-toggle="tooltip"]').tooltip();
         var people = [];
         // pre-populate first object in array
         var empty_person = new Person(0, '', '', 0, 0);

@@ -114,3 +114,10 @@ span.round-tab:hover {
     content: " ";
     position: absolute;
     left: 35%; } }
+
+.fa-question-circle {
+  cursor: pointer;
+  color: #337ab7; }
+  .fa-question-circle:hover {
+    color: #1d4567;
+    transition: all 0.5s ease; }

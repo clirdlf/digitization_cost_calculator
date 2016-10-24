@@ -13,8 +13,8 @@ QUnit.test("Estimate object defaults", function( assert ){
     assert.equal(e.total_scans(), '', 'capture_device method');
     assert.equal(e.scans_per_hundred(), '', 'scans_per_hundred method');
 
-    e.extent = 1;
-    assert.equal(e.extent, 1, 'extent property');
+    e.extent = 1200;
+    assert.equal(e.extent, 1200, 'extent property');
     assert.equal(e.total_scans(), 1200, 'capture_device property');
     assert.equal(e.scans_per_hundred(), 12, 'scans_per_hundred method');
 
@@ -38,11 +38,11 @@ QUnit.test("Estimate object defaults", function( assert ){
 
 QUnit.test("Estimate capture", function( assert ) {
     var e = $.extend(true, {}, blank_estimate);
-    e.extent = 1;
+    e.extent = 1200;
     e.capture_device = scanner;
     // 1 * (1200 / 100) * 183.5533333333333 = 2202.64 minutes
     assert.equal(e.capture_estimate(), 2202.64, '1 linear foot flatbed capture in minutes');
-    e.extent = 10;
+    e.extent = 12000;
     assert.equal(e.capture_estimate(), 22026.399999999998, '10 linear foot flatbed capture in minutes');
 
 
@@ -54,7 +54,7 @@ QUnit.test("Estimate capture", function( assert ) {
 QUnit.test("preparation_estimate", function( assert ) {
     var e = $.extend(true, {}, blank_estimate);
 
-    e.extent = 1;
+    e.extent = 1200;
     e.capture_device = scanner;
 
     var prep = e.preparation_of_materials;
@@ -85,7 +85,7 @@ QUnit.test("preparation_estimate", function( assert ) {
 QUnit.test("quality_control_estimate", function( assert ) {
     var e = $.extend(true, {}, blank_estimate);
 
-    e.extent = 1;
+    e.extent = 1200;
     e.capture_device = scanner;
     e.quality_control = 'level_1';
 
@@ -101,7 +101,7 @@ QUnit.test("quality_control_estimate", function( assert ) {
 
 QUnit.test("post_processing_estimate", function( assert ) {
     var e = $.extend(true, {}, blank_estimate);
-    e.extent = 1;
+    e.extent = 1200;
 
     var post = e.post_processing;
     post.alignment.percentage = 100;
@@ -128,7 +128,7 @@ QUnit.test("post_processing_estimate", function( assert ) {
 QUnit.test("post_preparation_estimate", function( assert ) {
     var e = $.extend(true, {}, blank_estimate);
 
-    e.extent = 1;
+    e.extent = 1200;
     e.capture_device = scanner;
     // TODO: Note: none of the post_preparation keys have any data...check on that
     var post_prep = e.post_preparation;
@@ -174,7 +174,7 @@ QUnit.test("calculate_hourly_rate", function( assert ) {
 QUnit.test("metadata_creation estimate", function( assert ) {
     var e = $.extend(true, {}, blank_estimate);
 
-    e.extent = 1;
+    e.extent = 1200;
     e.capture_device = scanner;
 
     assert.equal(e.metadata, 'level_1', 'metadata default level_1');

@@ -5,3 +5,16 @@
 // @import "tabs";
 // @import "form";
 @import "wizard";
+
+$anchor_color: #337ab7;
+
+// make markup simpler with no anchors
+.fa-question-circle {
+  cursor: pointer;
+  color: $anchor_color;
+
+  &:hover {
+    color: darken($anchor_color, 20%);
+    transition: all 0.5s ease;
+  }
+}
