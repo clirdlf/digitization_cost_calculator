@@ -4,9 +4,9 @@
 
 // @import "tabs";
 // @import "form";
+@import "vars";
+@import "footer";
 @import "wizard";
-
-$anchor_color: #337ab7;
 
 // make markup simpler with no anchors
 .fa-question-circle {
@@ -17,4 +17,13 @@ $anchor_color: #337ab7;
     color: darken($anchor_color, 20%);
     transition: all 0.5s ease;
   }
+}
+
+.dlf-font   { font-family: 'Crimson Text', serif; }
+.dlf-color  { color: $dlf-blue; }
+
+.logo {
+  font-size: 22px;
+  letter-spacing: 1px;
+  margin-bottom: 0;
 }

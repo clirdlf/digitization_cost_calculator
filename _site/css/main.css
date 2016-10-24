@@ -1,3 +1,47 @@
+@import 'https://fonts.googleapis.com/css?family=Crimson+Text|Open+Sans';
+@import 'https://cdn.rawgit.com/clirdlf/logo-fonts/master/style.min.css';
+@import 'https://cdn.rawgit.com/clirdlf/logo-fonts/master/clir-font/stylesheet.min.css';
+@import 'https://fonts.googleapis.com/css?family=Crimson+Text|Open+Sans';
+@import 'https://cdn.rawgit.com/clirdlf/logo-fonts/master/style.min.css';
+@import 'https://cdn.rawgit.com/clirdlf/logo-fonts/master/clir-font/stylesheet.min.css';
+.bg-gray {
+  background: #eef2f5;
+  border-bottom: 1px solid #d9d9d9;
+  border-top: 1px solid #e9e9e9; }
+
+footer {
+  padding-top: 25px;
+  margin-top: 15px; }
+  footer h5 {
+    color: #333;
+    font-size: 15px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1px; }
+  footer a {
+    color: #97a0af; }
+    footer a:hover {
+      color: #337ab7; }
+  footer ul li {
+    margin: 5px 0; }
+  footer .footer-alt {
+    border-top: 1px solid rgba(151, 160, 175, 0.2);
+    margin-top: 30px;
+    padding-top: 20px; }
+    footer .footer-alt .logo {
+      color: #97a0af !important;
+      margin-bottom: 0; }
+      footer .footer-alt .logo i {
+        margin-right: 5px; }
+  footer .twitter {
+    color: #4099FF; }
+  footer .linkedin {
+    color: #0177B5; }
+  footer .rss {
+    color: #F17330; }
+  footer .youtube {
+    color: #D83232; }
+
 .wizard {
   margin: 20px auto;
   background: #fff; }
@@ -121,3 +165,14 @@ span.round-tab:hover {
   .fa-question-circle:hover {
     color: #1d4567;
     transition: all 0.5s ease; }
+
+.dlf-font {
+  font-family: 'Crimson Text', serif; }
+
+.dlf-color {
+  color: #236DA3; }
+
+.logo {
+  font-size: 22px;
+  letter-spacing: 1px;
+  margin-bottom: 0; }

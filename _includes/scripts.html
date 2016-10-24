@@ -5,6 +5,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.0/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
 
+<script src="{{ '/js/vendor/format-google-calendar.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/js/community_calendar.js' | prepend: site.baseurl }}"></script>
 <script src="{{ '/data/calculator_data.js' | prepend: site.baseurl }}"></script>
 <!-- page dependencies -->
 {% for js in page.javascripts %}
