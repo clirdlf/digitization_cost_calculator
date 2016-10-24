@@ -1,4 +1,5 @@
 var people = []; // global object to keep track of people
+
 // pre-populate one person in the people array
 var empty_person = new Person(0, '', '', 0, 0);
 people.push(empty_person);
