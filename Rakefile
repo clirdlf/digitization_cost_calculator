@@ -127,16 +127,20 @@ def quality_control_stats
           institution: @ws[row, 2],
           percentage: @ws[row, column],
           time:  @ws[row, column + 1],
-          normalized: normalize_time(@ws[row, column], @ws[row, column + 1])
+          normalized: normalize_time(@ws[row, column], @ws[row, column + 1]),
+          row: row
         }
 
         case column
         when 55
           @quality_control_stats['level_1']['raw_times'] << v
+          break
         when 57
           @quality_control_stats['level_2']['raw_times'] << v
+          break
         when 59
           @quality_control_stats['level_3']['raw_times'] << v
+          break
         end
       end
 
@@ -147,11 +151,17 @@ def quality_control_stats
   @quality_control_stats.each do |key, value|
     sum = 0
     average = 0
+    min = 0 # TODO: set to first value in the value['raw_times'].first
+    max = 0
     @quality_control_stats[key]['raw_times'].each do |instance|
       sum += instance[:normalized]
+      min = instance[:normalized].to_f if instance[:normalized].to_f < min
+      max = instance[:normalized].to_f if instance[:normalized].to_f > max
     end
     average = sum / @quality_control_stats[key]['raw_times'].length unless @quality_control_stats[key]['raw_times'].length == 0
     @quality_control_stats[key]['average'] = average
+    @quality_control_stats[key]['min'] = min
+    @quality_control_stats[key]['max'] = max
 
   end
   # TODO: write to js file
@@ -161,11 +171,17 @@ def sub_hash_stats(hash)
   hash.each do |key, value|
     sum = 0
     average = 0
+    min = 0
+    max = 0
     hash[key]['raw_times'].each do |instance|
       sum += instance[:normalized]
+      min = instance[:normalized].to_f if instance[:normalized].to_f < min
+      max = instance[:normalized].to_f if instance[:normalized].to_f < max
     end
     average = sum / value['raw_times'].length unless value['raw_times'].length == 0
     hash[key]['average'] = average
+    hash[key]['min'] = min
+    hash[key]['max'] = max
     # hash['average'] = average
   end
 end
@@ -301,7 +317,7 @@ def calcuate_image_capture_averages
   @scanner_types.each do |key, value|
     sum = 0
     average = 0
-    min = 0.0
+    min = 0
     max = 0.0
     median = 0.0
 
@@ -376,22 +392,29 @@ def post_processing_stats
           institution: @ws[row, 2],
           percentage: @ws[row, column],
           time: @ws[row, column + 1],
-          normalized: normalize_time(@ws[row, column], @ws[row, column + 1])
+          normalized: normalize_time(@ws[row, column], @ws[row, column + 1]),
+          row: row
         }
 
         case column
         when 67
           @post_processing_times['alignment']['raw_times'] << v
+          break
         when 69
           @post_processing_times['background_removal']['raw_times'] << v
+          break
         when 71
           @post_processing_times['clean_up']['raw_times'] << v
+          break
         when 73
           @post_processing_times['color_correction']['raw_times'] << v
+          break
         when 75
           @post_processing_times['cropping']['raw_times'] << v
+          break
         when 77
           @post_processing_times['stitching']['raw_times'] << v
+          break
         end
       end
     end
@@ -464,19 +487,23 @@ def metadata_stats
     (94..99).step(2).each do |column|
       unless @ws[row, column].empty?
         v = {
-          insitution: @ws[row,2],
+          institution: @ws[row,2],
           percentage: @ws[row, column],
           time: @ws[row, column + 1],
-          normalized: normalize_time(@ws[row, column], @ws[row, column + 1])
+          normalized: normalize_time(@ws[row, column], @ws[row, column + 1]),
+          row: row
         }
 
         case column
         when 94
           @metadata_times['level_1']['raw_times'] << v
+          break
         when 96
           @metadata_times['level_2']['raw_times'] << v
+          break
         when 98
           @metadata_times['level_3']['raw_times'] << v
+          break
         end
       end
     end
