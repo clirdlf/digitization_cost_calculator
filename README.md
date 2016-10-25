@@ -39,6 +39,8 @@ To **stop** the webserver, hit `ctrl + c`.
 
 In the GitHub Client, right-click on the `digitization_cost_calculator` project and select **Open in Atom**. This should launch in Atom.
 
+[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+
 #### Publishing Changes
 
 After you've made changes, you should see a list of changes under the "Uncommitted Change" tab at the top of the GitHub Client. Add a **Summary** of the changes you made a brief **description** of what changed. Then click on the **Commit to gh-pages** button to publish the change.
