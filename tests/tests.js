@@ -175,6 +175,40 @@ QUnit.test("metadata_creation estimate", function( assert ) {
     assert.equal(e.metadata_estimate().total_time, 0, 'quality control time for non-existant key');
 });
 
+QUnit.test("Test Other task assignment", function( assert ) {
+    var e = $.extend(true, {}, blank_estimate);
+
+    var task1 = { label: 'Test task', percentage: 50, by: hourly_employee, average: 20 };
+    var task2 = { label: 'Test task2', percentage: 100, by: salaried_employee, average: 80 };
+
+    e.extent = 1000;
+
+    // add task1 to e (only one additional task)
+    e.other_tasks.push(task1);
+    // e.other_tasks[task1] = task1;
+    // task 1 = extent * percentage * average * total hourly rate
+    // (1000 / 100) * .5 * 20 * 12.3 == 1230 (cost)
+    // (1000 / 100) * .5 * 20 == 100
+    // console.log(hourly_employee);
+    assert.equal(e.other_tasks_estimate().total_time, 100, 'Total Time estimate');
+    assert.equal(e.other_tasks_estimate().total, 1230, 'Total cost estimate');
+    assert.equal(e.other_tasks_estimate().salaried, 0, 'Total salaried cost estimate');
+    assert.equal(e.other_tasks_estimate().hourly, 1230, 'Total hourly cost estimate');
+
+    // add task2 to e (two tasks, salaried and hourly)
+    // e.other_tasks[task2] = task2;
+    // (1000 / 100) * 1 * 80 * 30.75 == 24600 (cost)
+    // (1000 / 100) * 1 * 80  == 800 (time)
+    assert.equal(e.other_tasks_estimate().total_time, 900, 'Total Time estimate');
+    assert.equal(e.other_tasks_estimate().total, 25830, 'Total cost estimate');
+    assert.equal(e.other_tasks_estimate().salaried, 24600, 'Total salaried cost estimate');
+    assert.equal(e.other_tasks_estimate().hourly, 1230, 'Total hourly cost estimate');
+
+    console.log('other tasks', e.other_tasks);
+    console.log('keys in other tasks', Object.keys(e.other_tasks));
+
+});
+
 QUnit.test("Hourly person properties", function( assert ){
     var person = new Person(0, 'Thomas Jefferson', 'hourly', 23, 23, 40);
     var person2 = new Person(1, 'Thomas Jefferson', 'hourly', 23, 23, 35);

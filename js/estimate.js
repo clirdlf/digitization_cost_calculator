@@ -154,7 +154,7 @@ var estimate = {
   "metadata": 'level_1',
   "metadata_estimate": function(){
     var costs = { total_time: 0, total: 0, salaried: 0, hourly: 0 };
-    console.log('key', metadata_stats[this.metadata]);
+    // console.log('key', metadata_stats[this.metadata]);
     if(metadata_stats[this.metadata] && metadata_stats[this.metadata].average){
       var average = metadata_stats[this.metadata].average;
       costs.total_time = average * this.scans_per_hundred();
@@ -166,4 +166,13 @@ var estimate = {
   "total_digitization_time": function(){
     return minutes_in_hours(this.total_scans() * this.capture_average());
   },
+  "other_tasks": {},
+  "other_tasks_estimate": function(){
+    var costs = { total_time: 0, total: 0, salaried: 0, hourly: 0 };
+    var keys = Object.keys(this.other_tasks);
+
+
+    // console.log('keys', keys);
+    return costs;
+  }
 };
