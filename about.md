@@ -4,32 +4,26 @@ title: About the Project
 permalink: /about/
 ---
 
-## Notes on the Data
+## The project
 
-The calculator uses donated data about various aspects of digitization to provide an estimate of possible time and costs for digitization projects. Currently, data in the tool is limited, and not all contributors provide data for each aspect of digitization listed in the tool. Current contributors include:
+The Digitization Cost Calculator is a project undertaken by the [Digital Library Federation Assessment Interest Group's working group on Cost Assessment](https://wiki.diglib.org/Assessment:Costs). The Cost Assessment working group's tasks are to aggregate and make freely available a large set of data on the time it takes to perform various tasks involved in the digitization process, in order to assist organizations in digitization project planning and benchmarking. To that end, we have collaborated with DLF to build the Digitization Cost Calculator and draft best practices and guidelines for the collection of time data for various digitization processes, with the goal of standardizing collection of such data in the field as well as to guide data submissions to the Digitization Cost Calculator.
 
-* Duke University Libraries (2010-2014) -- 18th-20th century materials
-* The University of Alabama (2009-2014) -- 19th century materials
-* The Triangle Research Libraries Network's consortial grant project "Content Context and Capacity" (CCC) (2011-2013) -- 20th century materials
+How does it work? Users like yourself donate time data about various aspects of digitization. Each individual submission can be viewed on the Raw Data page. After submissions have been reviewed by the working group and approved, the calculator normalizes each contribution so it can be combined into an average with other contributions for the same digitization process. To use the calculator, you input paramters (including the cost of staff, the quantity of material you will digitize, and the level at which you plan to conduct different digitization processes, and which staff will conduct which processes) and the calculator will produce an estimate of time and costs for each process of your digitization project. 
 
-Note that while Duke is a member of the Triangle Research Libraries Network and participated in the CCC project, they did not necessarily follow the same workflows for that project that they do normally because CCC was an experiment in large scale digitization. Duke additionally contributed a number of years of data collected from their normal digitization program, and is therefore listed twice as a contributor on some data fields below.
-
-For each piece of information, averages from each institution for which the data is available are averaged together. For example, Duke, Alabama, and TRLN all provided information on the average number of minutes per item spent on quality control of digitized images. The data that you see in the calculator represents these three numbers averaged together.
-
-## Data Sources
-
-* Condition review: CCC (NCSU, UNC, Duke)
-* Scanning rates
-* Zeutschel: CCC (UNC, Duke), Duke
-  * Fujitsu: Duke
-  * PhaseOne: Duke
-  * Flatbed: University of Alabama
-* Quality control: CCC (UNC), Duke, University of Alabama
-* Metadata creation time: University of Alabama
-* Fastener removal: CCC (NCSU, UNC, Duke), University of Alabama
-* Intellectual Property review: CCC (NCSU, UNC, Duke)
-* Sorting material into items: University of Alabama
-* Flatten/support: University of Alabama
-* Disbinding/rebinding materials: University of Alabama
+The calculator does not save, share, or transmit any data that you input. 
 
 ## Project Team
+This list includes both current and past members of the DLF-AIG Cost Assessment working group. 
+* Joyce Chapman, Duke University Libraries (project coordinator)
+* Wayne Graham, CLIR (technical lead)
+* Chrissy Rissmeyer, University of California, Santa Barbara
+* Dan Zellner, Northwestern University
+* Jane Davis, Saint Louis Federal Reserve Bank
+* Genya O'Gara, The Virtual Library of Virginia
+* Ann Hanlon, University of Wisconsin Milwaukee
+* Kinza Masood, University of Utah
+* Sarah Severson, McGill University Library
+* Emily Shaw, Ohio State University Libraries
+
+## Contact us
+Please contact joyce.chapman [at] duke dot edu with any questions.
