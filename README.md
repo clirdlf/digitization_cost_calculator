@@ -5,6 +5,46 @@ A tool based on donated statistics that helps organizations better estimate the 
 
 ## Quickstart
 
+### Windows
+
+Windows requires a few additional requirements that you will need to install:
+
+* [Atom](https://atom.io/) - A much nicer text editor than Notepad...
+* [git](https://git-scm.com/downloads) - We need this for the git-bash client
+* [node](https://nodejs.org/en/) - For running a local web server
+* [RailsInstaller](http://railsinstaller.org/) - For generating the JavaScript dataset
+* [GitHubDesktop](https://desktop.github.com/) - For version control/publishing the website
+* [GitHub Account](https://github.com) - An account on GitHub
+
+After installation of these, you'll need to "clone" the repository. You can do so by clicking on the green "Clone or Download" button on the [project page](https://github.com/clirdlf/digitization_cost_calculator).
+
+It doesn't matter where you save it, but you'll need to remember where it is. I always set my project location to `C:/Users/%user%/projects/`. Again, just remember where you save it to.
+
+Make sure the branch says `gh-pages`.
+
+In the GitHub Client, right click on the `digitization_cost_calculator` project and select "Open in Terminal".
+
+In this terminal session, type:
+
+```
+npm install
+bundle
+```
+
+After this is finished installing everything, in the terminal type `gulp`. This will start a webserver on you machine and open your browser to the page [http://localhost:3000](http://localhost:3000). Whenever you save a file, this will rebuild the site and refresh you page so you should see your update immediately.
+
+To **stop** the webserver, hit `ctrl + c`.
+
+#### Edit the Files
+
+In the GitHub Client, right-click on the `digitization_cost_calculator` project and select **Open in Atom**. This should launch in Atom.
+
+#### Publishing Changes
+
+After you've made changes, you should see a list of changes under the "Uncommitted Change" tab at the top of the GitHub Client. Add a **Summary** of the changes you made a brief **description** of what changed. Then click on the **Commit to gh-pages** button to publish the change.
+
+This is important, you then need to **sync** these changes by clicking on the **Sync** button in the top-right.
+
 ### OS X
 
 All of the commands are run through the terminal. You can make this a
