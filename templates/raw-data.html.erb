@@ -4,72 +4,89 @@ title: Raw Data
 permalink: /data/
 ---
 
-## Scanner Stastics
+<h2>Scanner Stastics</h2>
 <table class="table">
   <tr>
-    <th>
-      Scanner Type
-    </th>
-    <th>
-      Average
-    </th>
-    <th>
-      Min
-    </th>
-    <th>
-      Max
-    </th>
+    <th>Scanner Type</th>
+    <th>Average</th>
+    <th>Min</th>
+    <th>Max</th>
     <!-- <th>
       Median
     </th> -->
   </tr>
   <% @scanner_types.each do |scanner, data| %>
   <tr>
-    <td>
-      <%= scanner %>
-    </td>
-    <td>
-      <%= "%0.1f" % data['average'] %>
-    </td>
-    <td>
-      <%= data['min'] %>
-    </td>
-    <td>
-      <%= data['max'] %>
-    </td>
+    <td><%= scanner %></td>
+    <td><%= "%0.1f" % data['average'] %></td>
+    <td><%= data['min'] %></td>
+    <td><%= data['max'] %></td>
   </tr>
   <% end %>
 </table>
 
-## Scanner Raw Data
-
+<h2>Raw Scanner Data</h2>
 <% @scanner_types.each do |scanner, data| %>
 <h3><%= scanner %></h3>
+<table class="table">
+  <tr>
+    <th>Institution</th>
+    <th>Time per 100 Items</th>
+    <th>Lookup Row</th>
+  </tr>
+  <% data['raw_times'].each do |value| %>
+  <tr>
+    <td><%= value[:institution] %></td>
+    <td><%= value[:time] %></td>
+    <td><%= value[:row] %></td>
+  </tr>
+  <% end %>
+</table>
+<% end %>
+<!-- end scanner -->
+
+<section id="preparation_times">
+  <h2>Preparation Times</h2>
   <table class="table">
     <tr>
-      <th>
-        Institution
-      </th>
-      <th>
-        Time per 100 Items
-      </th>
-      <th>
-        Lookup Row
-      </th>
+      <th>Task</th>
+      <th>Average</th>
+      <th>Min</th>
+      <th>Max</th>
+      <!-- <th>
+        Median
+      </th> -->
     </tr>
-    <% data['raw_times'].each do |value| %>
+    <% @prep_times.each do |task, data| %>
     <tr>
-      <td>
-        <%= value[:institution] %>
-      </td>
-      <td>
-        <%= value[:time] %>
-      </td>
-      <td>
-        <%= value[:row] %>
-      </td>
+      <td><%= task.gsub('_', ' ').split.map(&:capitalize).join(' ') %></td>
+      <td><%= "%0.1f" % data['average'] %></td>
+      <td><%= "%0.1f" % data['min'] %></td>
+      <td><%= "%0.1f" % data['max'] %></td>
     </tr>
     <% end %>
   </table>
 
-<% end %>
+  <% @prep_times.each do |task, data| %>
+    <h3><%= task.gsub('_', ' ').split.map(&:capitalize).join(' ') %></h3>
+
+    <table class="table">
+      <tr>
+        <th>Institution</th>
+        <th>Percentage</th>
+        <th>Time per 100 Items</th>
+        <th>Normalized Time</th>
+        <th>Lookup Row</th>
+      </tr>
+      <% data['raw_times'].each do |value| %>
+      <tr>
+        <td><%= value[:institution] %></td>
+        <td><%= value[:percentage] %></td>
+        <td><%= value[:time] %></td>
+        <td><%= value[:normalized] %></td>
+        <td><%= value[:row] %></td>
+      </tr>
+      <% end %>
+    </table>
+  <% end %>
+</section>

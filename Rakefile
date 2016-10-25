@@ -253,7 +253,8 @@ def preparation_stats
         institution: @ws[row, 2],
         percentage: @ws[row,column],
         time: @ws[row,column + 1],
-        normalized: normalize_time(@ws[row,column], @ws[row,column + 1])
+        normalized: normalize_time(@ws[row,column], @ws[row,column + 1]),
+        row: row
       } unless @ws[row,column].empty?
 
       @prep_times[key]['raw_times'] << values unless values.empty?
@@ -281,11 +282,18 @@ def calculate_prep_averages
   @prep_times.each do |key, value|
       sum = 0
       average = 0
+      min = 0
+      max = 0
+      median = 0
       value['raw_times'].each do |instance|
         sum += instance[:normalized]
+        min = instance[:normalized] if instance[:normalized].to_f < min
+        max = instance[:normalized] if instance[:normalized].to_f > max
       end
       average = sum / value['raw_times'].length unless value['raw_times'].length == 0
       value['average'] = average
+      value['min'] = min
+      value['max'] = max
   end
 end
 
