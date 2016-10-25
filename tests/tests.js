@@ -25,7 +25,7 @@ QUnit.test("Estimate object defaults", function( assert ){
     assert.equal(e.capture_average(), 0, 'capture_average method from unknown key');
 
     e.capture_device = 'Flatbed scanner (i.e., an Epson 11000XL)';
-    assert.equal(e.capture_average(), 183.5533333333333, 'capture_average method from known key');
+    assert.equal(e.capture_average(), 183.55333333333334, 'capture_average method from known key');
 
 });
 
@@ -35,9 +35,9 @@ QUnit.test("Estimate capture", function( assert ) {
     e.capture_device = scanner;
 
     // 1 * (1200 / 100) * 183.5533333333333 = 2202.64 minutes
-    assert.equal(e.capture_estimate(), 2202.64, '1 linear foot flatbed capture in minutes');
+    assert.equal(e.capture_estimate(), 2202.6400000000003, '1 linear foot flatbed capture in minutes');
     e.extent = 12000;
-    assert.equal(e.capture_estimate(), 22026.399999999998, '10 linear foot flatbed capture in minutes');
+    assert.equal(e.capture_estimate(), 22026.4, '10 linear foot flatbed capture in minutes');
 });
 
 QUnit.test("preparation_estimate", function( assert ) {

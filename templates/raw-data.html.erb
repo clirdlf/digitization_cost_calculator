@@ -1,0 +1,75 @@
+---
+layout: page
+title: Raw Data
+permalink: /data/
+---
+
+## Scanner Stastics
+<table class="table">
+  <tr>
+    <th>
+      Scanner Type
+    </th>
+    <th>
+      Average
+    </th>
+    <th>
+      Min
+    </th>
+    <th>
+      Max
+    </th>
+    <!-- <th>
+      Median
+    </th> -->
+  </tr>
+  <% @scanner_types.each do |scanner, data| %>
+  <tr>
+    <td>
+      <%= scanner %>
+    </td>
+    <td>
+      <%= "%0.1f" % data['average'] %>
+    </td>
+    <td>
+      <%= data['min'] %>
+    </td>
+    <td>
+      <%= data['max'] %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+## Scanner Raw Data
+
+<% @scanner_types.each do |scanner, data| %>
+<h3><%= scanner %></h3>
+  <table class="table">
+    <tr>
+      <th>
+        Institution
+      </th>
+      <th>
+        Time per 100 Items
+      </th>
+      <th>
+        Lookup Row
+      </th>
+    </tr>
+    <% data['raw_times'].each do |value| %>
+    <tr>
+      <td>
+        <%= value[:institution] %>
+      </td>
+      <td>
+        <%= value[:time] %>
+      </td>
+      <td>
+        <%= value[:row] %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+
+<% end %>

@@ -287,7 +287,29 @@ def calculate_prep_averages
       average = sum / value['raw_times'].length unless value['raw_times'].length == 0
       value['average'] = average
   end
+end
 
+def calcuate_image_capture_averages
+  @scanner_types.each do |key, value|
+    sum = 0
+    average = 0
+    min = 0.0
+    max = 0.0
+    median = 0.0
+
+    value['raw_times'].each do |instance|
+      sum += instance[:time].to_f
+      # puts instance[:time].to_f < min
+      min = instance[:time].to_f if instance[:time].to_f < min
+      max = instance[:time].to_f if instance[:time].to_f > max
+      #TODO median
+    end
+    average = sum / value['raw_times'].length unless value['raw_times'].length == 0
+    value['average'] = average
+    value['min'] = min
+    value['max'] = max
+
+  end
 end
 
 def normalize_time(percentage, time)
@@ -390,11 +412,18 @@ def image_capture_stats
       header = clean_scanner_header(@ws[1, column]) # header
       type = @scanner_types[header]['raw_times']
       time = @ws[row, column]
-      type << time.to_f unless time.empty?
+
+      v = {
+        institution: @ws[row, 2],
+        time: time,
+        row: row
+      }
+      # type << time.to_f unless time.empty?
+      @scanner_types[header]['raw_times'] << v unless time.empty?
     end
   end
-  # TODO refactor so all the hashes get written at the same time
-  render_vals(@scanner_types)
+  calcuate_image_capture_averages
+  # render_vals(@scanner_types)
 end
 
 def metadata_times
@@ -490,5 +519,9 @@ namespace :convert do
     puts "Rendering calculator data".green
     contents = render('templates/calculator_data.js.erb')
     write_file('./data/calculator_data.js', contents)
+
+    puts "Creating human-readable data output".green
+    contents = render('templates/raw-data.html.erb')
+    write_file('./raw-data.md', contents)
   end
 end
