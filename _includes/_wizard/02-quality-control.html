@@ -1,0 +1,45 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseQualityControl">
+                <span class="fa fa-building-o">
+                </span> Quality Control</a>
+            </h4>
+    </div>
+    <div id="collapseQualityControl" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="radio">
+                            <label><input type="radio" name="quality_control" value="level_1"> Level 1</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="quality_control" value="level_2"> Level 2</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="quality_control" value="level_3"> Level 3</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                            <label for="quality_control_percentage"></label>
+                            <input type="number" class="form-control" id="quality_control_percentage" placeholder="% Materials" />
+                    </div>
+                    <div class="form-group">
+                        <label for="quality_control_by">Performed By</label>
+                        <select id="quality_control_by" class="form-control performed_by">
+                            <option>
+                                Performed By
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
