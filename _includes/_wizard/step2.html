@@ -1,6 +1,6 @@
 <div class="tab-pane" role="tabpanel" id="step2">
     <h3>Staffing</h3>
-    <p>Tell us a bit about the people working on the project</p>
+    <p>Enter information below about staffing categories or staff members who will be performing parts of the digitization project. On the following page, you'll be able to assign a different staff person to each process before cost calculations are performed by the calculator. The data you enter about staff is not saved, shared, or transmitted, though it will be retained in this browser window until you close it (allowing you to modify your calculator query during this session without re-entering staffing data each time). The "Name" field is only used to populate the dropdown list on the following page used to assign people to tasks -- you may use real names, or any other label (e.g., "Technician 1, Salaried #2").</p>
     <!-- TODO: refactor to make it look like the prettier version below -->
     {% include people_form.html %}
 
@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control staff_name input-lg" name="name[]" placeholder="Name" required="">
+                                <input type="text" class="form-control staff_name input-lg" name="name[]" placeholder="Name/label" required="">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
