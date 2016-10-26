@@ -70,7 +70,7 @@ people.push(empty_person);
     $('.total-hourly-post-processing-cost').html(estimate.preparation_estimate().hourly.formatCurrency());
 
     // metadata creation
-    $('.total-metadata-time').html(minutes_in_hours(estimate.quality_control_estimate().total_time));
+    $('.total-metadata-time').html(minutes_in_hours(estimate.metadata_estimate().total_time));
     $('.total-metadata-salaried-cost').html((0).formatCurrency());
     $('.total-metadata-hourly-cost').html((0).formatCurrency());
 
