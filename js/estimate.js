@@ -4,8 +4,12 @@ var estimate = {
   "total_scans": function(){ return this.extent; },
   "scans_per_hundred": function(){ return (this.total_scans() / 100.0); },
   "capture_device": '',
+  "capture_by": '',
   "capture_estimate": function(){
-      return this.scans_per_hundred() * this.capture_average();
+      var costs = { "total_time": 0, "total": 0 };
+      costs.total_time = this.scans_per_hundred() * this.capture_average();
+      costs.total = this.capture_by.total_hourly_rate * costs.total_time;
+      return costs;
   },
   "capture_average": function(){
     var average = 0;
@@ -36,12 +40,22 @@ var estimate = {
     costs.total = costs.hourly + costs.salaried;
     return costs;
   },
-  "quality_control": 'level_1',
+  "quality_control" : {
+    level: '',
+    percentage: '',
+    by: '',
+    average: function(){
+      return quality_control_stats[this.quality_control.level].average;
+    }
+  },
+  // "quality_control": 'level_1',
   quality_control_estimate: function(){
     var costs = { total_time: 0, total: 0, salaried: 0, hourly: 0 };
-    if(quality_control_stats[this.quality_control] && quality_control_stats[this.quality_control].average){
-      var average = quality_control_stats[this.quality_control].average;
-      costs.total_time = average * this.scans_per_hundred();
+
+    if(quality_control_stats[this.quality_control.level] && quality_control_stats[this.quality_control.level].average){
+      var average = quality_control_stats[this.quality_control.level].average;
+      costs.total_time = average * (this.quality_control.percentage / 100) * this.scans_per_hundred();
+      costs.total = this.quality_control.by.total_hourly_rate * (this.quality_control.percentage / 100) * costs.total_time;
     }
 
     return costs;
@@ -151,14 +165,23 @@ var estimate = {
   post_preparation_estimate: function() {
       return this.task_group_estimate(this.post_preparation);
   },
-  "metadata": 'level_1',
+  // "metadata": 'level_1',
+  "metadata": {
+      "level": '',
+      "by": '',
+      "percentage": '',
+      // "average": function(){
+      //   return metadata_stats[this.metadata.level].average;
+      // }
+  },
   "metadata_estimate": function(){
     var costs = { total_time: 0, total: 0, salaried: 0, hourly: 0 };
     // console.log('key', metadata_stats[this.metadata]);
-    if(metadata_stats[this.metadata] && metadata_stats[this.metadata].average){
-      var average = metadata_stats[this.metadata].average;
-      costs.total_time = average * this.scans_per_hundred();
-      // are these salaried? and if so, which one?
+    if(metadata_stats[this.metadata.level] && metadata_stats[this.metadata.level].average){
+      var average = metadata_stats[this.metadata.level].average;
+
+      costs.total_time = average * (this.metadata.percentage / 100) * this.scans_per_hundred();
+      costs.total = this.metadata.by.total_hourly_rate * (this.metadata.percentage / 100) * costs.total_time;
     }
 
     return costs;

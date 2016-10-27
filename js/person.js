@@ -10,6 +10,7 @@ function Person(id, name, type, rate, benefits, hours_per_week) {
     this.id = parseInt(id);
     this.name = name;
     this.type = type;
+    this.rate = rate;
     this.slug = name.sluggify();
     this.benefits_percent = benefits / 100;
     this.hours_per_week = hpw;

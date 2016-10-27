@@ -7,7 +7,7 @@ people.push(empty_person);
 (function($) {
   'use strict';
 
-    $('[data-toggle="popover"]').popover();
+  $('[data-toggle="popover"]').popover();
 
   // set image capture devices from available fields
   $.each(image_capture, function(key){
@@ -34,19 +34,76 @@ people.push(empty_person);
       });
   }
 
+  // get object values that have an average > 0
+  function get_object_values(obj, lookup) {
+      var values = [];
+      $.each(obj, function(i){
+        var prefix = obj[i];
+        // TODO: deal with percentage == 0
+        if(!isNaN(estimate[lookup][prefix].percentage)){
+          values.push(estimate[lookup][prefix]);
+        }
+      });
+
+      return values;
+  }
+
+  function format_report(){
+    var prep_items = get_object_values(preparation_of_materials_fields, 'preparation_of_materials');
+    var post_processing_items = get_object_values(post_processing_fields, 'post_processing');
+    var post_preparation_items = get_object_values(post_preparation_fields, 'post_preparation');
+
+    // console.log(estimate);
+    // var prep_items = get_object_values(preparation_of_materials_fields, 'preparation_of_materials');
+    // console.log('prep_items', prep_items);
+
+    $('#report .extent').html(estimate.extent);
+    $('#report .image_capture_device').html(estimate.capture_device);
+
+    if(estimate.capture_by && estimate.capture_by.name){
+      $('#report .scan_by').html(estimate.capture_by.name);
+      $('#report .scan_rate').html(estimate.capture_by.rate.formatCurrency());
+      $('#report .total_hourly_rate').html(estimate.capture_by.total_hourly_rate.formatCurrency());
+    }
+
+    if(estimate.capture_device && image_capture[estimate.capture_device]){
+      var capture_min = image_capture[estimate.capture_device].min;
+      var capture_max = image_capture[estimate.capture_device].max;
+
+      $('#report .scanner_average').html(image_capture[estimate.capture_device].average.toFixed(2));
+      $('#report .scanner_range').html(min + ' - ' + capture_max);
+      $('#report .scanner_time').html(estimate.capture_estimate().toFixed(2));
+      $('#report .scanning_cost').html(estimate.capture_estimate());
+    }
+
+
+
+    console.log(estimate.capture_estimate());
+  }
+
   function set_values() {
     estimate.extent = parseFloat($('input#extent').val());
     estimate.capture_device = $('select[name="capture_device"] option:selected').text();
+    estimate.capture_by = people[$('#scanning_by option:selected').val()];
 
+    console.log(estimate);
     // preparation of materials
     set_object_values(preparation_of_materials_fields, 'preparation_of_materials');
     set_object_values(post_processing_fields, 'post_processing');
     set_object_values(post_preparation_fields, 'post_preparation');
 
     // quality_control
-    estimate.quality_control = $('input:radio[name="quality_control"]:checked').val();
-    estimate.metadata = $('input:radio[name="descriptive_medatadata"]:checked').val();
-    // console.log('estimate.quality_control ', estimate.quality_control );
+    // check if undefined, or set
+    // console.log($('input:radio[name="quality_control"]:checked').val());
+    if($('input:radio[name="quality_control"]:checked')){
+        estimate.quality_control.level = $('input:radio[name="quality_control"]:checked').val();
+        estimate.quality_control.percentage = $('#quality_control_percentage').val();
+        estimate.quality_control.by = $('#quality_control_by option:selected').text();
+    }
+    // need the by value
+    estimate.metadata.level = $('input:radio[name="descriptive_medatadata"]:checked').val();
+    // need the by value
+    console.log('estimate.quality_control ', estimate.quality_control );
 
     $('.total-digitization-time').html(minutes_in_hours(estimate.total_digitization_time()));
     $('.total-staff-digization-cost').html((0).formatCurrency());
@@ -84,7 +141,7 @@ people.push(empty_person);
     $('.total-salaried-cost').html((0).formatCurrency());
     $('.total-hourly-cost').html((0).formatCurrency());
     //console.log('preparaton', estimate.preparation_estimate());
-    console.log('estimate', estimate);
-
+    // console.log('estimate', estimate);
+    format_report();
   }
 })(jQuery);
