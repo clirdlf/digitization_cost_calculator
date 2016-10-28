@@ -25,27 +25,27 @@ people.push(empty_person);
 
   // set object values sections (except with radio buttons)
   function set_object_values(obj, lookup){
-      $.each(obj, function(i){
-        var prefix = obj[i];
-        var percent_selector = '#' + prefix + '_percent';
-        var person_selector = '#' + prefix + '_by option:selected';
-        estimate[lookup][prefix].percentage = parseFloat($(percent_selector).val());
-        estimate[lookup][prefix].by = people[$(person_selector).val()];
-      });
+    $.each(obj, function(i){
+      var prefix = obj[i];
+      var percent_selector = '#' + prefix + '_percent';
+      var person_selector = '#' + prefix + '_by option:selected';
+      estimate[lookup][prefix].percentage = parseFloat($(percent_selector).val());
+      estimate[lookup][prefix].by = people[$(person_selector).val()];
+    });
   }
 
   // get object values that have an average > 0
   function get_object_values(obj, lookup) {
-      var values = [];
-      $.each(obj, function(i){
-        var prefix = obj[i];
-        // TODO: deal with percentage == 0
-        if(!isNaN(estimate[lookup][prefix].percentage)){
-          values.push(estimate[lookup][prefix]);
-        }
-      });
+    var values = [];
+    $.each(obj, function(i){
+      var prefix = obj[i];
+      // TODO: deal with percentage == 0
+      if(!isNaN(estimate[lookup][prefix].percentage)){
+        values.push(estimate[lookup][prefix]);
+      }
+    });
 
-      return values;
+    return values;
   }
 
   function format_report(){
@@ -96,9 +96,9 @@ people.push(empty_person);
     // check if undefined, or set
     // console.log($('input:radio[name="quality_control"]:checked').val());
     if($('input:radio[name="quality_control"]:checked')){
-        estimate.quality_control.level = $('input:radio[name="quality_control"]:checked').val();
-        estimate.quality_control.percentage = $('#quality_control_percentage').val();
-        estimate.quality_control.by = $('#quality_control_by option:selected').text();
+      estimate.quality_control.level = $('input:radio[name="quality_control"]:checked').val();
+      estimate.quality_control.percentage = $('#quality_control_percentage').val();
+      estimate.quality_control.by = $('#quality_control_by option:selected').text();
     }
     // need the by value
     estimate.metadata.level = $('input:radio[name="descriptive_medatadata"]:checked').val();

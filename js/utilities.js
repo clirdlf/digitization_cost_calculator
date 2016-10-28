@@ -9,6 +9,14 @@ var dlf = [
 
 console.log(dlf);
 
+// TODO: make this work better
+// @see https://gist.github.com/daverogers/5375778
+$(document).ready(function() {
+	// get current URL path and assign 'active' class
+	var pathname = window.location.pathname;
+	$('.nav > li > a[href="'+pathname+'"]').parent().addClass('active');
+});
+
 /** Simple spam protection for email addresses using jQuery.
  * Well, the protection isn’t jQuery-based, but you get the idea.
  * This snippet allows you to slightly ‘obfuscate’ email addresses to make it harder for spambots to harvest them, while still offering a readable address to your visitors.
@@ -31,6 +39,14 @@ function sortObject(obj) {
         return result;
     }, {});
 }
+
+// Strips trailing slashes (for URL lookups)
+function stripTrailingSlash(str) {
+    if(str.substr(-1) == '/') {
+      return str.substr(0, str.length - 1);
+    }
+    return str;
+  }
 
 // @see http://stackoverflow.com/questions/45888/what-is-the-most-efficient-way-to-sort-an-html-selects-options-by-value-while
 // TODO: only sort things that have value in the select box; may be better to do in the Rakefile...

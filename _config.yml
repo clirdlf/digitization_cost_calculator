@@ -17,4 +17,5 @@ exclude:
   - Rakefile
   - README.md
   - templates
+  - vendor
 google-tracking-id: ''
