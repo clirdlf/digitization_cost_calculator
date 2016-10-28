@@ -863,50 +863,50 @@ permalink: /data/
     
     <tr>
       <td>Alignment</td>
-      <td>65.7</td>
+      <td>18.2</td>
       <td>0.3</td>
-      <td>382.0</td>
-      <td>23</td>
+      <td>30.0</td>
+      <td>11</td>
     </tr>
     
     <tr>
       <td>Background Removal</td>
-      <td>65.7</td>
-      <td>0.3</td>
-      <td>382.0</td>
-      <td>23</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
     </tr>
     
     <tr>
       <td>Clean Up</td>
-      <td>65.7</td>
-      <td>0.3</td>
-      <td>382.0</td>
-      <td>23</td>
+      <td>18.0</td>
+      <td>11.0</td>
+      <td>25.0</td>
+      <td>2</td>
     </tr>
     
     <tr>
       <td>Color Correction</td>
-      <td>65.7</td>
-      <td>0.3</td>
-      <td>382.0</td>
-      <td>23</td>
+      <td>106.2</td>
+      <td>14.0</td>
+      <td>300.0</td>
+      <td>7</td>
     </tr>
     
     <tr>
       <td>Cropping</td>
-      <td>65.7</td>
-      <td>0.3</td>
+      <td>54.6</td>
+      <td>0.8</td>
       <td>382.0</td>
-      <td>23</td>
+      <td>20</td>
     </tr>
     
     <tr>
       <td>Stitching</td>
-      <td>65.7</td>
-      <td>0.3</td>
-      <td>382.0</td>
-      <td>23</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
     </tr>
     
   </table>
@@ -924,14 +924,6 @@ permalink: /data/
       </tr>
       
       <tr>
-        <td>Metropolitan New York Library Council (METRO)</td>
-        <td>25.0</td>
-        <td>60.0</td>
-        <td>240.0</td>
-        <td>3</td>
-      </tr>
-      
-      <tr>
         <td>University of Kansas Libraries</td>
         <td>100.0</td>
         <td>30.0</td>
@@ -980,46 +972,6 @@ permalink: /data/
       </tr>
       
       <tr>
-        <td>University of South Carolina Libraries</td>
-        <td>100.0</td>
-        <td>57.0</td>
-        <td>57.0</td>
-        <td>18</td>
-      </tr>
-      
-      <tr>
-        <td>University of South Carolina Libraries</td>
-        <td>100.0</td>
-        <td>47.5</td>
-        <td>47.5</td>
-        <td>19</td>
-      </tr>
-      
-      <tr>
-        <td>University of Wisconsin-Madison</td>
-        <td>100.0</td>
-        <td>82.0</td>
-        <td>82.0</td>
-        <td>24</td>
-      </tr>
-      
-      <tr>
-        <td>University Of CA Berkeley</td>
-        <td>100.0</td>
-        <td>19.0</td>
-        <td>19.0</td>
-        <td>27</td>
-      </tr>
-      
-      <tr>
-        <td>UC Berkeley</td>
-        <td>100.0</td>
-        <td>382.0</td>
-        <td>382.0</td>
-        <td>29</td>
-      </tr>
-      
-      <tr>
         <td>Case Western Reserve University</td>
         <td>100.0</td>
         <td>10.7</td>
@@ -1028,43 +980,11 @@ permalink: /data/
       </tr>
       
       <tr>
-        <td>Harvard University</td>
-        <td>10.0</td>
-        <td>30.0</td>
-        <td>300.0</td>
-        <td>37</td>
-      </tr>
-      
-      <tr>
-        <td>Harvard University</td>
-        <td>20.0</td>
-        <td>20.0</td>
-        <td>100.0</td>
-        <td>38</td>
-      </tr>
-      
-      <tr>
-        <td>Harvard University</td>
-        <td>100.0</td>
-        <td>30.0</td>
-        <td>30.0</td>
-        <td>39</td>
-      </tr>
-      
-      <tr>
         <td>Smithsonian Libraries</td>
         <td>100.0</td>
         <td>28.0</td>
         <td>28.0</td>
         <td>45</td>
-      </tr>
-      
-      <tr>
-        <td>University of Florida, George A. Smathers Libraries</td>
-        <td>100.0</td>
-        <td>14.2</td>
-        <td>14.2</td>
-        <td>46</td>
       </tr>
       
       <tr>
@@ -1084,27 +1004,11 @@ permalink: /data/
       </tr>
       
       <tr>
-        <td>Perry</td>
-        <td>100.0</td>
-        <td>14.0</td>
-        <td>14.0</td>
-        <td>49</td>
-      </tr>
-      
-      <tr>
         <td>Center for Western Studies - Augustana University</td>
         <td>100.0</td>
         <td>30.0</td>
         <td>30.0</td>
         <td>57</td>
-      </tr>
-      
-      <tr>
-        <td>McGill University Library</td>
-        <td>20.0</td>
-        <td>5.0</td>
-        <td>25.0</td>
-        <td>58</td>
       </tr>
       
     </table>
@@ -1118,190 +1022,6 @@ permalink: /data/
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
         <th>Lookup Row</th>
-      </tr>
-      
-      <tr>
-        <td>Metropolitan New York Library Council (METRO)</td>
-        <td>25.0</td>
-        <td>60.0</td>
-        <td>240.0</td>
-        <td>3</td>
-      </tr>
-      
-      <tr>
-        <td>University of Kansas Libraries</td>
-        <td>100.0</td>
-        <td>30.0</td>
-        <td>30.0</td>
-        <td>4</td>
-      </tr>
-      
-      <tr>
-        <td>University of Kansas Libraries</td>
-        <td>100.0</td>
-        <td>20.0</td>
-        <td>20.0</td>
-        <td>5</td>
-      </tr>
-      
-      <tr>
-        <td>University of Kansas Libraries</td>
-        <td>100.0</td>
-        <td>11.0</td>
-        <td>11.0</td>
-        <td>6</td>
-      </tr>
-      
-      <tr>
-        <td>Chemical Heritage Foundation</td>
-        <td>100.0</td>
-        <td>20.0</td>
-        <td>20.0</td>
-        <td>8</td>
-      </tr>
-      
-      <tr>
-        <td>Chemical Heritage Foundation</td>
-        <td>100.0</td>
-        <td>19.0</td>
-        <td>19.0</td>
-        <td>9</td>
-      </tr>
-      
-      <tr>
-        <td>Chemical Heritage Foundation</td>
-        <td>100.0</td>
-        <td>19.0</td>
-        <td>19.0</td>
-        <td>12</td>
-      </tr>
-      
-      <tr>
-        <td>University of South Carolina Libraries</td>
-        <td>100.0</td>
-        <td>57.0</td>
-        <td>57.0</td>
-        <td>18</td>
-      </tr>
-      
-      <tr>
-        <td>University of South Carolina Libraries</td>
-        <td>100.0</td>
-        <td>47.5</td>
-        <td>47.5</td>
-        <td>19</td>
-      </tr>
-      
-      <tr>
-        <td>University of Wisconsin-Madison</td>
-        <td>100.0</td>
-        <td>82.0</td>
-        <td>82.0</td>
-        <td>24</td>
-      </tr>
-      
-      <tr>
-        <td>University Of CA Berkeley</td>
-        <td>100.0</td>
-        <td>19.0</td>
-        <td>19.0</td>
-        <td>27</td>
-      </tr>
-      
-      <tr>
-        <td>UC Berkeley</td>
-        <td>100.0</td>
-        <td>382.0</td>
-        <td>382.0</td>
-        <td>29</td>
-      </tr>
-      
-      <tr>
-        <td>Case Western Reserve University</td>
-        <td>100.0</td>
-        <td>10.7</td>
-        <td>10.7</td>
-        <td>31</td>
-      </tr>
-      
-      <tr>
-        <td>Harvard University</td>
-        <td>10.0</td>
-        <td>30.0</td>
-        <td>300.0</td>
-        <td>37</td>
-      </tr>
-      
-      <tr>
-        <td>Harvard University</td>
-        <td>20.0</td>
-        <td>20.0</td>
-        <td>100.0</td>
-        <td>38</td>
-      </tr>
-      
-      <tr>
-        <td>Harvard University</td>
-        <td>100.0</td>
-        <td>30.0</td>
-        <td>30.0</td>
-        <td>39</td>
-      </tr>
-      
-      <tr>
-        <td>Smithsonian Libraries</td>
-        <td>100.0</td>
-        <td>28.0</td>
-        <td>28.0</td>
-        <td>45</td>
-      </tr>
-      
-      <tr>
-        <td>University of Florida, George A. Smathers Libraries</td>
-        <td>100.0</td>
-        <td>14.2</td>
-        <td>14.2</td>
-        <td>46</td>
-      </tr>
-      
-      <tr>
-        <td>Smithsonian Institution</td>
-        <td>100.0</td>
-        <td>0.3</td>
-        <td>0.3</td>
-        <td>47</td>
-      </tr>
-      
-      <tr>
-        <td>Smithsonian Libraries</td>
-        <td>100.0</td>
-        <td>12.0</td>
-        <td>12.0</td>
-        <td>48</td>
-      </tr>
-      
-      <tr>
-        <td>Perry</td>
-        <td>100.0</td>
-        <td>14.0</td>
-        <td>14.0</td>
-        <td>49</td>
-      </tr>
-      
-      <tr>
-        <td>Center for Western Studies - Augustana University</td>
-        <td>100.0</td>
-        <td>30.0</td>
-        <td>30.0</td>
-        <td>57</td>
-      </tr>
-      
-      <tr>
-        <td>McGill University Library</td>
-        <td>20.0</td>
-        <td>5.0</td>
-        <td>25.0</td>
-        <td>58</td>
       </tr>
       
     </table>
@@ -1318,179 +1038,11 @@ permalink: /data/
       </tr>
       
       <tr>
-        <td>Metropolitan New York Library Council (METRO)</td>
-        <td>25.0</td>
-        <td>60.0</td>
-        <td>240.0</td>
-        <td>3</td>
-      </tr>
-      
-      <tr>
-        <td>University of Kansas Libraries</td>
-        <td>100.0</td>
-        <td>30.0</td>
-        <td>30.0</td>
-        <td>4</td>
-      </tr>
-      
-      <tr>
-        <td>University of Kansas Libraries</td>
-        <td>100.0</td>
-        <td>20.0</td>
-        <td>20.0</td>
-        <td>5</td>
-      </tr>
-      
-      <tr>
         <td>University of Kansas Libraries</td>
         <td>100.0</td>
         <td>11.0</td>
         <td>11.0</td>
         <td>6</td>
-      </tr>
-      
-      <tr>
-        <td>Chemical Heritage Foundation</td>
-        <td>100.0</td>
-        <td>20.0</td>
-        <td>20.0</td>
-        <td>8</td>
-      </tr>
-      
-      <tr>
-        <td>Chemical Heritage Foundation</td>
-        <td>100.0</td>
-        <td>19.0</td>
-        <td>19.0</td>
-        <td>9</td>
-      </tr>
-      
-      <tr>
-        <td>Chemical Heritage Foundation</td>
-        <td>100.0</td>
-        <td>19.0</td>
-        <td>19.0</td>
-        <td>12</td>
-      </tr>
-      
-      <tr>
-        <td>University of South Carolina Libraries</td>
-        <td>100.0</td>
-        <td>57.0</td>
-        <td>57.0</td>
-        <td>18</td>
-      </tr>
-      
-      <tr>
-        <td>University of South Carolina Libraries</td>
-        <td>100.0</td>
-        <td>47.5</td>
-        <td>47.5</td>
-        <td>19</td>
-      </tr>
-      
-      <tr>
-        <td>University of Wisconsin-Madison</td>
-        <td>100.0</td>
-        <td>82.0</td>
-        <td>82.0</td>
-        <td>24</td>
-      </tr>
-      
-      <tr>
-        <td>University Of CA Berkeley</td>
-        <td>100.0</td>
-        <td>19.0</td>
-        <td>19.0</td>
-        <td>27</td>
-      </tr>
-      
-      <tr>
-        <td>UC Berkeley</td>
-        <td>100.0</td>
-        <td>382.0</td>
-        <td>382.0</td>
-        <td>29</td>
-      </tr>
-      
-      <tr>
-        <td>Case Western Reserve University</td>
-        <td>100.0</td>
-        <td>10.7</td>
-        <td>10.7</td>
-        <td>31</td>
-      </tr>
-      
-      <tr>
-        <td>Harvard University</td>
-        <td>10.0</td>
-        <td>30.0</td>
-        <td>300.0</td>
-        <td>37</td>
-      </tr>
-      
-      <tr>
-        <td>Harvard University</td>
-        <td>20.0</td>
-        <td>20.0</td>
-        <td>100.0</td>
-        <td>38</td>
-      </tr>
-      
-      <tr>
-        <td>Harvard University</td>
-        <td>100.0</td>
-        <td>30.0</td>
-        <td>30.0</td>
-        <td>39</td>
-      </tr>
-      
-      <tr>
-        <td>Smithsonian Libraries</td>
-        <td>100.0</td>
-        <td>28.0</td>
-        <td>28.0</td>
-        <td>45</td>
-      </tr>
-      
-      <tr>
-        <td>University of Florida, George A. Smathers Libraries</td>
-        <td>100.0</td>
-        <td>14.2</td>
-        <td>14.2</td>
-        <td>46</td>
-      </tr>
-      
-      <tr>
-        <td>Smithsonian Institution</td>
-        <td>100.0</td>
-        <td>0.3</td>
-        <td>0.3</td>
-        <td>47</td>
-      </tr>
-      
-      <tr>
-        <td>Smithsonian Libraries</td>
-        <td>100.0</td>
-        <td>12.0</td>
-        <td>12.0</td>
-        <td>48</td>
-      </tr>
-      
-      <tr>
-        <td>Perry</td>
-        <td>100.0</td>
-        <td>14.0</td>
-        <td>14.0</td>
-        <td>49</td>
-      </tr>
-      
-      <tr>
-        <td>Center for Western Studies - Augustana University</td>
-        <td>100.0</td>
-        <td>30.0</td>
-        <td>30.0</td>
-        <td>57</td>
       </tr>
       
       <tr>
@@ -1523,102 +1075,6 @@ permalink: /data/
       </tr>
       
       <tr>
-        <td>University of Kansas Libraries</td>
-        <td>100.0</td>
-        <td>30.0</td>
-        <td>30.0</td>
-        <td>4</td>
-      </tr>
-      
-      <tr>
-        <td>University of Kansas Libraries</td>
-        <td>100.0</td>
-        <td>20.0</td>
-        <td>20.0</td>
-        <td>5</td>
-      </tr>
-      
-      <tr>
-        <td>University of Kansas Libraries</td>
-        <td>100.0</td>
-        <td>11.0</td>
-        <td>11.0</td>
-        <td>6</td>
-      </tr>
-      
-      <tr>
-        <td>Chemical Heritage Foundation</td>
-        <td>100.0</td>
-        <td>20.0</td>
-        <td>20.0</td>
-        <td>8</td>
-      </tr>
-      
-      <tr>
-        <td>Chemical Heritage Foundation</td>
-        <td>100.0</td>
-        <td>19.0</td>
-        <td>19.0</td>
-        <td>9</td>
-      </tr>
-      
-      <tr>
-        <td>Chemical Heritage Foundation</td>
-        <td>100.0</td>
-        <td>19.0</td>
-        <td>19.0</td>
-        <td>12</td>
-      </tr>
-      
-      <tr>
-        <td>University of South Carolina Libraries</td>
-        <td>100.0</td>
-        <td>57.0</td>
-        <td>57.0</td>
-        <td>18</td>
-      </tr>
-      
-      <tr>
-        <td>University of South Carolina Libraries</td>
-        <td>100.0</td>
-        <td>47.5</td>
-        <td>47.5</td>
-        <td>19</td>
-      </tr>
-      
-      <tr>
-        <td>University of Wisconsin-Madison</td>
-        <td>100.0</td>
-        <td>82.0</td>
-        <td>82.0</td>
-        <td>24</td>
-      </tr>
-      
-      <tr>
-        <td>University Of CA Berkeley</td>
-        <td>100.0</td>
-        <td>19.0</td>
-        <td>19.0</td>
-        <td>27</td>
-      </tr>
-      
-      <tr>
-        <td>UC Berkeley</td>
-        <td>100.0</td>
-        <td>382.0</td>
-        <td>382.0</td>
-        <td>29</td>
-      </tr>
-      
-      <tr>
-        <td>Case Western Reserve University</td>
-        <td>100.0</td>
-        <td>10.7</td>
-        <td>10.7</td>
-        <td>31</td>
-      </tr>
-      
-      <tr>
         <td>Harvard University</td>
         <td>10.0</td>
         <td>30.0</td>
@@ -1643,35 +1099,11 @@ permalink: /data/
       </tr>
       
       <tr>
-        <td>Smithsonian Libraries</td>
-        <td>100.0</td>
-        <td>28.0</td>
-        <td>28.0</td>
-        <td>45</td>
-      </tr>
-      
-      <tr>
         <td>University of Florida, George A. Smathers Libraries</td>
         <td>100.0</td>
         <td>14.2</td>
         <td>14.2</td>
         <td>46</td>
-      </tr>
-      
-      <tr>
-        <td>Smithsonian Institution</td>
-        <td>100.0</td>
-        <td>0.3</td>
-        <td>0.3</td>
-        <td>47</td>
-      </tr>
-      
-      <tr>
-        <td>Smithsonian Libraries</td>
-        <td>100.0</td>
-        <td>12.0</td>
-        <td>12.0</td>
-        <td>48</td>
       </tr>
       
       <tr>
@@ -1685,17 +1117,9 @@ permalink: /data/
       <tr>
         <td>Center for Western Studies - Augustana University</td>
         <td>100.0</td>
-        <td>30.0</td>
-        <td>30.0</td>
+        <td>45.0</td>
+        <td>45.0</td>
         <td>57</td>
-      </tr>
-      
-      <tr>
-        <td>McGill University Library</td>
-        <td>20.0</td>
-        <td>5.0</td>
-        <td>25.0</td>
-        <td>58</td>
       </tr>
       
     </table>
@@ -1713,9 +1137,9 @@ permalink: /data/
       
       <tr>
         <td>Metropolitan New York Library Council (METRO)</td>
-        <td>25.0</td>
+        <td>100.0</td>
         <td>60.0</td>
-        <td>240.0</td>
+        <td>60.0</td>
         <td>3</td>
       </tr>
       
@@ -1733,14 +1157,6 @@ permalink: /data/
         <td>20.0</td>
         <td>20.0</td>
         <td>5</td>
-      </tr>
-      
-      <tr>
-        <td>University of Kansas Libraries</td>
-        <td>100.0</td>
-        <td>11.0</td>
-        <td>11.0</td>
-        <td>6</td>
       </tr>
       
       <tr>
@@ -1808,90 +1224,74 @@ permalink: /data/
       </tr>
       
       <tr>
-        <td>Case Western Reserve University</td>
-        <td>100.0</td>
-        <td>10.7</td>
-        <td>10.7</td>
-        <td>31</td>
-      </tr>
-      
-      <tr>
         <td>Harvard University</td>
-        <td>10.0</td>
-        <td>30.0</td>
-        <td>300.0</td>
+        <td>100.0</td>
+        <td>1.0</td>
+        <td>1.0</td>
         <td>37</td>
       </tr>
       
       <tr>
         <td>Harvard University</td>
-        <td>20.0</td>
-        <td>20.0</td>
         <td>100.0</td>
+        <td>1.0</td>
+        <td>1.0</td>
         <td>38</td>
-      </tr>
-      
-      <tr>
-        <td>Harvard University</td>
-        <td>100.0</td>
-        <td>30.0</td>
-        <td>30.0</td>
-        <td>39</td>
       </tr>
       
       <tr>
         <td>Smithsonian Libraries</td>
         <td>100.0</td>
-        <td>28.0</td>
-        <td>28.0</td>
+        <td>31.0</td>
+        <td>31.0</td>
         <td>45</td>
       </tr>
       
       <tr>
         <td>University of Florida, George A. Smathers Libraries</td>
         <td>100.0</td>
-        <td>14.2</td>
-        <td>14.2</td>
+        <td>44.2</td>
+        <td>44.2</td>
         <td>46</td>
       </tr>
       
       <tr>
         <td>Smithsonian Institution</td>
         <td>100.0</td>
-        <td>0.3</td>
-        <td>0.3</td>
+        <td>0.8</td>
+        <td>0.8</td>
         <td>47</td>
       </tr>
       
       <tr>
         <td>Smithsonian Libraries</td>
         <td>100.0</td>
-        <td>12.0</td>
-        <td>12.0</td>
+        <td>3.0</td>
+        <td>3.0</td>
         <td>48</td>
       </tr>
       
       <tr>
         <td>Perry</td>
         <td>100.0</td>
-        <td>14.0</td>
-        <td>14.0</td>
+        <td>44.0</td>
+        <td>44.0</td>
         <td>49</td>
       </tr>
       
       <tr>
         <td>Center for Western Studies - Augustana University</td>
         <td>100.0</td>
-        <td>30.0</td>
-        <td>30.0</td>
+        <td>206.0</td>
+        <td>206.0</td>
         <td>57</td>
       </tr>
       
       <tr>
         <td>McGill University Library</td>
-        <td>20.0</td>
+        <td>100.0</td>
         <td>5.0</td>
-        <td>25.0</td>
+        <td>5.0</td>
         <td>58</td>
       </tr>
       
@@ -1906,190 +1306,6 @@ permalink: /data/
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
         <th>Lookup Row</th>
-      </tr>
-      
-      <tr>
-        <td>Metropolitan New York Library Council (METRO)</td>
-        <td>25.0</td>
-        <td>60.0</td>
-        <td>240.0</td>
-        <td>3</td>
-      </tr>
-      
-      <tr>
-        <td>University of Kansas Libraries</td>
-        <td>100.0</td>
-        <td>30.0</td>
-        <td>30.0</td>
-        <td>4</td>
-      </tr>
-      
-      <tr>
-        <td>University of Kansas Libraries</td>
-        <td>100.0</td>
-        <td>20.0</td>
-        <td>20.0</td>
-        <td>5</td>
-      </tr>
-      
-      <tr>
-        <td>University of Kansas Libraries</td>
-        <td>100.0</td>
-        <td>11.0</td>
-        <td>11.0</td>
-        <td>6</td>
-      </tr>
-      
-      <tr>
-        <td>Chemical Heritage Foundation</td>
-        <td>100.0</td>
-        <td>20.0</td>
-        <td>20.0</td>
-        <td>8</td>
-      </tr>
-      
-      <tr>
-        <td>Chemical Heritage Foundation</td>
-        <td>100.0</td>
-        <td>19.0</td>
-        <td>19.0</td>
-        <td>9</td>
-      </tr>
-      
-      <tr>
-        <td>Chemical Heritage Foundation</td>
-        <td>100.0</td>
-        <td>19.0</td>
-        <td>19.0</td>
-        <td>12</td>
-      </tr>
-      
-      <tr>
-        <td>University of South Carolina Libraries</td>
-        <td>100.0</td>
-        <td>57.0</td>
-        <td>57.0</td>
-        <td>18</td>
-      </tr>
-      
-      <tr>
-        <td>University of South Carolina Libraries</td>
-        <td>100.0</td>
-        <td>47.5</td>
-        <td>47.5</td>
-        <td>19</td>
-      </tr>
-      
-      <tr>
-        <td>University of Wisconsin-Madison</td>
-        <td>100.0</td>
-        <td>82.0</td>
-        <td>82.0</td>
-        <td>24</td>
-      </tr>
-      
-      <tr>
-        <td>University Of CA Berkeley</td>
-        <td>100.0</td>
-        <td>19.0</td>
-        <td>19.0</td>
-        <td>27</td>
-      </tr>
-      
-      <tr>
-        <td>UC Berkeley</td>
-        <td>100.0</td>
-        <td>382.0</td>
-        <td>382.0</td>
-        <td>29</td>
-      </tr>
-      
-      <tr>
-        <td>Case Western Reserve University</td>
-        <td>100.0</td>
-        <td>10.7</td>
-        <td>10.7</td>
-        <td>31</td>
-      </tr>
-      
-      <tr>
-        <td>Harvard University</td>
-        <td>10.0</td>
-        <td>30.0</td>
-        <td>300.0</td>
-        <td>37</td>
-      </tr>
-      
-      <tr>
-        <td>Harvard University</td>
-        <td>20.0</td>
-        <td>20.0</td>
-        <td>100.0</td>
-        <td>38</td>
-      </tr>
-      
-      <tr>
-        <td>Harvard University</td>
-        <td>100.0</td>
-        <td>30.0</td>
-        <td>30.0</td>
-        <td>39</td>
-      </tr>
-      
-      <tr>
-        <td>Smithsonian Libraries</td>
-        <td>100.0</td>
-        <td>28.0</td>
-        <td>28.0</td>
-        <td>45</td>
-      </tr>
-      
-      <tr>
-        <td>University of Florida, George A. Smathers Libraries</td>
-        <td>100.0</td>
-        <td>14.2</td>
-        <td>14.2</td>
-        <td>46</td>
-      </tr>
-      
-      <tr>
-        <td>Smithsonian Institution</td>
-        <td>100.0</td>
-        <td>0.3</td>
-        <td>0.3</td>
-        <td>47</td>
-      </tr>
-      
-      <tr>
-        <td>Smithsonian Libraries</td>
-        <td>100.0</td>
-        <td>12.0</td>
-        <td>12.0</td>
-        <td>48</td>
-      </tr>
-      
-      <tr>
-        <td>Perry</td>
-        <td>100.0</td>
-        <td>14.0</td>
-        <td>14.0</td>
-        <td>49</td>
-      </tr>
-      
-      <tr>
-        <td>Center for Western Studies - Augustana University</td>
-        <td>100.0</td>
-        <td>30.0</td>
-        <td>30.0</td>
-        <td>57</td>
-      </tr>
-      
-      <tr>
-        <td>McGill University Library</td>
-        <td>20.0</td>
-        <td>5.0</td>
-        <td>25.0</td>
-        <td>58</td>
       </tr>
       
     </table>

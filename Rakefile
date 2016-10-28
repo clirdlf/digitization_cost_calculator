@@ -170,7 +170,6 @@ end
 
 def sub_hash_stats(hash)
   hash.each do |key, value|
-    puts key
     sum = 0
     average = 0
     min = 0
@@ -349,9 +348,9 @@ end
 def post_preparation_stats
   values = {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []}
   @post_preparation_stats ||= {
-    'desorting' => values.clone,
-    'rebinding' => values.clone,
-    'refastening' => values.clone
+    'desorting' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
+    'rebinding' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
+    'refastening' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []}
   }
 end
 
@@ -360,12 +359,12 @@ def post_processing_times
   values = {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []}
 
   @post_processing_times ||= {
-    'alignment' => values.clone,
-    'background_removal' => values.clone,
-    'clean_up' => values.clone,
-    'color_correction' => values.clone,
-    'cropping' => values.clone,
-    'stitching' => values.clone,
+    'alignment' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
+    'background_removal' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
+    'clean_up' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
+    'color_correction' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
+    'cropping' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
+    'stitching' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
   }
 end
 
@@ -390,8 +389,8 @@ def post_processing_stats
   # 76: Post-processing-Cropping-Minutes per 100 scans
   # 77: Post-processing-Stitching-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)
   # 78: Post-processing-Stitching-Minutes per 100 scans
-
   (2..@ws.num_rows - 1).each do |row|
+    # TODO: bug in this logic to populate the arrays
     (67..78).step(2).each do |column|
       unless @ws[row, column].empty?
         v = {
@@ -405,24 +404,19 @@ def post_processing_stats
         case column
         when 67
           @post_processing_times['alignment']['raw_times'] << v
-          break
         when 69
           @post_processing_times['background_removal']['raw_times'] << v
-          break
         when 71
           @post_processing_times['clean_up']['raw_times'] << v
-          break
         when 73
           @post_processing_times['color_correction']['raw_times'] << v
-          break
         when 75
           @post_processing_times['cropping']['raw_times'] << v
-          break
         when 77
           @post_processing_times['stitching']['raw_times'] << v
-          break
         end
       end
+
     end
   end
 
