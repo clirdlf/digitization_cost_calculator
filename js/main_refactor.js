@@ -10,7 +10,7 @@ people.push(empty_person);
   $('[data-toggle="popover"]').popover();
 
   // set image capture devices from available fields
-  $.each(image_capture, function(key){
+  $.each(sortObject(image_capture), function(key){
     $('select[name="capture_device"]').append($('<option>', {
       value: key.sluggify(),
       text: key
