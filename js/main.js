@@ -3,11 +3,12 @@
     $(document).ready(function() {
         // enable popovers
         $('i[data-toggle="popover"]').popover();
-        // $('[data-toggle="tooltip"]').tooltip();
+
         var people = [];
         // pre-populate first object in array
         var empty_person = new Person(0, '', '', 0, 0);
         people.push(empty_person);
+
         // add a default empty option for performed_by
         $('select[name!="capture_device"]').append($('<option>', {
             value: 0,
@@ -25,16 +26,16 @@
         // app and form logic
         var counter = 1; // for adding fields
 
-        var scans = 0;
+        //var scans = 0;
 
         var wrapper = $('.form-group');
         var add_button = $('.add_field'); // add salary? add_wage?
         var form_wrapper = $('form#calculator');
 
-        var extant = 0;
-        var hourly = [], staff = [];
+        //var extant = 0;
+        //var hourly = [], staff = [];
 
-        var preparation = [];
+        //var preparation = [];
 
         function JobEstimate(label, percentage, performed_by, extent, lookup) {
           this.label = label;

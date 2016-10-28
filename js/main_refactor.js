@@ -21,6 +21,7 @@ people.push(empty_person);
   var post_processing_fields = Object.keys(estimate.post_processing);
   var post_preparation_fields = Object.keys(estimate.post_preparation);
 
+  // When there is a change in the form, set the values
   $('form').on('change', set_values);
 
   // set object values sections (except with radio buttons)
@@ -100,11 +101,12 @@ people.push(empty_person);
       estimate.quality_control.percentage = $('#quality_control_percentage').val();
       estimate.quality_control.by = $('#quality_control_by option:selected').text();
     }
-    // need the by value
-    estimate.metadata.level = $('input:radio[name="descriptive_medatadata"]:checked').val();
-    // need the by value
-    console.log('estimate.quality_control ', estimate.quality_control );
 
+    if($('input:radio[name="metadata"]:checked')){
+      estimate.metadata.level = $('input:radio[name="descriptive_medatadata"]:checked').val();
+      console.log('estimate.quality_control ', estimate.quality_control );
+    }
+  
     $('.total-digitization-time').html(minutes_in_hours(estimate.total_digitization_time()));
     $('.total-staff-digization-cost').html((0).formatCurrency());
     $('.total-hourly-digization-cost').html((0).formatCurrency());
