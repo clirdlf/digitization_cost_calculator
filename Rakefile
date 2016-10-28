@@ -152,6 +152,7 @@ def quality_control_stats
     sum = 0
     average = 0
     min = 0 # TODO: set to first value in the value['raw_times'].first
+    min = value['raw_times'].first[:time].to_f unless value['raw_times'].length == 0
     max = 0
     @quality_control_stats[key]['raw_times'].each do |instance|
       sum += instance[:normalized]
@@ -169,14 +170,16 @@ end
 
 def sub_hash_stats(hash)
   hash.each do |key, value|
+    puts key
     sum = 0
     average = 0
     min = 0
+    min = value['raw_times'].first[:time].to_f unless value['raw_times'].length == 0
     max = 0
     hash[key]['raw_times'].each do |instance|
       sum += instance[:normalized]
       min = instance[:normalized].to_f if instance[:normalized].to_f < min
-      max = instance[:normalized].to_f if instance[:normalized].to_f < max
+      max = instance[:normalized].to_f if instance[:normalized].to_f > max
     end
     average = sum / value['raw_times'].length unless value['raw_times'].length == 0
     hash[key]['average'] = average
@@ -295,10 +298,14 @@ end
 # end
 
 def calculate_prep_averages
+
   @prep_times.each do |key, value|
       sum = 0
       average = 0
+
       min = 0
+      min = value['raw_times'].first[:time].to_f unless value['raw_times'].length == 0
+
       max = 0
       median = 0
       value['raw_times'].each do |instance|
@@ -317,7 +324,7 @@ def calcuate_image_capture_averages
   @scanner_types.each do |key, value|
     sum = 0
     average = 0
-    min = 0
+    min = value['raw_times'].first[:time].to_f
     max = 0.0
     median = 0.0
 
@@ -332,7 +339,6 @@ def calcuate_image_capture_averages
     value['average'] = average
     value['min'] = min
     value['max'] = max
-
   end
 end
 
@@ -453,6 +459,8 @@ def image_capture_stats
       @scanner_types[header]['raw_times'] << v unless time.empty?
     end
   end
+  @scanner_types.delete("I'm not submitting image capture data")
+
   calcuate_image_capture_averages
   # render_vals(@scanner_types)
 end

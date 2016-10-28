@@ -19,58 +19,50 @@ permalink: /data/
   
   <tr>
     <td>Flatbed scanner (i.e., an Epson 11000XL)</td>
-    <td>183.6</td>
-    <td>0</td>
+    <td>195.7</td>
+    <td>95.0</td>
     <td>325.0</td>
-    <td>15</td>
-  </tr>
-  
-  <tr>
-    <td>I'm not submitting image capture data</td>
-    <td>1.0</td>
-    <td>0</td>
-    <td>1.0</td>
-    <td>1</td>
+    <td>14</td>
   </tr>
   
   <tr>
     <td>Medium format camera (i.e. PhaseOne, Hasselblad)</td>
-    <td>75.3</td>
-    <td>0</td>
+    <td>83.6</td>
+    <td>11.0</td>
     <td>200.0</td>
-    <td>9</td>
+    <td>8</td>
   </tr>
   
   <tr>
     <td>Overhead scanner (i.e., a Zeutschel, i2S Quartz or Digibook, Cruse)</td>
-    <td>46.1</td>
-    <td>0</td>
+    <td>50.3</td>
+    <td>22.0</td>
     <td>100.0</td>
-    <td>10</td>
+    <td>9</td>
   </tr>
   
   <tr>
     <td>Sheet feeding scanner (i.e., a Fujitsu)</td>
+    <td>1.2</td>
+    <td>1.0</td>
     <td>1.5</td>
-    <td>0</td>
-    <td>2.0</td>
-    <td>3</td>
+    <td>2</td>
   </tr>
   
   <tr>
     <td>Manual DSLR camera (i.e. Canon EOS 5D, Nikon D7200)</td>
-    <td>58.6</td>
-    <td>0</td>
+    <td>62.5</td>
+    <td>4.0</td>
     <td>385.0</td>
-    <td>13</td>
+    <td>12</td>
   </tr>
   
   <tr>
     <td>Film or transparency scanner (i.e., Epson V700, Nikon Coolscan, Flextight X5)</td>
-    <td>132.6</td>
-    <td>0</td>
+    <td>175.8</td>
+    <td>75.0</td>
     <td>370.0</td>
-    <td>4</td>
+    <td>3</td>
   </tr>
   
 </table>
@@ -169,28 +161,6 @@ permalink: /data/
     <td>63</td>
   </tr>
   
-  <tr>
-    <td></td>
-    <td>14</td>
-    <td>66</td>
-  </tr>
-  
-</table>
-
-<h3>I'm not submitting image capture data</h3>
-<table class="table">
-  <tr>
-    <th>Institution</th>
-    <th>Time per 100 Items</th>
-    <th>Lookup Row</th>
-  </tr>
-  
-  <tr>
-    <td></td>
-    <td>1</td>
-    <td>66</td>
-  </tr>
-  
 </table>
 
 <h3>Medium format camera (i.e. PhaseOne, Hasselblad)</h3>
@@ -247,12 +217,6 @@ permalink: /data/
     <td>Smithsonian Libraries</td>
     <td>11</td>
     <td>48</td>
-  </tr>
-  
-  <tr>
-    <td></td>
-    <td>9</td>
-    <td>66</td>
   </tr>
   
 </table>
@@ -319,12 +283,6 @@ permalink: /data/
     <td>61</td>
   </tr>
   
-  <tr>
-    <td></td>
-    <td>9</td>
-    <td>66</td>
-  </tr>
-  
 </table>
 
 <h3>Sheet feeding scanner (i.e., a Fujitsu)</h3>
@@ -345,12 +303,6 @@ permalink: /data/
     <td>Northwestern University Library</td>
     <td>1.5</td>
     <td>62</td>
-  </tr>
-  
-  <tr>
-    <td></td>
-    <td>2</td>
-    <td>66</td>
   </tr>
   
 </table>
@@ -435,12 +387,6 @@ permalink: /data/
     <td>60</td>
   </tr>
   
-  <tr>
-    <td></td>
-    <td>12</td>
-    <td>66</td>
-  </tr>
-  
 </table>
 
 <h3>Film or transparency scanner (i.e., Epson V700, Nikon Coolscan, Flextight X5)</h3>
@@ -469,12 +415,6 @@ permalink: /data/
     <td>64</td>
   </tr>
   
-  <tr>
-    <td></td>
-    <td>3</td>
-    <td>66</td>
-  </tr>
-  
 </table>
 
 <!-- end scanner -->
@@ -496,7 +436,7 @@ permalink: /data/
     <tr>
       <td>Condition Review</td>
       <td>15.3</td>
-      <td>0.0</td>
+      <td>10.0</td>
       <td>20.0</td>
       <td>3</td>
     </tr>
@@ -512,7 +452,7 @@ permalink: /data/
     <tr>
       <td>Fastener Removal</td>
       <td>28.4</td>
-      <td>0.0</td>
+      <td>10.0</td>
       <td>40.6</td>
       <td>3</td>
     </tr>
@@ -689,7 +629,7 @@ permalink: /data/
     <tr>
       <td>Level 1</td>
       <td>45.3</td>
-      <td>0.0</td>
+      <td>1.2</td>
       <td>166.7</td>
       <td>13</td>
     </tr>
@@ -697,7 +637,7 @@ permalink: /data/
     <tr>
       <td>Level 2</td>
       <td>30.6</td>
-      <td>0.0</td>
+      <td>11.1</td>
       <td>50.0</td>
       <td>2</td>
     </tr>
@@ -705,7 +645,7 @@ permalink: /data/
     <tr>
       <td>Level 3</td>
       <td>63.7</td>
-      <td>0.0</td>
+      <td>40.0</td>
       <td>113.0</td>
       <td>4</td>
     </tr>
@@ -923,50 +863,50 @@ permalink: /data/
     
     <tr>
       <td>Alignment</td>
-      <td>64.1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>24</td>
+      <td>65.7</td>
+      <td>0.3</td>
+      <td>382.0</td>
+      <td>23</td>
     </tr>
     
     <tr>
       <td>Background Removal</td>
-      <td>64.1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>24</td>
+      <td>65.7</td>
+      <td>0.3</td>
+      <td>382.0</td>
+      <td>23</td>
     </tr>
     
     <tr>
       <td>Clean Up</td>
-      <td>64.1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>24</td>
+      <td>65.7</td>
+      <td>0.3</td>
+      <td>382.0</td>
+      <td>23</td>
     </tr>
     
     <tr>
       <td>Color Correction</td>
-      <td>64.1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>24</td>
+      <td>65.7</td>
+      <td>0.3</td>
+      <td>382.0</td>
+      <td>23</td>
     </tr>
     
     <tr>
       <td>Cropping</td>
-      <td>64.1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>24</td>
+      <td>65.7</td>
+      <td>0.3</td>
+      <td>382.0</td>
+      <td>23</td>
     </tr>
     
     <tr>
       <td>Stitching</td>
-      <td>64.1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>24</td>
+      <td>65.7</td>
+      <td>0.3</td>
+      <td>382.0</td>
+      <td>23</td>
     </tr>
     
   </table>
@@ -1167,14 +1107,6 @@ permalink: /data/
         <td>58</td>
       </tr>
       
-      <tr>
-        <td>Northwestern University Library</td>
-        <td>100.0</td>
-        <td>27.5</td>
-        <td>27.5</td>
-        <td>65</td>
-      </tr>
-      
     </table>
   
     <h3>Background Removal</h3>
@@ -1370,14 +1302,6 @@ permalink: /data/
         <td>5.0</td>
         <td>25.0</td>
         <td>58</td>
-      </tr>
-      
-      <tr>
-        <td>Northwestern University Library</td>
-        <td>100.0</td>
-        <td>27.5</td>
-        <td>27.5</td>
-        <td>65</td>
       </tr>
       
     </table>
@@ -1577,14 +1501,6 @@ permalink: /data/
         <td>58</td>
       </tr>
       
-      <tr>
-        <td>Northwestern University Library</td>
-        <td>100.0</td>
-        <td>27.5</td>
-        <td>27.5</td>
-        <td>65</td>
-      </tr>
-      
     </table>
   
     <h3>Color Correction</h3>
@@ -1780,14 +1696,6 @@ permalink: /data/
         <td>5.0</td>
         <td>25.0</td>
         <td>58</td>
-      </tr>
-      
-      <tr>
-        <td>Northwestern University Library</td>
-        <td>100.0</td>
-        <td>27.5</td>
-        <td>27.5</td>
-        <td>65</td>
       </tr>
       
     </table>
@@ -1987,14 +1895,6 @@ permalink: /data/
         <td>58</td>
       </tr>
       
-      <tr>
-        <td>Northwestern University Library</td>
-        <td>100.0</td>
-        <td>27.5</td>
-        <td>27.5</td>
-        <td>65</td>
-      </tr>
-      
     </table>
   
     <h3>Stitching</h3>
@@ -2192,14 +2092,6 @@ permalink: /data/
         <td>58</td>
       </tr>
       
-      <tr>
-        <td>Northwestern University Library</td>
-        <td>100.0</td>
-        <td>27.5</td>
-        <td>27.5</td>
-        <td>65</td>
-      </tr>
-      
     </table>
   
 </section>
@@ -2221,24 +2113,24 @@ permalink: /data/
     <tr>
       <td>Level 1</td>
       <td>483.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>74.0</td>
+      <td>2469.0</td>
       <td>20</td>
     </tr>
     
     <tr>
       <td>Level 2</td>
       <td>483.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>74.0</td>
+      <td>2469.0</td>
       <td>20</td>
     </tr>
     
     <tr>
       <td>Level 3</td>
       <td>483.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>74.0</td>
+      <td>2469.0</td>
       <td>20</td>
     </tr>
     
