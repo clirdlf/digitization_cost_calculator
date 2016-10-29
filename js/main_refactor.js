@@ -31,6 +31,7 @@ people.push(empty_person);
       var percent_selector = '#' + prefix + '_percent';
       var person_selector = '#' + prefix + '_by option:selected';
       estimate[lookup][prefix].percentage = parseFloat($(percent_selector).val());
+      estimate[lookup][prefix].label = prefix;
       estimate[lookup][prefix].by = people[$(person_selector).val()];
     });
   }
@@ -59,7 +60,12 @@ people.push(empty_person);
     // console.log('prep_items', prep_items);
 
     $('#report .extent').html(estimate.extent);
-    $('#report .image_capture_device').html(estimate.capture_device);
+
+    if(estimate.capture_device !== '' && estimate.capture_device !== 'Select Your Capture Device') {
+      $('#digitization_report').removeClass('hidden');
+      $('#report .image_capture_device').html(estimate.capture_device);
+    }
+
 
     if(estimate.capture_by && estimate.capture_by.name){
       $('#report .scan_by').html(estimate.capture_by.name);
@@ -72,15 +78,24 @@ people.push(empty_person);
       var capture_max = image_capture[estimate.capture_device].max;
 
       $('#report .scanner_average').html(image_capture[estimate.capture_device].average.toFixed(2));
-      $('#report .scanner_range').html(min + ' - ' + capture_max);
+      $('#report .scanner_range').html(capture_min + ' - ' + capture_max);
       $('#report .scanner_time').html(estimate.capture_estimate().toFixed(2));
       $('#report .scanning_cost').html(estimate.capture_estimate());
     }
 
+    if(prep_items.length > 0){
+      $('#preparation_of_materials_report').removeClass('hidden');
+      $('#prep_data').html(report_table(prep_items));
+    }
 
+    if(post_processing_items.length > 0){
+      $('#post_processing_report').removeClass('hidden');
+      $('#post_processing_data').html(report_table(post_processing_items));
+    }
 
-    console.log(estimate.capture_estimate());
+    console.log(post_processing_items);
   }
+
 
   function set_values() {
     estimate.extent = parseFloat($('input#extent').val());
@@ -106,7 +121,7 @@ people.push(empty_person);
       estimate.metadata.level = $('input:radio[name="descriptive_medatadata"]:checked').val();
       console.log('estimate.quality_control ', estimate.quality_control );
     }
-  
+
     $('.total-digitization-time').html(minutes_in_hours(estimate.total_digitization_time()));
     $('.total-staff-digization-cost').html((0).formatCurrency());
     $('.total-hourly-digization-cost').html((0).formatCurrency());
@@ -145,5 +160,28 @@ people.push(empty_person);
     //console.log('preparaton', estimate.preparation_estimate());
     // console.log('estimate', estimate);
     format_report();
+  }
+
+  // Build a report tsble from an array of tasks
+  function report_table(tasks_array){
+    var content = '<table class="table">';
+    var total_time = 0, total_cost = 0;
+
+    content += '<tr><th>Task</th><th>Percentage</th><th>Performed By</th><th>Time Estimate</th><th>Cost Estimate</th></tr>';
+    $.each(tasks_array, function(item){
+        var row = '<tr>';
+        row += '<td>' + this.label + '</td>';
+        row += '<td>' + this.percentage + '</td>';
+        row += '<td>' + this.by.name + '</td>';
+        row += '<td>' + '0' + '</td>';
+        row += '<td> 0 </td>';
+        row += '</tr>';
+        content += row;
+    });
+    content += '<tr><td>&nbsp;</td><td>&nbsp;</td><td><strong>Total</strong></td>';
+    content += '<td>' + total_time.toFixed(2) +'</td>';
+    content += '<td>$' + total_cost.formatCurrency() + '</td></tr>';
+    content += '</table>';
+    return content;
   }
 })(jQuery);
