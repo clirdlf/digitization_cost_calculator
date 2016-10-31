@@ -23,20 +23,23 @@ var estimate = {
     var scans = this.scans_per_hundred();
     $.each(generic, function(task, obj){
       if(obj.by && obj.by.total_minute_rate) {
-        var hourly_rate = obj.by.total_minute_rate; // not being used?
+        var minute_rate = obj.by.total_minute_rate; // not being used?
         var time = (obj.percentage / 100.0) * scans * obj.average;
         // console.log(time);
         costs.total_time += time;
         switch(obj.by.type) {
           case 'hourly':
-            costs.hourly += (obj.average);
+            // costs.hourly += (obj.average);
+            costs.hourly += (time * obj.by.total_minute_rate);
             break;
           case 'salaried':
-            costs.salaried += (obj.average);
+            // costs.salaried += (obj.average);
+            costs.salaried += (time * obj.by.total_minute_rate);
             break;
         }
       }
     });
+
     costs.total = costs.hourly + costs.salaried;
     return costs;
   },

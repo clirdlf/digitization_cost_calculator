@@ -35,7 +35,25 @@ QUnit.test("Testing entire thing...", function( assert ){
     // 4830.2938095238096 * 0.21 ~= 1014.36
     assert.equal(e.metadata_estimate().total, 1014.3616999999999, 'Cost for level_1 metata');
 
+    e.preparation_of_materials.condition_review.percentage = 100;
+    e.preparation_of_materials.condition_review.by = hourly_employee;
 
+    // 15.333333333333334 per 100 items
+    // time = scans_per_hundred() * e.preparation_of_materials.condition_review.average
+    // 10 * 15.3333... ~= 153.33 minutes
+    // 153.33 * .21 ~= 32.20
+    assert.equal(e.preparation_estimate().total_time, '153.33333333333334', 'Condition Review Preparation time estimate');
+    assert.equal(e.preparation_estimate().total, '32.20', 'Condition Review Preparation cost');
+
+    e.post_processing.alignment.percentage = 100;
+    e.post_processing.alignment.by = hourly_employee;
+
+    // 18.181818181818183 per 100 items
+    // time = scans_per_hundred * e.post_processing.alignment.percentage
+    // 10 * 18.181818181818183 ~= 181.81
+    // 181.81 * .21 ~= 38.181818182
+    assert.equal(e.post_processing_estimate().total_time, '181.81818181818184', 'Post processing alignment time estimate');
+    assert.equal(e.post_processing_estimate().total, '38.18181818181819', 'Post processing alignment cost estimate');
 
 });
 
@@ -69,10 +87,10 @@ QUnit.test("Estimate capture", function( assert ) {
     e.capture_device = scanner;
     e.capture_by = hourly_employee;
     // 1 * (1200 / 100) * 183.5533333333333 = 2202.64 minutes
-    assert.equal(e.capture_estimate().total, 28880.04857142858, '1 linear foot flatbed capture cost');
+    assert.equal(e.capture_estimate().total, 493.07400000000007, '1 linear foot flatbed capture cost');
     assert.equal(e.capture_estimate().total_time, 2347.971428571429, '1 linear foot flatbed capture in minutes');
     e.extent = 12000;
-    assert.equal(e.capture_estimate().total, 288800.4857142858, '10 linear foot flatbed capture cost');
+    assert.equal(e.capture_estimate().total, 4930.740000000001, '10 linear foot flatbed capture cost');
     assert.equal(e.capture_estimate().total_time, 23479.71428571429, '10 linear foot flatbed capture in minutes');
 });
 
@@ -90,17 +108,17 @@ QUnit.test("preparation_estimate", function( assert ) {
     assert.equal(prep.condition_review.by, hourly_employee, 'hourly_employee doing condition_review');
 
     assert.equal(e.preparation_estimate().total_time, 184, 'time for condition_review by hourly employee');
-    assert.equal(e.preparation_estimate().total, 15.333333333333334, 'total cost for condition review');
+    assert.equal(e.preparation_estimate().total, 38.64, 'total cost for condition review');
     assert.equal(e.preparation_estimate().salaried, 0, 'salary costs for condition review');
-    assert.equal(e.preparation_estimate().hourly, 15.333333333333334, 'hourly costs for condition review');
+    assert.equal(e.preparation_estimate().hourly, 38.64, 'hourly costs for condition review');
 
     prep.fastener_removal.percentage = 100;
     prep.fastener_removal.by = salaried_employee;
 
     assert.equal(e.preparation_estimate().total_time, 525.2121212121212, 'time for condition_review by hourly employee');
-    assert.equal(e.preparation_estimate().total, 43.76767676767677, 'total cost for condition review');
-    assert.equal(e.preparation_estimate().salaried, 28.434343434343432, 'salary costs for condition review');
-    assert.equal(e.preparation_estimate().hourly, 15.333333333333334, 'hourly costs for condition review');
+    assert.equal(e.preparation_estimate().total, 212.6581818181818, 'total cost for condition review');
+    assert.equal(e.preparation_estimate().salaried, 174.0181818181818, 'salary costs for condition review');
+    assert.equal(e.preparation_estimate().hourly, 38.64, 'hourly costs for condition review');
 
 });
 
@@ -140,17 +158,17 @@ QUnit.test("post_processing_estimate", function( assert ) {
     assert.equal(post.alignment.by, hourly_employee, 'hourly_employee doing alignment');
 
     assert.equal(e.post_processing_estimate().total_time, 218.1818181818182, 'time for post_processing by hourly employee');
-    assert.equal(e.post_processing_estimate().total, 18.181818181818183, 'total cost for post_processing');
+    assert.equal(e.post_processing_estimate().total, 45.81818181818182, 'total cost for post_processing');
     assert.equal(e.post_processing_estimate().salaried, 0, 'salary costs for post_processing review');
-    assert.equal(e.post_processing_estimate().hourly, 18.181818181818183, 'hourly costs for post_processing');
+    assert.equal(e.post_processing_estimate().hourly, 	45.81818181818182, 'hourly costs for post_processing');
 
     post.background_removal.percentage = 100;
     post.background_removal.by = salaried_employee;
 
     assert.equal(e.post_processing_estimate().total_time, 218.1818181818182, 'time for post_processing by hourly employee');
-    assert.equal(e.post_processing_estimate().total, 18.181818181818183, 'total cost for post_processing');
+    assert.equal(e.post_processing_estimate().total, 45.81818181818182, 'total cost for post_processing');
     assert.equal(e.post_processing_estimate().salaried, 64.09375, 'salary costs for post_processing');
-    assert.equal(e.post_processing_estimate().hourly, 18.181818181818183, 'hourly costs for post_processing');
+    assert.equal(e.post_processing_estimate().hourly, 45.81818181818182, 'hourly costs for post_processing');
 });
 
 QUnit.test("post_preparation_estimate", function( assert ) {
@@ -210,14 +228,14 @@ QUnit.test("metadata_creation estimate", function( assert ) {
 
     assert.equal(e.metadata.level, 'level_1', 'metadata default level_1');
     assert.equal(e.metadata_estimate().total_time, 5796.3525714285715, 'level_1 quality control time');
-    assert.equal(e.metadata_estimate().total, 71295.13662857143, 'level_1 metadata for hourly employee');
+    assert.equal(e.metadata_estimate().total, 1217.23404, 'level_1 metadata for hourly employee');
 
     e.metadata.by = salaried_employee;
-    assert.equal(e.metadata_estimate().total, 178237.84157142858, 'level_1 metadata for salaried employee');
+    assert.equal(e.metadata_estimate().total, 2956.1398114285716, 'level_1 metadata for salaried employee');
 
     e.metadata.percentage = 50;
     assert.equal(e.metadata_estimate().total_time, 2898.1762857142858, 'level_1 quality control time at 50%');
-    assert.equal(e.metadata_estimate().total, 44559.460392857145, 'level_1 metadata at 50% of the collection');
+    assert.equal(e.metadata_estimate().total, 739.0349528571429, 'level_1 metadata at 50% of the collection');
 
     e.metadata.percentage = 100;
     e.metadata.level = 'level_2';

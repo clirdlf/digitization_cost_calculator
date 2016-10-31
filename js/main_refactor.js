@@ -182,12 +182,12 @@ people.push(empty_person);
         var content = '<table class="table">';
         var total_time = 0,
             total_cost = 0;
-        content += '<tr><th>Level</th><th>Percentage</th><th>Performed By</th><th>Average Time</th><th>Time Estimate</th><th>Cost Estimate</th></tr>';
+        content += '<tr><th>Level</th><th>Percentage</th><th>Performed By</th><th>Average Time (per 100)</th><th>Time Estimate</th><th>Cost Estimate</th></tr>';
         var row = '<tr>';
         row += '<td>' + obj.level + '</td>';
         row += '<td>' + obj.percentage + '</td>';
         row += '<td>' + obj.by.name + '</td>';
-        row += '<td>' + (costs.average).toFixed(2) + '</td>';
+        row += '<td>' + (costs.average).toFixed(2) + ' minutes</td>';
         row += '<td>' + costs.total_time.toFixed(2) + '</td>';
         row += '<td>$' + costs.total.formatCurrency() + '</td>';
         row += '</tr>';
