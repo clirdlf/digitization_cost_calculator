@@ -6,6 +6,39 @@ var blank_estimate = estimate;
 //     assert.ok(1 == "1", "Passed");
 // });
 
+QUnit.test("Testing entire thing...", function( assert ){
+    var e = $.extend(true, {}, blank_estimate);
+    e.extent = 1000;
+
+    e.capture_by = hourly_employee;
+    e.capture_device = 'Flatbed scanner (i.e., an Epson 11000XL)';
+    // (1000 / 100) * 195.66428571428574 ~= 1956.6
+    assert.equal(e.capture_estimate().total_time, 1956.6428571428573, 'Time for 1000 objects scanned by hourly worker');
+    // 1956.6 * .21 ~= 410.90
+    assert.equal(e.capture_estimate().total, 410.89500000000004, 'Cost for 1000 objects scanned by hourly worker');
+
+    e.quality_control.level = 'level_1'; // 45.301025641025646
+    e.quality_control.by = hourly_employee;
+    e.quality_control.percentage = 100;
+
+    // (1000 / 100) * percentage = 453.01025641025646
+    assert.equal(e.quality_control_estimate().total_time, 453.01025641025646, 'Time for level_1 quality control for 1000 scans');
+    // 453.01025641025646 * 0.21 ~= 95.132153846
+    assert.equal(e.quality_control_estimate().total, 95.13215384615386, 'Cost for level_1 qc');
+
+    e.metadata.level = 'level_1'; // 483.02938095238096
+    e.metadata.by = hourly_employee;
+    e.metadata.percentage = 100;
+
+    // (1000 / 100) * percentage = 4830.2938095238096
+    assert.equal(e.metadata_estimate().total_time, 4830.2938095238096, 'Time for level_1 metadata for 1000 scans');
+    // 4830.2938095238096 * 0.21 ~= 1014.36
+    assert.equal(e.metadata_estimate().total, 1014.3616999999999, 'Cost for level_1 metata');
+
+
+
+});
+
 QUnit.test("Estimate object defaults", function( assert ){
     var e = $.extend(true, {}, blank_estimate);
 
@@ -26,7 +59,7 @@ QUnit.test("Estimate object defaults", function( assert ){
     assert.equal(e.capture_average(), 0, 'capture_average method from unknown key');
 
     e.capture_device = 'Flatbed scanner (i.e., an Epson 11000XL)';
-    assert.equal(e.capture_average(), 183.55333333333334, 'capture_average method from known key');
+    assert.equal(e.capture_average(), 195.66428571428574, 'capture_average method from known key');
 
 });
 
@@ -36,11 +69,11 @@ QUnit.test("Estimate capture", function( assert ) {
     e.capture_device = scanner;
     e.capture_by = hourly_employee;
     // 1 * (1200 / 100) * 183.5533333333333 = 2202.64 minutes
-    assert.equal(e.capture_estimate().total, 27092.472000000005, '1 linear foot flatbed capture cost');
-    assert.equal(e.capture_estimate().total_time, 2202.6400000000003, '1 linear foot flatbed capture in minutes');
+    assert.equal(e.capture_estimate().total, 28880.04857142858, '1 linear foot flatbed capture cost');
+    assert.equal(e.capture_estimate().total_time, 2347.971428571429, '1 linear foot flatbed capture in minutes');
     e.extent = 12000;
-    assert.equal(e.capture_estimate().total, 270924.72000000003, '10 linear foot flatbed capture cost');
-    assert.equal(e.capture_estimate().total_time, 22026.4, '10 linear foot flatbed capture in minutes');
+    assert.equal(e.capture_estimate().total, 288800.4857142858, '10 linear foot flatbed capture cost');
+    assert.equal(e.capture_estimate().total_time, 23479.71428571429, '10 linear foot flatbed capture in minutes');
 });
 
 QUnit.test("preparation_estimate", function( assert ) {
@@ -82,10 +115,10 @@ QUnit.test("quality_control_estimate", function( assert ) {
 
     assert.equal(e.quality_control.level, 'level_1', 'default quality control');
     assert.equal(e.quality_control_estimate().total_time, 543.6123076923077, 'level_1 quality control total_time');
-    assert.equal(e.quality_control_estimate().total, 6686.4313846153855, 'level_1 quality control @ 100%');
+    assert.equal(e.quality_control_estimate().total, 114.15858461538461, 'level_1 quality control @ 100%');
     e.quality_control.percentage = 50;
     assert.equal(e.quality_control_estimate().total_time, 271.80615384615385, 'level_1 quality control total_time (@50%)');
-    assert.equal(e.quality_control_estimate().total, 1671.6078461538464, 'level_1 quality control cost @ 50%');
+    assert.equal(e.quality_control_estimate().total, 28.539646153846153, 'level_1 quality control cost @ 50%');
 
     e.quality_control.percentage = 100;
     e.quality_control.level = 'level_2'; //37.93333333333333
@@ -103,21 +136,21 @@ QUnit.test("post_processing_estimate", function( assert ) {
     post.alignment.percentage = 100;
     post.alignment.by = hourly_employee;
 
-    assert.equal(post.alignment.average, 64.09375, 'alignment average lookup');
+    assert.equal(post.alignment.average, 18.181818181818183, 'alignment average lookup');
     assert.equal(post.alignment.by, hourly_employee, 'hourly_employee doing alignment');
 
-    assert.equal(e.post_processing_estimate().total_time, 769.125, 'time for post_processing by hourly employee');
-    assert.equal(e.post_processing_estimate().total, 64.09375, 'total cost for post_processing');
+    assert.equal(e.post_processing_estimate().total_time, 218.1818181818182, 'time for post_processing by hourly employee');
+    assert.equal(e.post_processing_estimate().total, 18.181818181818183, 'total cost for post_processing');
     assert.equal(e.post_processing_estimate().salaried, 0, 'salary costs for post_processing review');
-    assert.equal(e.post_processing_estimate().hourly, 64.09375, 'hourly costs for post_processing');
+    assert.equal(e.post_processing_estimate().hourly, 18.181818181818183, 'hourly costs for post_processing');
 
     post.background_removal.percentage = 100;
     post.background_removal.by = salaried_employee;
 
-    assert.equal(e.post_processing_estimate().total_time, 1538.25, 'time for post_processing by hourly employee');
-    assert.equal(e.post_processing_estimate().total, 128.1875, 'total cost for post_processing');
+    assert.equal(e.post_processing_estimate().total_time, 218.1818181818182, 'time for post_processing by hourly employee');
+    assert.equal(e.post_processing_estimate().total, 18.181818181818183, 'total cost for post_processing');
     assert.equal(e.post_processing_estimate().salaried, 64.09375, 'salary costs for post_processing');
-    assert.equal(e.post_processing_estimate().hourly, 64.09375, 'hourly costs for post_processing');
+    assert.equal(e.post_processing_estimate().hourly, 18.181818181818183, 'hourly costs for post_processing');
 });
 
 QUnit.test("post_preparation_estimate", function( assert ) {
