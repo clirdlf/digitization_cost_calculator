@@ -68,7 +68,7 @@ $.fn.sort_select_box = function() {
 
 // Estimates minutes in hours (returns an int)
 function minutes_in_hours(m) {
-    return Math.floor(m / 60);
+    return m / 60;
 }
 
 // @see http://stackoverflow.com/questions/196972/convert-string-to-title-case-with-javascript
@@ -87,6 +87,20 @@ String.prototype.sluggify = function() {
         .replace(/\s+/g, '-')
         .replace(/-+/g, '-');
     return str;
+};
+
+// @see https://codepad.co/snippet/zRykJud8
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+};
+// split variable names on '_'
+String.prototype.titleize = function() {
+    var string_array = this.split('_');
+    string_array = string_array.map(function(str) {
+       return str.capitalize();
+    });
+
+    return string_array.join(' ');
 };
 
 // @see http://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-money-in-javascript

@@ -107,8 +107,6 @@ people.push(empty_person);
         }
     }
 
-
-
     function set_values() {
         estimate.extent = parseFloat($('input#extent').val());
         estimate.capture_device = $('select[name="capture_device"] option:selected').text();
@@ -212,31 +210,27 @@ people.push(empty_person);
             // TODO: Task object to calculate individual tasks
             // pick average out of the proper esimate
             var row = '<tr>';
-            row += '<td>' + this.label + '</td>';
+            row += '<td>' + this.label.titleize() + '</td>';
             row += '<td>' + this.percentage + '</td>';
 
             if(this.by && this.by.name){
                 row += '<td>' + this.by.name + '</td>';
             }
 
-            costs.total_time = this.percentage * this.average * estimate.extent;
+            costs.total_time = (this.percentage / 100.0) * this.average * estimate.scans_per_hundred();
             costs.total = this.by.total_minute_rate * costs.total_time;
 
-            row += '<td>' + costs.total_time + '</td>';
-            row += '<td>' + costs.total + '</td>';
+            row += '<td>' + costs.total_time.toFixed(2) + ' minutes</td>';
+            row += '<td>$' + costs.total.formatCurrency() + '</td>';
             row += '</tr>';
             content += row;
 
             total_time += costs.total_time;
             total_cost += costs.total;
-
-            console.log(row);
         });
 
-
-
         content += '<tr><td>&nbsp;</td><td>&nbsp;</td><td><strong>Total</strong></td>';
-        content += '<td>' + total_time.toFixed(2) + '</td>';
+        content += '<td>' + minutes_in_hours(total_time).toFixed(2) + ' hours </td>';
         content += '<td>$' + total_cost.formatCurrency() + '</td></tr>';
         content += '</table>';
         return content;

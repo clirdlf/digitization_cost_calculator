@@ -332,4 +332,5 @@ QUnit.test("Utilities", function( assert ) {
     assert.equal(number3.formatCurrency(), '2.23');
     assert.ok(test_string.includes('Test'), 'test_string includes "Test"');
     assert.notOk(test_string.includes('string'), 'test_string does not include "string"');
+    assert.equal('test_string'.titleize(), 'Test String');
 });
