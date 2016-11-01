@@ -71,8 +71,8 @@ people.push(empty_person);
         }
 
         if (estimate.capture_device && image_capture[estimate.capture_device]) {
-            var capture_min = image_capture[estimate.capture_device].min;
-            var capture_max = image_capture[estimate.capture_device].max;
+            var capture_min = image_capture[estimate.capture_device].min.toFixed(2);
+            var capture_max = image_capture[estimate.capture_device].max.toFixed(2);
 
             $('#report .scanner_average').html(minutes_in_hours(image_capture[estimate.capture_device].average).toFixed(2));
             $('#report .scanner_range').html(minutes_in_hours(capture_min) + ' - ' + minutes_in_hours(capture_max));
