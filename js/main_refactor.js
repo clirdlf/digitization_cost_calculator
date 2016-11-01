@@ -52,12 +52,34 @@ people.push(empty_person);
         return values;
     }
 
+    function format_people(){
+        // reads people array and formats HTML
+        var html = '';
+
+        $.each(people, function(){
+            var div = '<div class="person"><p>';
+            div += '<span class="name"><strong>' + this.name + '</strong></span> ';
+            div += '<span class="rate_type">' + this.type + '</span> ';
+            div += '<span class="rate">' + this.rate + '</span> ';
+            div += '<span class="benefits">' + this.benefits_percent + '%</span> ';
+            div += '</p></div>';
+            html += div;
+            console.log(this);
+        });
+
+        return html;
+    }
+
     function format_report() {
         var prep_items = get_object_values(preparation_of_materials_fields, 'preparation_of_materials');
         var post_processing_items = get_object_values(post_processing_fields, 'post_processing');
         var post_preparation_items = get_object_values(post_preparation_fields, 'post_preparation');
+        var grand_total = estimate.total_estimate();
 
-        $('#report .extent').html(estimate.extent);
+        $('#total .extent').html(estimate.extent + ' scans');
+        $('#total .total').html('$' + grand_total.total.formatCurrency());
+        $('#total .total_time').html(minutes_in_hours(grand_total.total_time).toFixed(2) + ' hours');
+        $('#total .people').html(format_people());
 
         if (estimate.capture_device !== '' && estimate.capture_device !== 'Select Your Capture Device') {
             $('#digitization_report').removeClass('hidden');

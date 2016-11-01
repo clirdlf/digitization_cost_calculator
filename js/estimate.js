@@ -3,12 +3,45 @@ var estimate = {
   //"total_scans": function(){ return (parseFloat(this.extent) * 1200); },
   "total_scans": function(){ return this.extent; },
   "scans_per_hundred": function(){ return (this.total_scans() / 100.0); },
+  "total_estimate": function(){
+    var costs = { "total_time": 0, "total": 0 };
+
+    // TODO: iterate on these
+    var total_time = this.capture_estimate().total_time;
+    var total = this.capture_estimate().total;
+
+    total_time += this.quality_control_estimate().total_time;
+    total+= this.quality_control_estimate().total;
+
+    total_time += this.preparation_estimate().total_time;
+    total+= this.preparation_estimate().total;
+
+    total_time += this.post_processing_estimate().total_time;
+    total+= this.post_processing_estimate().total;
+
+    total_time += this.post_preparation_estimate().total_time;
+    total+= this.post_preparation_estimate().total;
+
+    total_time += this.metadata_estimate().total_time;
+    total += this.metadata_estimate().total;
+
+    total_time += this.other_tasks_estimate().total_time;
+    total += this.other_tasks_estimate().total;
+
+    costs.total_time = total_time;
+    costs.total = total;
+
+    return costs;
+
+  },
   "capture_device": '',
   "capture_by": '',
   "capture_estimate": function(){
       var costs = { "total_time": 0, "total": 0 };
       costs.total_time = this.scans_per_hundred() * this.capture_average();
-      costs.total = this.capture_by.total_minute_rate * costs.total_time;
+      if(this.capture_by && this.capture_by.total_minute_rate){
+        costs.total = this.capture_by.total_minute_rate * costs.total_time;
+      }
       return costs;
   },
   "capture_average": function(){
