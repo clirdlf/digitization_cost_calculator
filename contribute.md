@@ -12,13 +12,12 @@ No! You only give us time data. "Costs" are estimated using salary/benefits data
 
 **What if we don’t perform all of these processes?** That’s fine – you only submit data for the specific processes that you choose.
 
-**What if we have time data for process X and process Y smushed together in one number?** Unfortunately, we cannot use data that combines multiple processes. Your time data contributions will have to be separate for each process. 
+**What if we have time data for process X and process Y smushed together in one number?** Unfortunately, we cannot use data that combines multiple processes. Your time data contributions will have to be separate for each process.
 
-**What if I have data but it doesn't match the definition in your document?** We understand that many institutions' workflows do not match those described in the document. Unfortunately, we had to choose a set of definitions and processes that have strict guidelines in order for the calculator to function. We cannot accept any data that does not fit into the current definitions, though we would be happy to hear about changes you think should be made to the definitions or calculator. 
+**What if I have data but it doesn't match the definition in your document?** We understand that many institutions' workflows do not match those described in the document. Unfortunately, we had to choose a set of definitions and processes that have strict guidelines in order for the calculator to function. We cannot accept any data that does not fit into the current definitions, though we would be happy to hear about changes you think should be made to the definitions or calculator.
 
 **How will my institution benefit?** You will have contributed to the creation of a freely-available tool (the Digitization Cost Calculator) that allows users to input their institution’s salary and benefits data, the amount of material being digitized, select which processes they will be undertaking, and then outputs cost and time data based on all aggregate contributed data. This tool will help many organizations in planning future projects and in articulating the true costs of digitization projects.
 
 **Will the information I contribute be anonymous?** No. While the data you submit will be aggregated by the calculator along with all other data submissions and displayed as part of an average on the results screen when people use the calculator, individual institutional data is shown on the Raw Data page. This allows calculator users to get a feel for the wide variation in time and in practice from institution to institution and project to project. Seeing the data apart from the aggregate average can also be helpful if a user feels their institution is more similar to one or more other institutions in the list, and allows them to calculate custom time estimates.
 
-<iframe src="https://duke.qualtrics.com/SE/?SID=SV_3OtqSEAbpl2QDl"></iframe>
-
+<iframe width="100%" height="800px" src="https://duke.qualtrics.com/SE/?SID=SV_3OtqSEAbpl2QDl3"></iframe>

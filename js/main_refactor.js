@@ -56,7 +56,7 @@ people.push(empty_person);
         var prep_items = get_object_values(preparation_of_materials_fields, 'preparation_of_materials');
         var post_processing_items = get_object_values(post_processing_fields, 'post_processing');
         var post_preparation_items = get_object_values(post_preparation_fields, 'post_preparation');
-        console.log('prep_items', prep_items);
+
         $('#report .extent').html(estimate.extent);
 
         if (estimate.capture_device !== '' && estimate.capture_device !== 'Select Your Capture Device') {
@@ -136,43 +136,6 @@ people.push(empty_person);
             }
         }
 
-        // $('.total-digitization-time').html(minutes_in_hours(estimate.total_digitization_time()));
-        // $('.total-staff-digization-cost').html((0).formatCurrency());
-        // $('.total-hourly-digization-cost').html((0).formatCurrency());
-        //
-        // // preparation stats
-        // // TODO: set these values correctly
-        // // total-staff-preperation-cost
-        // $('.total-preperation-time').html(estimate.preparation_estimate().total_time);
-        // $('.total-salaried-preperation-cost').html(estimate.preparation_estimate().salaried.formatCurrency());
-        // $('.total-hourly-preperation-cost').html(estimate.preparation_estimate().hourly.formatCurrency());
-        //
-        // // quality_control
-        // $('.total-quality-control-time').html(minutes_in_hours(estimate.quality_control_estimate().total_time));
-        // $('.total-quality-control-salaried-cost').html((0).formatCurrency());
-        // $('.total-quality-control-hourly-cost').html((0).formatCurrency());
-        //
-        // // post_processing
-        // $('.total-post-processing-time').html(minutes_in_hours(estimate.preparation_estimate().total_time));
-        // $('.total-salaried-post-processing-cost').html(estimate.preparation_estimate().salaried.formatCurrency());
-        // $('.total-hourly-post-processing-cost').html(estimate.preparation_estimate().hourly.formatCurrency());
-        //
-        // // metadata creation
-        // $('.total-metadata-time').html(minutes_in_hours(estimate.metadata_estimate().total_time));
-        // $('.total-metadata-salaried-cost').html((0).formatCurrency());
-        // $('.total-metadata-hourly-cost').html((0).formatCurrency());
-        //
-        // // post_preparation
-        // $('.total-post-preparation-time').html(minutes_in_hours(estimate.preparation_estimate().total_time));
-        // $('.total-salaried-post-preparation-cost').html(estimate.preparation_estimate().salaried.formatCurrency());
-        // $('.total-hourly-post-processing-cost').html(estimate.preparation_estimate().hourly.formatCurrency());
-        //
-        // // TODO;
-        // $('.total-time').html(minutes_in_hours(0));
-        // $('.total-salaried-cost').html((0).formatCurrency());
-        // $('.total-hourly-cost').html((0).formatCurrency());
-        //console.log('preparaton', estimate.preparation_estimate());
-        // console.log('estimate', estimate);
         format_report();
     }
 
