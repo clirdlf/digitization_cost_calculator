@@ -47,6 +47,24 @@
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="sort_materials_into_items_percent">Sorting Materials Into Items <i class="fa fa-question-circle" data-toggle="popover" title="Sorting materials into items" data-content="The process of sorting materials into groupings of unique items in preparation for digitization (for example, grouping five pages that comprise a letter together). '% Materials' is the  the number of items divided by the number of scans."></i></label>
+              <input type="number" class="form-control" id='sort_materials_into_items_percent' placeholder="% Materials" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="sort_materials_into_items_by">Performed By</label>
+              <select id="sort_materials_into_items_by" class="form-control performed_by">
+                <option>
+                  Performed By
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
         {% comment %}
         <div class="row">
           <div class="col-md-6">
@@ -140,24 +158,7 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="sort_materials_into_items_percent">Sorting Materials Into Items <i class="fa fa-question-circle" data-toggle="popover" title="Sorting materials into items" data-content="The process of sorting materials into groupings of unique items in preparation for digitization (for example, grouping five pages that comprise a letter together). '% Materials' is the  the number of items divided by the number of scans."></i></label>
-              <input type="number" class="form-control" id='sort_materials_into_items_percent' placeholder="% Materials" />
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="sort_materials_into_items_by">Performed By</label>
-              <select id="sort_materials_into_items_by" class="form-control performed_by">
-                <option>
-                  Performed By
-                </option>
-              </select>
-            </div>
-          </div>
-        </div>
+
         {% endcomment %}
       </div>
     </div>

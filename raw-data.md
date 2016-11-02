@@ -19,10 +19,10 @@ permalink: /data/
   
   <tr>
     <td>Flatbed scanner (i.e., an Epson 11000XL)</td>
-    <td>195.7</td>
-    <td>95.0</td>
-    <td>325.0</td>
-    <td>14</td>
+    <td>199.5</td>
+    <td>24.7</td>
+    <td>379.0</td>
+    <td>17</td>
   </tr>
   
   <tr>
@@ -35,26 +35,26 @@ permalink: /data/
   
   <tr>
     <td>Overhead scanner (i.e., a Zeutschel, i2S Quartz or Digibook, Cruse)</td>
-    <td>50.3</td>
+    <td>53.0</td>
     <td>22.0</td>
     <td>100.0</td>
-    <td>9</td>
+    <td>11</td>
   </tr>
   
   <tr>
     <td>Sheet feeding scanner (i.e., a Fujitsu)</td>
-    <td>1.2</td>
+    <td>5.4</td>
     <td>1.0</td>
-    <td>1.5</td>
-    <td>2</td>
+    <td>13.6</td>
+    <td>3</td>
   </tr>
   
   <tr>
     <td>Manual DSLR camera (i.e. Canon EOS 5D, Nikon D7200)</td>
-    <td>62.5</td>
+    <td>69.8</td>
     <td>4.0</td>
     <td>385.0</td>
-    <td>12</td>
+    <td>15</td>
   </tr>
   
   <tr>
@@ -126,7 +126,7 @@ permalink: /data/
   </tr>
   
   <tr>
-    <td>University of CA Berkeley</td>
+    <td>University of California Berkeley</td>
     <td>325</td>
     <td>25</td>
   </tr>
@@ -159,6 +159,24 @@ permalink: /data/
     <td>Northwestern University Library</td>
     <td>310</td>
     <td>63</td>
+  </tr>
+  
+  <tr>
+    <td>University of Tennessee, Knoxville</td>
+    <td>24.7</td>
+    <td>67</td>
+  </tr>
+  
+  <tr>
+    <td>University of Tennessee Knoxville</td>
+    <td>379</td>
+    <td>68</td>
+  </tr>
+  
+  <tr>
+    <td>Center for Jewish History</td>
+    <td>248.3</td>
+    <td>72</td>
   </tr>
   
 </table>
@@ -283,6 +301,18 @@ permalink: /data/
     <td>61</td>
   </tr>
   
+  <tr>
+    <td>Duke University Libraries</td>
+    <td>66.66</td>
+    <td>74</td>
+  </tr>
+  
+  <tr>
+    <td>Triangle Research Libraries Network</td>
+    <td>63.76</td>
+    <td>75</td>
+  </tr>
+  
 </table>
 
 <h3>Sheet feeding scanner (i.e., a Fujitsu)</h3>
@@ -305,6 +335,12 @@ permalink: /data/
     <td>62</td>
   </tr>
   
+  <tr>
+    <td>University of Tennessee, Knoxville</td>
+    <td>13.6</td>
+    <td>69</td>
+  </tr>
+  
 </table>
 
 <h3>Manual DSLR camera (i.e. Canon EOS 5D, Nikon D7200)</h3>
@@ -322,25 +358,25 @@ permalink: /data/
   </tr>
   
   <tr>
-    <td>University of CA Berkeley</td>
+    <td>University of California Berkeley</td>
     <td>42</td>
     <td>26</td>
   </tr>
   
   <tr>
-    <td>University Of CA Berkeley</td>
+    <td>University of California Berkeley</td>
     <td>17</td>
     <td>27</td>
   </tr>
   
   <tr>
-    <td>Univeristy of CA Berkeley</td>
+    <td>University of California Berkeley</td>
     <td>33.5</td>
     <td>28</td>
   </tr>
   
   <tr>
-    <td>UC Berkeley</td>
+    <td>University of California Berkeley</td>
     <td>385</td>
     <td>29</td>
   </tr>
@@ -358,13 +394,13 @@ permalink: /data/
   </tr>
   
   <tr>
-    <td>Smithsonian Institution</td>
+    <td>Smithsonian Libraries</td>
     <td>4</td>
     <td>47</td>
   </tr>
   
   <tr>
-    <td>Perry</td>
+    <td>University of Florida, George A. Smathers Libraries</td>
     <td>34.74</td>
     <td>49</td>
   </tr>
@@ -385,6 +421,24 @@ permalink: /data/
     <td>Northwestern University Library</td>
     <td>8</td>
     <td>60</td>
+  </tr>
+  
+  <tr>
+    <td>Center for Jewish History</td>
+    <td>80.21</td>
+    <td>71</td>
+  </tr>
+  
+  <tr>
+    <td>Wesleyan University</td>
+    <td>64</td>
+    <td>80</td>
+  </tr>
+  
+  <tr>
+    <td>Davison Art Center, Wesleyan University</td>
+    <td>152</td>
+    <td>81</td>
   </tr>
   
 </table>
@@ -435,10 +489,10 @@ permalink: /data/
     
     <tr>
       <td>Condition Review</td>
-      <td>15.3</td>
-      <td>10.0</td>
+      <td>12.2</td>
+      <td>2.6</td>
       <td>20.0</td>
-      <td>3</td>
+      <td>4</td>
     </tr>
     
     <tr>
@@ -467,18 +521,18 @@ permalink: /data/
     
     <tr>
       <td>Rights Review</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0</td>
+      <td>4.7</td>
+      <td>4.3</td>
+      <td>5.0</td>
+      <td>2</td>
     </tr>
     
     <tr>
       <td>Sort Materials Into Items</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0</td>
+      <td>15.0</td>
+      <td>15.0</td>
+      <td>15.0</td>
+      <td>1</td>
     </tr>
     
   </table>
@@ -517,6 +571,14 @@ permalink: /data/
         <td>4.0</td>
         <td>20.0</td>
         <td>45</td>
+      </tr>
+      
+      <tr>
+        <td>Triangle Research Libraries Network</td>
+        <td>100.0</td>
+        <td>2.6</td>
+        <td>2.6</td>
+        <td>78</td>
       </tr>
       
     </table>
@@ -595,6 +657,22 @@ permalink: /data/
         <th>Lookup Row</th>
       </tr>
       
+      <tr>
+        <td>Center for Jewish History</td>
+        <td>100.0</td>
+        <td>4.3</td>
+        <td>4.3</td>
+        <td>71</td>
+      </tr>
+      
+      <tr>
+        <td>Triangle Research Libraries Network</td>
+        <td>100.0</td>
+        <td>5.0</td>
+        <td>5.0</td>
+        <td>79</td>
+      </tr>
+      
     </table>
   
     <h3>Sort Materials Into Items</h3>
@@ -606,6 +684,14 @@ permalink: /data/
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
         <th>Lookup Row</th>
+      </tr>
+      
+      <tr>
+        <td>University of Alabama Libraries</td>
+        <td>100.0</td>
+        <td>15.0</td>
+        <td>15.0</td>
+        <td>73</td>
       </tr>
       
     </table>
@@ -628,18 +714,18 @@ permalink: /data/
     
     <tr>
       <td>Level 1</td>
-      <td>45.3</td>
+      <td>42.7</td>
       <td>1.2</td>
       <td>166.7</td>
-      <td>13</td>
+      <td>15</td>
     </tr>
     
     <tr>
       <td>Level 2</td>
-      <td>30.6</td>
+      <td>45.4</td>
       <td>11.1</td>
-      <td>50.0</td>
-      <td>2</td>
+      <td>75.0</td>
+      <td>3</td>
     </tr>
     
     <tr>
@@ -768,6 +854,22 @@ permalink: /data/
         <td>57</td>
       </tr>
       
+      <tr>
+        <td>Indianapolis Museum of Art</td>
+        <td>100.0</td>
+        <td>30.0</td>
+        <td>30.0</td>
+        <td>66</td>
+      </tr>
+      
+      <tr>
+        <td>Center for Jewish History</td>
+        <td>100.0</td>
+        <td>22.0</td>
+        <td>22.0</td>
+        <td>71</td>
+      </tr>
+      
     </table>
   
     <h3>Level 2</h3>
@@ -795,6 +897,14 @@ permalink: /data/
         <td>10.0</td>
         <td>11.1</td>
         <td>58</td>
+      </tr>
+      
+      <tr>
+        <td>University of Tennessee, Knoxville</td>
+        <td>100.0</td>
+        <td>75.0</td>
+        <td>75.0</td>
+        <td>70</td>
       </tr>
       
     </table>
@@ -863,10 +973,10 @@ permalink: /data/
     
     <tr>
       <td>Alignment</td>
-      <td>18.2</td>
+      <td>24.6</td>
       <td>0.3</td>
-      <td>30.0</td>
-      <td>11</td>
+      <td>89.8</td>
+      <td>14</td>
     </tr>
     
     <tr>
@@ -887,18 +997,18 @@ permalink: /data/
     
     <tr>
       <td>Color Correction</td>
-      <td>106.2</td>
+      <td>107.0</td>
       <td>14.0</td>
       <td>300.0</td>
-      <td>7</td>
+      <td>8</td>
     </tr>
     
     <tr>
       <td>Cropping</td>
-      <td>54.6</td>
+      <td>58.4</td>
       <td>0.8</td>
       <td>382.0</td>
-      <td>20</td>
+      <td>22</td>
     </tr>
     
     <tr>
@@ -988,7 +1098,7 @@ permalink: /data/
       </tr>
       
       <tr>
-        <td>Smithsonian Institution</td>
+        <td>Smithsonian Libraries</td>
         <td>100.0</td>
         <td>0.3</td>
         <td>0.3</td>
@@ -1009,6 +1119,30 @@ permalink: /data/
         <td>30.0</td>
         <td>30.0</td>
         <td>57</td>
+      </tr>
+      
+      <tr>
+        <td>Northwestern University Library</td>
+        <td>100.0</td>
+        <td>27.5</td>
+        <td>27.5</td>
+        <td>65</td>
+      </tr>
+      
+      <tr>
+        <td>University of Tennessee Knoxville</td>
+        <td>59.0</td>
+        <td>53.0</td>
+        <td>89.8</td>
+        <td>68</td>
+      </tr>
+      
+      <tr>
+        <td>Wesleyan University</td>
+        <td>70.0</td>
+        <td>19.0</td>
+        <td>27.1</td>
+        <td>80</td>
       </tr>
       
     </table>
@@ -1107,7 +1241,7 @@ permalink: /data/
       </tr>
       
       <tr>
-        <td>Perry</td>
+        <td>University of Florida, George A. Smathers Libraries</td>
         <td>100.0</td>
         <td>14.0</td>
         <td>14.0</td>
@@ -1120,6 +1254,14 @@ permalink: /data/
         <td>45.0</td>
         <td>45.0</td>
         <td>57</td>
+      </tr>
+      
+      <tr>
+        <td>University of Tennessee, Knoxville</td>
+        <td>100.0</td>
+        <td>113.0</td>
+        <td>113.0</td>
+        <td>70</td>
       </tr>
       
     </table>
@@ -1208,7 +1350,7 @@ permalink: /data/
       </tr>
       
       <tr>
-        <td>University Of CA Berkeley</td>
+        <td>University of California Berkeley</td>
         <td>100.0</td>
         <td>19.0</td>
         <td>19.0</td>
@@ -1216,7 +1358,7 @@ permalink: /data/
       </tr>
       
       <tr>
-        <td>UC Berkeley</td>
+        <td>University of California Berkeley</td>
         <td>100.0</td>
         <td>382.0</td>
         <td>382.0</td>
@@ -1256,7 +1398,7 @@ permalink: /data/
       </tr>
       
       <tr>
-        <td>Smithsonian Institution</td>
+        <td>Smithsonian Libraries</td>
         <td>100.0</td>
         <td>0.8</td>
         <td>0.8</td>
@@ -1272,7 +1414,7 @@ permalink: /data/
       </tr>
       
       <tr>
-        <td>Perry</td>
+        <td>University of Florida, George A. Smathers Libraries</td>
         <td>100.0</td>
         <td>44.0</td>
         <td>44.0</td>
@@ -1293,6 +1435,22 @@ permalink: /data/
         <td>5.0</td>
         <td>5.0</td>
         <td>58</td>
+      </tr>
+      
+      <tr>
+        <td>University of Tennessee Knoxville</td>
+        <td>59.0</td>
+        <td>80.0</td>
+        <td>135.6</td>
+        <td>68</td>
+      </tr>
+      
+      <tr>
+        <td>Wesleyan University</td>
+        <td>100.0</td>
+        <td>58.0</td>
+        <td>58.0</td>
+        <td>80</td>
       </tr>
       
     </table>
