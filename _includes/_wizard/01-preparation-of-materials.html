@@ -65,6 +65,25 @@
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="rights_review_percent">Rights Review <i class="fa fa-question-circle" data-toggle="popover" title="Rights review" data-content="This includes both intellectual property (IP) review and privacy review. IP review is the process of examining materials prior to scanning to identify items that remain under copyright protection. Privacy review is the process of examining materials prior to scanning to detect private information such as social security numbers, student records, and medical records. '% Materials' is the percent of scan source material that was visually checked -- not the percent found to have rights issues."></i></label>
+              <input type="number" min="0" max="100" class="form-control" id='rights_review_percent' placeholder="% Materials" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="rights_review_by">Performed By</label>
+              <select id="rights_review_by" class="form-control performed_by">
+                <option>
+                  Performed By
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
         {% comment %}
         <div class="row">
           <div class="col-md-6">
@@ -140,24 +159,7 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="rights_review_percent">Rights Review <i class="fa fa-question-circle" data-toggle="popover" title="Rights review" data-content="This includes both intellectual property (IP) review and privacy review. IP review is the process of examining materials prior to scanning to identify items that remain under copyright protection. Privacy review is the process of examining materials prior to scanning to detect private information such as social security numbers, student records, and medical records. '% Materials' is the percent of scan source material that was visually checked -- not the percent found to have rights issues."></i></label>
-              <input type="number" min="0" max="100" class="form-control" id='rights_review_percent' placeholder="% Materials" />
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="rights_review_by">Performed By</label>
-              <select id="rights_review_by" class="form-control performed_by">
-                <option>
-                  Performed By
-                </option>
-              </select>
-            </div>
-          </div>
-        </div>
+
 
         {% endcomment %}
       </div>
