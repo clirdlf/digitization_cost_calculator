@@ -79,7 +79,7 @@ people.push(empty_person);
     }
 
     function summation_table(){
-        var html = '<table id="table" class="table table-striped">';
+        var html = '<table id="exportTable" class="table table-striped">';
         html += '<thead><tr><th>Task</th><th>Sub-Task</th><th>% Materials</th><th>Performed By</th><th>Time (minutes)</th><th>Cost</th></tr></thead>';
         html += '<tbody>';
         if (estimate.capture_device && estimate.capture_by) {
