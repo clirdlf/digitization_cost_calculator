@@ -88,7 +88,7 @@ var estimate = {
   quality_control_estimate: function(){
     var costs = { total_time: 0, total: 0, salaried: 0, hourly: 0, average: 0 };
 
-    if(quality_control_stats[this.quality_control.level] && quality_control_stats[this.quality_control.level].average){
+    if(this.quality_control.by && quality_control_stats[this.quality_control.level] && quality_control_stats[this.quality_control.level].average){
       var average = quality_control_stats[this.quality_control.level].average;
       costs.average = average;
       costs.total_time = average * (this.quality_control.percentage / 100) * this.scans_per_hundred();
@@ -214,7 +214,7 @@ var estimate = {
   "metadata_estimate": function(){
     var costs = { total_time: 0, total: 0, salaried: 0, hourly: 0, average: 0 };
     // console.log('key', metadata_stats[this.metadata]);
-    if(metadata_stats[this.metadata.level] && metadata_stats[this.metadata.level].average){
+    if(this.metadata.by && metadata_stats[this.metadata.level] && metadata_stats[this.metadata.level].average){
       var average = metadata_stats[this.metadata.level].average;
       costs.average = average;
       costs.total_time = average * (this.metadata.percentage / 100) * this.scans_per_hundred();
