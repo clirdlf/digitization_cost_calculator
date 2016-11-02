@@ -2,6 +2,7 @@
 layout: default
 javascripts:
 - /data/calculator_data.js
+- /js/validator.min.js
 - /js/utilities.js
 - /js/person.js
 - /js/estimate.js
@@ -51,10 +52,10 @@ javascripts:
                 </ul>
             </div>
 
-            <form id="digization_calculator" role="form" autocomplete="off">
+            <form id="digization_calculator" role="form" autocomplete="off" data-toggle="validator">
                 <div class="tab-content">
                     {% include _wizard/step1.html %}
-						  			{% include _wizard/step2.html %}
+						  {% include _wizard/step2.html %}
                     {% include _wizard/step3.html %}
                     {% include _wizard/final.html %}
                     <div class="clearfix"></div>

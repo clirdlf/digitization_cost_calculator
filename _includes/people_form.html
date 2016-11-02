@@ -9,8 +9,8 @@
                         <option value="salaried">Salaried</option>
                         <option value="hourly">Hourly</option>
                 </select>
-                <input type="number" class="rate" name="rate[]" placeholder="Salary/Hourly Rate" required />
-                <input type="number" class="benefits" name="benefits[]" placeholder="Benefits %" required />
+                <input type="number" min="0" class="rate" name="rate[]" placeholder="Salary/Hourly Rate" required />
+                <input type="number" min="0" max="100" class="benefits" name="benefits[]" placeholder="Benefits %" required />
 
                 <span class="input-group-btn">
                     <button class="btn btn-success btn-add" type="button">

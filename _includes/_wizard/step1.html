@@ -12,8 +12,9 @@
             <i class="fa fa-question-circle" data-toggle="popover" title="Number of scans" data-content="The number of scans (or images captured) for which you need to estimate costs and time. If you are only using the calculator for activities in the materials preparation phase, please use an estimate of the number of scans that would be produced if these materials were to be digitized."></i>
           </label>
             <div class="col-md-8">
-                <input type="text" class="form-control input-md" id="extent" required="required" placeholder="Number of scans">
+                <input type="number" min="0" class="form-control input-md" id="extent" data-error="We need to know how many scans you think you'll be performing." required="required" placeholder="Number of scans">
             </div>
+            <div class="help-block with-errors"></div>
         </div>
 
         <!-- <div class="form-group col-md-12">
