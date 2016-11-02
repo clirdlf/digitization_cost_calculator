@@ -529,10 +529,10 @@ permalink: /data/
     
     <tr>
       <td>Sort Materials Into Items</td>
+      <td>42.5</td>
       <td>15.0</td>
-      <td>15.0</td>
-      <td>15.0</td>
-      <td>1</td>
+      <td>70.0</td>
+      <td>2</td>
     </tr>
     
   </table>
@@ -694,6 +694,14 @@ permalink: /data/
         <td>73</td>
       </tr>
       
+      <tr>
+        <td>Davison Art Center, Wesleyan University</td>
+        <td>100.0</td>
+        <td>70.0</td>
+        <td>70.0</td>
+        <td>81</td>
+      </tr>
+      
     </table>
   
 </section>
@@ -722,10 +730,10 @@ permalink: /data/
     
     <tr>
       <td>Level 2</td>
-      <td>45.4</td>
+      <td>107.5</td>
       <td>11.1</td>
-      <td>75.0</td>
-      <td>3</td>
+      <td>294.0</td>
+      <td>4</td>
     </tr>
     
     <tr>
@@ -907,6 +915,14 @@ permalink: /data/
         <td>70</td>
       </tr>
       
+      <tr>
+        <td>Davison Art Center, Wesleyan University</td>
+        <td>100.0</td>
+        <td>294.0</td>
+        <td>294.0</td>
+        <td>81</td>
+      </tr>
+      
     </table>
   
     <h3>Level 3</h3>
@@ -954,7 +970,6 @@ permalink: /data/
       
     </table>
   
-
 </section>
 
 <section id="post_processing">
@@ -973,10 +988,10 @@ permalink: /data/
     
     <tr>
       <td>Alignment</td>
-      <td>24.6</td>
+      <td>26.8</td>
       <td>0.3</td>
       <td>89.8</td>
-      <td>14</td>
+      <td>15</td>
     </tr>
     
     <tr>
@@ -1005,10 +1020,10 @@ permalink: /data/
     
     <tr>
       <td>Cropping</td>
-      <td>58.4</td>
+      <td>59.5</td>
       <td>0.8</td>
       <td>382.0</td>
-      <td>22</td>
+      <td>23</td>
     </tr>
     
     <tr>
@@ -1143,6 +1158,14 @@ permalink: /data/
         <td>19.0</td>
         <td>27.1</td>
         <td>80</td>
+      </tr>
+      
+      <tr>
+        <td>Davison Art Center, Wesleyan University</td>
+        <td>99.0</td>
+        <td>57.0</td>
+        <td>57.6</td>
+        <td>81</td>
       </tr>
       
     </table>
@@ -1451,6 +1474,14 @@ permalink: /data/
         <td>58.0</td>
         <td>58.0</td>
         <td>80</td>
+      </tr>
+      
+      <tr>
+        <td>Davison Art Center, Wesleyan University</td>
+        <td>100.0</td>
+        <td>83.0</td>
+        <td>83.0</td>
+        <td>81</td>
       </tr>
       
     </table>
@@ -2048,10 +2079,10 @@ permalink: /data/
     
     <tr>
       <td>Desorting</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0</td>
+      <td>67.0</td>
+      <td>67.0</td>
+      <td>67.0</td>
+      <td>1</td>
     </tr>
     
     <tr>
@@ -2082,6 +2113,14 @@ permalink: /data/
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
         <th>Lookup Row</th>
+      </tr>
+      
+      <tr>
+        <td>Davison Art Center, Wesleyan University</td>
+        <td>100.0</td>
+        <td>67.0</td>
+        <td>67.0</td>
+        <td>81</td>
       </tr>
       
     </table>

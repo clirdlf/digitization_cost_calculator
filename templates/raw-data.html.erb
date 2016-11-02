@@ -141,7 +141,6 @@ permalink: /data/
       <% end %>
     </table>
   <% end %>
-
 </section>
 
 <section id="post_processing">
@@ -253,7 +252,7 @@ permalink: /data/
         Median
       </th> -->
     </tr>
-    <% @post_preparation_stats.each do |task, data| %>
+    <% @post_preparation_times.each do |task, data| %>
     <tr>
       <td><%= task.gsub('_', ' ').split.map(&:capitalize).join(' ') %></td>
       <td><%= "%0.1f" % data['average'] %></td>
@@ -264,7 +263,7 @@ permalink: /data/
     <% end %>
   </table>
 
-  <% @post_preparation_stats.each do |task, data| %>
+  <% @post_preparation_times.each do |task, data| %>
     <h3><%= task.gsub('_', ' ').split.map(&:capitalize).join(' ') %></h3>
 
     <table class="table">

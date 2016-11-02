@@ -119,7 +119,7 @@ def quality_control_stats
   # 51 => 57, 58
   # 52 => 59, 60
 
-  (2..@ws.num_rows - 1).each do |row|
+  (2..@ws.num_rows).each do |row|
 
     (55..59).step(2) do |column|
       unless @ws[row, column].empty?
@@ -175,6 +175,7 @@ def sub_hash_stats(hash)
     min = 0
     min = value['raw_times'].first[:time].to_f unless value['raw_times'].length == 0
     max = 0
+
     hash[key]['raw_times'].each do |instance|
       sum += instance[:normalized]
       min = instance[:normalized].to_f if instance[:normalized].to_f < min
@@ -257,7 +258,7 @@ def preparation_stats
   # 35 Supporting Material Time
   # 36 uuid %
   # 37 uuid time
-  (2..@ws.num_rows - 1).each do |row|
+  (2..@ws.num_rows).each do |row|
     (24..37).step(2) do |column|
       raw_header = clean_prep_header(@ws[1, column])
       # hash to put these values in
@@ -345,19 +346,7 @@ def normalize_time(percentage, time)
   100.0 * time.to_f / percentage.to_f
 end
 
-def post_preparation_stats
-  values = {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []}
-  @post_preparation_stats ||= {
-    'desorting' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
-    'rebinding' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
-    'refastening' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []}
-  }
-end
-
 def post_processing_times
-
-  values = {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []}
-
   @post_processing_times ||= {
     'alignment' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
     'background_removal' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
@@ -367,6 +356,56 @@ def post_processing_times
     'stitching' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
   }
 end
+
+def post_preparation_times
+  @post_preparation_times ||= {
+    'desorting' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
+    'rebinding' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
+    'refastening' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []}
+  }
+end
+
+def post_preparation_stats
+  post_preparation_times
+
+  # 79: Post-preparation-De-sorting
+  # 80: Post-preparation-Re-binding
+  # 81: Post-preparation-Re-fastening
+  # 82: Post-preparation.-De-sorting-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)
+  # 83: Post-preparation.-De-sorting-Minutes per 100 scans
+  # 84: Post-preparation.-Re-binding-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)
+  # 85: Post-preparation.-Re-binding-Minutes per 100 scans
+  # 86: Post-preparation.-Re-fastening-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)
+  # 87: Post-preparation.-Re-fastening-Minutes per 100 scans
+  (2..@ws.num_rows).each do |row|
+    (79..81).each do |column|
+      unless @ws[row, column].empty?
+        v = {
+          institution: @ws[row, 2],
+          percentage: @ws[row, column + 3],
+          time: @ws[row, column + 4],
+          normalized: normalize_time(@ws[row, column + 3], @ws[row, column + 4]),
+          row: row
+        }
+
+        case column
+        when 79
+          @post_preparation_times['desorting']['raw_times'] << v
+          break
+        when 80
+          @post_preparation_times['rebinding']['raw_times'] << v
+          break
+        when 81
+          @post_preparation_times['refastening']['raw_times'] << v
+          break
+        end
+
+      end
+    end
+  end
+  sub_hash_stats(@post_preparation_times)
+end
+
 
 def post_processing_stats
   post_processing_times
@@ -389,7 +428,7 @@ def post_processing_stats
   # 76: Post-processing-Cropping-Minutes per 100 scans
   # 77: Post-processing-Stitching-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)
   # 78: Post-processing-Stitching-Minutes per 100 scans
-  (2..@ws.num_rows - 1).each do |row|
+  (2..@ws.num_rows).each do |row|
     # TODO: bug in this logic to populate the arrays
     (67..78).step(2).each do |column|
       unless @ws[row, column].empty?
@@ -485,7 +524,7 @@ def metadata_stats
   # 98: Descriptive metadata creation-Level 3-Percent of scans on which process was performed (i.e., "20"; do not use the % sign)
   # 99: Descriptive metadata -Level 3-Minutes per 100 scans
 
-  (2..@ws.num_rows - 1).each do |row|
+  (2..@ws.num_rows).each do |row|
     (94..99).step(2).each do |column|
       unless @ws[row, column].empty?
         v = {
