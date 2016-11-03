@@ -7,7 +7,7 @@ permalink: /data/
 <h2>Image Capture Stastics</h2>
 <table class="table">
   <tr>
-    <th>Image Capture Type</th>
+    <th>Image Capture Device Type</th>
     <th>Average</th>
     <th>Min</th>
     <th>Max</th>

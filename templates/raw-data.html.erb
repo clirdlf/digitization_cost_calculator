@@ -4,10 +4,10 @@ title: Raw Data
 permalink: /data/
 ---
 
-<h2>Scanner Stastics</h2>
+<h2>Image Capture Stastics</h2>
 <table class="table">
   <tr>
-    <th>Scanner Type</th>
+    <th>Image Capture Device Type</th>
     <th>Average</th>
     <th>Min</th>
     <th>Max</th>
@@ -27,13 +27,13 @@ permalink: /data/
   <% end %>
 </table>
 
-<h2>Raw Scanner Data</h2>
+<h2>Raw Image Capture Data</h2>
 <% @scanner_types.each do |scanner, data| %>
 <h3><%= scanner %></h3>
 <table class="table">
   <tr>
     <th>Institution</th>
-    <th>Time per 100 Items</th>
+    <th>Time per 100 Scans</th>
     <!-- <th>Lookup Row</th> -->
   </tr>
   <% data['raw_times'].each do |value| %>
@@ -48,7 +48,7 @@ permalink: /data/
 <!-- end scanner -->
 
 <section id="preparation_times">
-  <h2>Preparation Times</h2>
+  <h2>Preparation of Original Materials Times</h2>
   <table class="table">
     <tr>
       <th>Task</th>
