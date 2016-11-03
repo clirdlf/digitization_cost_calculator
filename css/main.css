@@ -159,6 +159,9 @@ span.round-tab:hover {
     position: absolute;
     left: 35%; } }
 
+.person {
+  padding-bottom: 20px; }
+
 .fa-question-circle {
   cursor: pointer;
   color: #337ab7; }

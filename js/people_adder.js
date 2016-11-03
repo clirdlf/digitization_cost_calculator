@@ -17,6 +17,10 @@
     currentEntry = $(this).parents('.person:first'),
     newEntry = $(currentEntry.clone()).appendTo(staff_div);
 
+    console.log('staff_div', staff_div);
+    console.log('currentEntry', currentEntry);
+    console.log('newEntry', newEntry);
+
     newEntry.attr('data-id', newid); // increment the data-id value
     newEntry.find('input').val(''); // reset values in input
 
@@ -24,7 +28,8 @@
     staff_div.find('.person:not(:last) .btn-add')
     .removeClass('btn-add').addClass('btn-remove')
     .removeClass('btn-success').addClass('btn-danger')
-    .html('<span class="glyphicon glyphicon-minus"></span>');
+    .html('<span class="glyphicon glyphicon-minus"></span> Remove Staff');
+
 
     // add to select options
     // TODO: need to also exclude from 'staff_type'
@@ -42,10 +47,11 @@
 
     // read the values
     var id = $(this).data('id'),
-    name = currentEntry.children('.staff_name').val(),
-    type = currentEntry.children('select.type').find(":selected").val(),
-    rate = currentEntry.children('.rate').val(),
-    benefits = currentEntry.children('.benefits').val();
+    // name = currentEntry.children('.staff_name').val(),
+    name = currentEntry.find('.staff_name').val(),
+    type = currentEntry.find('select.type').find(":selected").val(),
+    rate = currentEntry.find('.rate').val(),
+    benefits = currentEntry.find('.benefits').val();
     // Set the Person object
     var person = new Person(id, name, type, rate, benefits);
     // Add/edit person in array
