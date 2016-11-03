@@ -10,12 +10,13 @@ function Person(id, name, type, rate, benefits, hours_per_week) {
     this.id = parseInt(id);
     this.name = name;
     this.type = type;
+    this.set_rate = rate;
     this.rate = rate;
     this.slug = name.sluggify();
     this.benefits_percent = benefits / 100;
     this.hours_per_week = hpw;
 
-    if (this.type === 'salaried') {
+    if (this.type == 'salaried') {
         this.rate = parseFloat(calculate_hourly_rate(rate, hpw));
     } else {
         this.rate = parseFloat(rate);
