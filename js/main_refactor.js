@@ -80,14 +80,14 @@ people.push(empty_person);
 
     function summation_table(){
         var html = '<table id="exportTable" class="table table-striped">';
-        html += '<thead><tr><th>Task</th><th>Sub-Task</th><th>% Materials</th><th>Performed By</th><th>Time (minutes)</th><th>Cost</th></tr></thead>';
+        html += '<thead><tr><th>Task</th><th>Sub-Task</th><th>% Materials</th><th>Performed By</th><th>Time (in minutes)</th><th>Cost</th></tr></thead>';
         html += '<tbody>';
         if (estimate.capture_device && estimate.capture_by) {
             html += '<tr><td>Image Capture</td>';
             html += '<td>' + estimate.capture_device + '</td>';
             html += '<td>&nbsp;</td>';
             html += '<td>' + estimate.capture_by.name + '</td>';
-            html += '<td>' + estimate.capture_estimate().total_time.toFixed(2) + ' minutes</td>';
+            html += '<td>' + estimate.capture_estimate().total_time.toFixed(2) + '</td>';
             html += '<td>$' + estimate.capture_estimate().total.formatCurrency() + '</td>';
             html += '</tr>';
         }
@@ -115,7 +115,7 @@ people.push(empty_person);
         }
 
         html += '<tr><td colspan="4" class="text-right"><strong>Total:</strong></td>';
-        html += '<td><strong>' + estimate.total_estimate().total_time.toFixed(2) +' minutes</strong>';
+        html += '<td><strong>' + estimate.total_estimate().total_time.toFixed(2) +'</strong>';
         // html += ' (' + minutes_in_hours(estimate.total_estimate().total_time).toFixed(2) + ' hours)</td>';
         html += '<td><strong>$' + estimate.total_estimate().total.formatCurrency() + '</strong></td></tr>';
 
@@ -226,7 +226,7 @@ people.push(empty_person);
         row += '<td>' + obj.level + '</td>';
         row += '<td>' + obj.percentage + '</td>';
         row += '<td>' + obj.by.name + '</td>';
-        row += '<td>' + (costs.average).toFixed(2) + ' minutes</td>';
+        row += '<td>' + (costs.average).toFixed(2) + '</td>';
         row += '<td>' + costs.total_time.toFixed(2) + '</td>';
         row += '<td>$' + costs.total.formatCurrency() + '</td>';
         row += '</tr>';
@@ -247,7 +247,7 @@ people.push(empty_person);
         if(obj.by && obj.by.name){
             html += '<td>' + obj.by.name + '</td>';
         }
-        html += '<td>' + costs.total_time.toFixed(2) + ' minutes</td>';
+        html += '<td>' + costs.total_time.toFixed(2) + '</td>';
         html += '<td>$' + costs.total.formatCurrency() + '</td>';
 
         html += '</tr>';
@@ -269,7 +269,7 @@ people.push(empty_person);
                 costs.total = this.by.total_minute_rate * costs.total_time;
             }
 
-            row += '<td>' + costs.total_time.toFixed(2) + ' minutes</td>';
+            row += '<td>' + costs.total_time.toFixed(2) + '</td>';
             row += '<td>$' + costs.total.formatCurrency() + '</td>';
             html += row;
         });
@@ -299,7 +299,7 @@ people.push(empty_person);
                 costs.total = this.by.total_minute_rate * costs.total_time;
             }
 
-            row += '<td>' + costs.total_time.toFixed(2) + ' minutes</td>';
+            row += '<td>' + costs.total_time.toFixed(2) + '</td>';
             row += '<td>$' + costs.total.formatCurrency() + '</td>';
             row += '</tr>';
             content += row;
