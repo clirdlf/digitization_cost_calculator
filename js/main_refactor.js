@@ -267,6 +267,8 @@ people.push(empty_person);
                 row += '<td>' + this.by.name + '</td>';
                 costs.total_time = (this.percentage / 100.0) * this.average * estimate.scans_per_hundred();
                 costs.total = this.by.total_minute_rate * costs.total_time;
+            } else {
+                row += '<td>&nbsp;</td>';
             }
 
             row += '<td>' + costs.total_time.toFixed(2) + '</td>';
@@ -297,6 +299,8 @@ people.push(empty_person);
                 row += '<td>' + this.by.name + '</td>';
                 costs.total_time = (this.percentage / 100.0) * this.average * estimate.scans_per_hundred();
                 costs.total = this.by.total_minute_rate * costs.total_time;
+            } else {
+                row += '<td>&nbsp;</td>';
             }
 
             row += '<td>' + costs.total_time.toFixed(2) + '</td>';
