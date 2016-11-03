@@ -15,7 +15,7 @@
                 Condition Review
                 <i class="fa fa-question-circle" data-toggle="popover" title="Condition review" data-content="Reviewing materials scheduled to be scanned in order to determine whether they can be scanned as is, or require conservation treatment prior to scanning. Condition review involves a visual check of items, and some sort of flagging or removal of items that require attention. '% Materials' is the percent of scan source material that was visually checked -- not the percent that needed conservation attention."></i>
               </label>
-              <input type="number" min="0" max="100" class="form-control" id='condition_review_percent' placeholder="% Materials" />
+              <input type="number" step="0.01" min="0" max="100" class="form-control" id='condition_review_percent' placeholder="% Materials" />
             </div>
           </div>
           <div class="col-md-6">
@@ -33,7 +33,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="fastener_removal_percent">Fastener Removal <i class="fa fa-question-circle" data-toggle="popover" title="Fastener removal" data-content="Process of removing all staples, paper clips, or other fasteners from materials scheduled to be scanned. '% Materials' is the percent of scan source material from which fasteners actually had to be removed, not the percent of material reviewed for the presence of fasteners."></i></label>
-              <input type="number" min="0" max="100" class="form-control" id='fastener_removal_percent' placeholder="% Materials" />
+              <input type="number" step="0.01" min="0" max="100" class="form-control" id='fastener_removal_percent' placeholder="% Materials" />
             </div>
           </div>
           <div class="col-md-6">
@@ -51,7 +51,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="sort_materials_into_items_percent">Sorting Materials Into Items <i class="fa fa-question-circle" data-toggle="popover" title="Sorting materials into items" data-content="The process of sorting materials into groupings of unique items in preparation for digitization (for example, grouping five pages that comprise a letter together). '% Materials' is the  the number of items divided by the number of scans."></i></label>
-              <input type="number" min="0" max="100" class="form-control" id='sort_materials_into_items_percent' placeholder="% Materials" />
+              <input type="number" step="0.01" min="0" max="100" class="form-control" id='sort_materials_into_items_percent' placeholder="% Materials" />
             </div>
           </div>
           <div class="col-md-6">
@@ -69,7 +69,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="rights_review_percent">Rights Review <i class="fa fa-question-circle" data-toggle="popover" title="Rights review" data-content="This includes both intellectual property (IP) review and privacy review. IP review is the process of examining materials prior to scanning to identify items that remain under copyright protection. Privacy review is the process of examining materials prior to scanning to detect private information such as social security numbers, student records, and medical records. '% Materials' is the percent of scan source material that was visually checked -- not the percent found to have rights issues."></i></label>
-              <input type="number" min="0" max="100" class="form-control" id='rights_review_percent' placeholder="% Materials" />
+              <input type="number" step="0.01" min="0" max="100" class="form-control" id='rights_review_percent' placeholder="% Materials" />
             </div>
           </div>
           <div class="col-md-6">
@@ -83,13 +83,13 @@
             </div>
           </div>
         </div>
-        
+
         {% comment %}
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
               <label for="supporting_percent">Supporting <i class="fa fa-question-circle" data-toggle="popover" title="Supporting" data-content="Process where the physical support of the original material may be required, such as for bound volumes with detached spines or loose joints, and also for tight bindings that open less than 90 degrees. '% Material' is the percent of scan source material that actually had to be supported, not that was reviewed for supporting needs."></i></label>
-              <input type="number" min="0" max="100" class="form-control" id='supporting_percent' placeholder="% Materials" />
+              <input type="number" step="0.01" min="0" max="100" class="form-control" id='supporting_percent' placeholder="% Materials" />
             </div>
           </div>
           <div class="col-md-6">
@@ -107,7 +107,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="unique_id_percent">Unique Identifier Assignment <i class="fa fa-question-circle" data-toggle="popover" title="Unique identifier assignment" data-content="The assignment of a unique ID to physical objects prior to digitization to serve as an unambiguous link from the original object to their digital surrogates (and associated metadata). This link helps to facilitate all steps in the digitization workflow, and assists in the long-term management of the objects. '% Materials' is the number of unique IDs assigned to source material divided by the number of scans (20 IDs assigned among material that will produce 100 scans = 20%)."></i></label>
-              <input type="number" min="0" max="100" class="form-control" id='unique_id_percent' placeholder="% Materials" />
+              <input type="number" step="0.01" min="0" max="100" class="form-control" id='unique_id_percent' placeholder="% Materials" />
             </div>
           </div>
           <div class="col-md-6">
@@ -127,7 +127,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="disbinding_percent">Disbinding <i class="fa fa-question-circle" data-toggle="popover" title="Disbinding" data-content="Disbinding is the process of unsecuring bound leaves. '% Materials' is the percent of scan source material that required disbinding."></i></label>
-              <input type="number" min="0" max="100" class="form-control" id='disbinding_percent' placeholder="% Materials" />
+              <input type="number" step="0.01" min="0" max="100" class="form-control" id='disbinding_percent' placeholder="% Materials" />
             </div>
           </div>
           <div class="col-md-6">
@@ -145,7 +145,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="flattening_percent">Flattening <i class="fa fa-question-circle" data-toggle="popover" title="Flattening" data-content="Source material may be rolled or material may be obscured by a fold or crease. '% Material' is the percent of scan source material that actually had to be flattened, not that was reviewed for flattening needs."></i></label>
-              <input type="number" min="0" max="100" class="form-control" id='flattening_percent' placeholder="% Materials" />
+              <input type="number" step="0.01" min="0" max="100" class="form-control" id='flattening_percent' placeholder="% Materials" />
             </div>
           </div>
           <div class="col-md-6">
