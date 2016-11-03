@@ -74,109 +74,109 @@ permalink: /data/
   <tr>
     <th>Institution</th>
     <th>Time per 100 Items</th>
-    <th>Lookup Row</th>
+    <!-- <th>Lookup Row</th> -->
   </tr>
   
   <tr>
     <td>Metropolitan New York Library Council (METRO)</td>
     <td>214.5</td>
-    <td>2</td>
+    <!-- <td>2</td> -->
   </tr>
   
   <tr>
     <td>University of Kansas Libraries</td>
     <td>105</td>
-    <td>4</td>
+    <!-- <td>4</td> -->
   </tr>
   
   <tr>
     <td>University of Richmond Law Library</td>
     <td>133</td>
-    <td>11</td>
+    <!-- <td>11</td> -->
   </tr>
   
   <tr>
     <td>Loyola University New Orleans</td>
     <td>95</td>
-    <td>13</td>
+    <!-- <td>13</td> -->
   </tr>
   
   <tr>
     <td>Metropolitan New York Library Council (METRO)</td>
     <td>201</td>
-    <td>16</td>
+    <!-- <td>16</td> -->
   </tr>
   
   <tr>
     <td>University of South Carolina Libraries</td>
     <td>183</td>
-    <td>18</td>
+    <!-- <td>18</td> -->
   </tr>
   
   <tr>
     <td>University of South Carolina Libraries</td>
     <td>246</td>
-    <td>19</td>
+    <!-- <td>19</td> -->
   </tr>
   
   <tr>
     <td>University of Wisconsin-Madison</td>
     <td>160</td>
-    <td>24</td>
+    <!-- <td>24</td> -->
   </tr>
   
   <tr>
     <td>University of California Berkeley</td>
     <td>325</td>
-    <td>25</td>
+    <!-- <td>25</td> -->
   </tr>
   
   <tr>
     <td>Case Western Reserve University</td>
     <td>125</td>
-    <td>30</td>
+    <!-- <td>30</td> -->
   </tr>
   
   <tr>
     <td>Case Western Reserve University</td>
     <td>275</td>
-    <td>31</td>
+    <!-- <td>31</td> -->
   </tr>
   
   <tr>
     <td>Case Western Reserve University</td>
     <td>96.8</td>
-    <td>33</td>
+    <!-- <td>33</td> -->
   </tr>
   
   <tr>
     <td>Center for Western Studies - Augustana University</td>
     <td>270</td>
-    <td>57</td>
+    <!-- <td>57</td> -->
   </tr>
   
   <tr>
     <td>Northwestern University Library</td>
     <td>310</td>
-    <td>63</td>
+    <!-- <td>63</td> -->
   </tr>
   
   <tr>
     <td>University of Tennessee, Knoxville</td>
     <td>24.7</td>
-    <td>67</td>
+    <!-- <td>67</td> -->
   </tr>
   
   <tr>
     <td>University of Tennessee Knoxville</td>
     <td>379</td>
-    <td>68</td>
+    <!-- <td>68</td> -->
   </tr>
   
   <tr>
     <td>Center for Jewish History</td>
     <td>248.3</td>
-    <td>72</td>
+    <!-- <td>72</td> -->
   </tr>
   
 </table>
@@ -186,55 +186,55 @@ permalink: /data/
   <tr>
     <th>Institution</th>
     <th>Time per 100 Items</th>
-    <th>Lookup Row</th>
+    <!-- <th>Lookup Row</th> -->
   </tr>
   
   <tr>
     <td>University of Kansas Libraries</td>
     <td>23</td>
-    <td>5</td>
+    <!-- <td>5</td> -->
   </tr>
   
   <tr>
     <td>Chemical Heritage Foundation</td>
     <td>110</td>
-    <td>8</td>
+    <!-- <td>8</td> -->
   </tr>
   
   <tr>
     <td>Chemical Heritage Foundation</td>
     <td>200</td>
-    <td>12</td>
+    <!-- <td>12</td> -->
   </tr>
   
   <tr>
     <td>Harvard University</td>
     <td>120</td>
-    <td>39</td>
+    <!-- <td>39</td> -->
   </tr>
   
   <tr>
     <td>University of Virginia</td>
     <td>67</td>
-    <td>40</td>
+    <!-- <td>40</td> -->
   </tr>
   
   <tr>
     <td>University of Virginia</td>
     <td>78</td>
-    <td>41</td>
+    <!-- <td>41</td> -->
   </tr>
   
   <tr>
     <td>Smithsonian Libraries</td>
     <td>60</td>
-    <td>45</td>
+    <!-- <td>45</td> -->
   </tr>
   
   <tr>
     <td>Smithsonian Libraries</td>
     <td>11</td>
-    <td>48</td>
+    <!-- <td>48</td> -->
   </tr>
   
 </table>
@@ -244,73 +244,73 @@ permalink: /data/
   <tr>
     <th>Institution</th>
     <th>Time per 100 Items</th>
-    <th>Lookup Row</th>
+    <!-- <th>Lookup Row</th> -->
   </tr>
   
   <tr>
     <td>University of Kansas Libraries</td>
     <td>22</td>
-    <td>6</td>
+    <!-- <td>6</td> -->
   </tr>
   
   <tr>
     <td>University of South Carolina Libraries</td>
     <td>66</td>
-    <td>20</td>
+    <!-- <td>20</td> -->
   </tr>
   
   <tr>
     <td>Ohio History Connection</td>
     <td>60</td>
-    <td>23</td>
+    <!-- <td>23</td> -->
   </tr>
   
   <tr>
     <td>Case Western Reserve University</td>
     <td>100</td>
-    <td>32</td>
+    <!-- <td>32</td> -->
   </tr>
   
   <tr>
     <td>University of Texas at San Antonio</td>
     <td>73.17</td>
-    <td>42</td>
+    <!-- <td>42</td> -->
   </tr>
   
   <tr>
     <td>University of Florida, George A. Smathers Libraries</td>
     <td>41</td>
-    <td>46</td>
+    <!-- <td>46</td> -->
   </tr>
   
   <tr>
     <td>Kansas State University Libraries</td>
     <td>24</td>
-    <td>53</td>
+    <!-- <td>53</td> -->
   </tr>
   
   <tr>
     <td>McGill University Library</td>
     <td>26.29</td>
-    <td>58</td>
+    <!-- <td>58</td> -->
   </tr>
   
   <tr>
     <td>Northwestern University Library</td>
     <td>40</td>
-    <td>61</td>
+    <!-- <td>61</td> -->
   </tr>
   
   <tr>
     <td>Duke University Libraries</td>
     <td>66.66</td>
-    <td>74</td>
+    <!-- <td>74</td> -->
   </tr>
   
   <tr>
     <td>Triangle Research Libraries Network</td>
     <td>63.76</td>
-    <td>75</td>
+    <!-- <td>75</td> -->
   </tr>
   
 </table>
@@ -320,25 +320,25 @@ permalink: /data/
   <tr>
     <th>Institution</th>
     <th>Time per 100 Items</th>
-    <th>Lookup Row</th>
+    <!-- <th>Lookup Row</th> -->
   </tr>
   
   <tr>
     <td>University of Kansas Libraries</td>
     <td>1</td>
-    <td>7</td>
+    <!-- <td>7</td> -->
   </tr>
   
   <tr>
     <td>Northwestern University Library</td>
     <td>1.5</td>
-    <td>62</td>
+    <!-- <td>62</td> -->
   </tr>
   
   <tr>
     <td>University of Tennessee, Knoxville</td>
     <td>13.6</td>
-    <td>69</td>
+    <!-- <td>69</td> -->
   </tr>
   
 </table>
@@ -348,97 +348,97 @@ permalink: /data/
   <tr>
     <th>Institution</th>
     <th>Time per 100 Items</th>
-    <th>Lookup Row</th>
+    <!-- <th>Lookup Row</th> -->
   </tr>
   
   <tr>
     <td>Wake Forest University</td>
     <td>88</td>
-    <td>22</td>
+    <!-- <td>22</td> -->
   </tr>
   
   <tr>
     <td>University of California Berkeley</td>
     <td>42</td>
-    <td>26</td>
+    <!-- <td>26</td> -->
   </tr>
   
   <tr>
     <td>University of California Berkeley</td>
     <td>17</td>
-    <td>27</td>
+    <!-- <td>27</td> -->
   </tr>
   
   <tr>
     <td>University of California Berkeley</td>
     <td>33.5</td>
-    <td>28</td>
+    <!-- <td>28</td> -->
   </tr>
   
   <tr>
     <td>University of California Berkeley</td>
     <td>385</td>
-    <td>29</td>
+    <!-- <td>29</td> -->
   </tr>
   
   <tr>
     <td>Harvard University</td>
     <td>24</td>
-    <td>37</td>
+    <!-- <td>37</td> -->
   </tr>
   
   <tr>
     <td>Harvard University</td>
     <td>50</td>
-    <td>38</td>
+    <!-- <td>38</td> -->
   </tr>
   
   <tr>
     <td>Smithsonian Libraries</td>
     <td>4</td>
-    <td>47</td>
+    <!-- <td>47</td> -->
   </tr>
   
   <tr>
     <td>University of Florida, George A. Smathers Libraries</td>
     <td>34.74</td>
-    <td>49</td>
+    <!-- <td>49</td> -->
   </tr>
   
   <tr>
     <td>Center for Jewish History</td>
     <td>33.58</td>
-    <td>50</td>
+    <!-- <td>50</td> -->
   </tr>
   
   <tr>
     <td>Center for Jewish History</td>
     <td>30.6</td>
-    <td>51</td>
+    <!-- <td>51</td> -->
   </tr>
   
   <tr>
     <td>Northwestern University Library</td>
     <td>8</td>
-    <td>60</td>
+    <!-- <td>60</td> -->
   </tr>
   
   <tr>
     <td>Center for Jewish History</td>
     <td>80.21</td>
-    <td>71</td>
+    <!-- <td>71</td> -->
   </tr>
   
   <tr>
     <td>Wesleyan University</td>
     <td>64</td>
-    <td>80</td>
+    <!-- <td>80</td> -->
   </tr>
   
   <tr>
     <td>Davison Art Center, Wesleyan University</td>
     <td>152</td>
-    <td>81</td>
+    <!-- <td>81</td> -->
   </tr>
   
 </table>
@@ -448,25 +448,25 @@ permalink: /data/
   <tr>
     <th>Institution</th>
     <th>Time per 100 Items</th>
-    <th>Lookup Row</th>
+    <!-- <th>Lookup Row</th> -->
   </tr>
   
   <tr>
     <td>Northern Kentucky University</td>
     <td>82.5</td>
-    <td>54</td>
+    <!-- <td>54</td> -->
   </tr>
   
   <tr>
     <td>Northern Kentucky University</td>
     <td>75</td>
-    <td>55</td>
+    <!-- <td>55</td> -->
   </tr>
   
   <tr>
     <td>Northwestern University Library</td>
     <td>370</td>
-    <td>64</td>
+    <!-- <td>64</td> -->
   </tr>
   
 </table>
@@ -546,7 +546,7 @@ permalink: /data/
         <th>Percentage</th>
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
-        <th>Lookup Row</th>
+        <!-- <th>Lookup Row</th> -->
       </tr>
       
       <tr>
@@ -554,7 +554,7 @@ permalink: /data/
         <td>100.0</td>
         <td>10.0</td>
         <td>10.0</td>
-        <td>37</td>
+        <!-- <td>37</td> -->
       </tr>
       
       <tr>
@@ -562,7 +562,7 @@ permalink: /data/
         <td>50.0</td>
         <td>8.0</td>
         <td>16.0</td>
-        <td>38</td>
+        <!-- <td>38</td> -->
       </tr>
       
       <tr>
@@ -570,7 +570,7 @@ permalink: /data/
         <td>20.0</td>
         <td>4.0</td>
         <td>20.0</td>
-        <td>45</td>
+        <!-- <td>45</td> -->
       </tr>
       
       <tr>
@@ -578,7 +578,7 @@ permalink: /data/
         <td>100.0</td>
         <td>2.6</td>
         <td>2.6</td>
-        <td>78</td>
+        <!-- <td>78</td> -->
       </tr>
       
     </table>
@@ -591,7 +591,7 @@ permalink: /data/
         <th>Percentage</th>
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
-        <th>Lookup Row</th>
+        <!-- <th>Lookup Row</th> -->
       </tr>
       
     </table>
@@ -604,7 +604,7 @@ permalink: /data/
         <th>Percentage</th>
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
-        <th>Lookup Row</th>
+        <!-- <th>Lookup Row</th> -->
       </tr>
       
       <tr>
@@ -612,7 +612,7 @@ permalink: /data/
         <td>75.0</td>
         <td>26.0</td>
         <td>34.7</td>
-        <td>11</td>
+        <!-- <td>11</td> -->
       </tr>
       
       <tr>
@@ -620,7 +620,7 @@ permalink: /data/
         <td>100.0</td>
         <td>10.0</td>
         <td>10.0</td>
-        <td>24</td>
+        <!-- <td>24</td> -->
       </tr>
       
       <tr>
@@ -628,7 +628,7 @@ permalink: /data/
         <td>11.0</td>
         <td>4.5</td>
         <td>40.6</td>
-        <td>50</td>
+        <!-- <td>50</td> -->
       </tr>
       
     </table>
@@ -641,7 +641,7 @@ permalink: /data/
         <th>Percentage</th>
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
-        <th>Lookup Row</th>
+        <!-- <th>Lookup Row</th> -->
       </tr>
       
     </table>
@@ -654,7 +654,7 @@ permalink: /data/
         <th>Percentage</th>
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
-        <th>Lookup Row</th>
+        <!-- <th>Lookup Row</th> -->
       </tr>
       
       <tr>
@@ -662,7 +662,7 @@ permalink: /data/
         <td>100.0</td>
         <td>4.3</td>
         <td>4.3</td>
-        <td>71</td>
+        <!-- <td>71</td> -->
       </tr>
       
       <tr>
@@ -670,7 +670,7 @@ permalink: /data/
         <td>100.0</td>
         <td>5.0</td>
         <td>5.0</td>
-        <td>79</td>
+        <!-- <td>79</td> -->
       </tr>
       
     </table>
@@ -683,7 +683,7 @@ permalink: /data/
         <th>Percentage</th>
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
-        <th>Lookup Row</th>
+        <!-- <th>Lookup Row</th> -->
       </tr>
       
       <tr>
@@ -691,7 +691,7 @@ permalink: /data/
         <td>100.0</td>
         <td>15.0</td>
         <td>15.0</td>
-        <td>73</td>
+        <!-- <td>73</td> -->
       </tr>
       
       <tr>
@@ -699,7 +699,7 @@ permalink: /data/
         <td>100.0</td>
         <td>70.0</td>
         <td>70.0</td>
-        <td>81</td>
+        <!-- <td>81</td> -->
       </tr>
       
     </table>
@@ -755,7 +755,7 @@ permalink: /data/
         <th>Percentage</th>
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
-        <th>Lookup Row</th>
+        <!-- <th>Lookup Row</th> -->
       </tr>
       
       <tr>
@@ -763,7 +763,7 @@ permalink: /data/
         <td>100.0</td>
         <td>20.0</td>
         <td>20.0</td>
-        <td>5</td>
+        <!-- <td>5</td> -->
       </tr>
       
       <tr>
@@ -771,7 +771,7 @@ permalink: /data/
         <td>100.0</td>
         <td>4.0</td>
         <td>4.0</td>
-        <td>7</td>
+        <!-- <td>7</td> -->
       </tr>
       
       <tr>
@@ -779,7 +779,7 @@ permalink: /data/
         <td>100.0</td>
         <td>25.4</td>
         <td>25.4</td>
-        <td>30</td>
+        <!-- <td>30</td> -->
       </tr>
       
       <tr>
@@ -787,7 +787,7 @@ permalink: /data/
         <td>100.0</td>
         <td>29.0</td>
         <td>29.0</td>
-        <td>33</td>
+        <!-- <td>33</td> -->
       </tr>
       
       <tr>
@@ -795,7 +795,7 @@ permalink: /data/
         <td>100.0</td>
         <td>166.7</td>
         <td>166.7</td>
-        <td>34</td>
+        <!-- <td>34</td> -->
       </tr>
       
       <tr>
@@ -803,7 +803,7 @@ permalink: /data/
         <td>100.0</td>
         <td>81.0</td>
         <td>81.0</td>
-        <td>40</td>
+        <!-- <td>40</td> -->
       </tr>
       
       <tr>
@@ -811,7 +811,7 @@ permalink: /data/
         <td>100.0</td>
         <td>49.0</td>
         <td>49.0</td>
-        <td>41</td>
+        <!-- <td>41</td> -->
       </tr>
       
       <tr>
@@ -819,7 +819,7 @@ permalink: /data/
         <td>75.0</td>
         <td>88.2</td>
         <td>117.7</td>
-        <td>42</td>
+        <!-- <td>42</td> -->
       </tr>
       
       <tr>
@@ -827,7 +827,7 @@ permalink: /data/
         <td>100.0</td>
         <td>1.2</td>
         <td>1.2</td>
-        <td>45</td>
+        <!-- <td>45</td> -->
       </tr>
       
       <tr>
@@ -835,7 +835,7 @@ permalink: /data/
         <td>100.0</td>
         <td>26.0</td>
         <td>26.0</td>
-        <td>50</td>
+        <!-- <td>50</td> -->
       </tr>
       
       <tr>
@@ -843,7 +843,7 @@ permalink: /data/
         <td>100.0</td>
         <td>40.8</td>
         <td>40.8</td>
-        <td>51</td>
+        <!-- <td>51</td> -->
       </tr>
       
       <tr>
@@ -851,7 +851,7 @@ permalink: /data/
         <td>100.0</td>
         <td>16.0</td>
         <td>16.0</td>
-        <td>53</td>
+        <!-- <td>53</td> -->
       </tr>
       
       <tr>
@@ -859,7 +859,7 @@ permalink: /data/
         <td>100.0</td>
         <td>12.2</td>
         <td>12.2</td>
-        <td>57</td>
+        <!-- <td>57</td> -->
       </tr>
       
       <tr>
@@ -867,7 +867,7 @@ permalink: /data/
         <td>100.0</td>
         <td>30.0</td>
         <td>30.0</td>
-        <td>66</td>
+        <!-- <td>66</td> -->
       </tr>
       
       <tr>
@@ -875,7 +875,7 @@ permalink: /data/
         <td>100.0</td>
         <td>22.0</td>
         <td>22.0</td>
-        <td>71</td>
+        <!-- <td>71</td> -->
       </tr>
       
     </table>
@@ -888,7 +888,7 @@ permalink: /data/
         <th>Percentage</th>
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
-        <th>Lookup Row</th>
+        <!-- <th>Lookup Row</th> -->
       </tr>
       
       <tr>
@@ -896,7 +896,7 @@ permalink: /data/
         <td>100.0</td>
         <td>50.0</td>
         <td>50.0</td>
-        <td>24</td>
+        <!-- <td>24</td> -->
       </tr>
       
       <tr>
@@ -904,7 +904,7 @@ permalink: /data/
         <td>90.0</td>
         <td>10.0</td>
         <td>11.1</td>
-        <td>58</td>
+        <!-- <td>58</td> -->
       </tr>
       
       <tr>
@@ -912,7 +912,7 @@ permalink: /data/
         <td>100.0</td>
         <td>75.0</td>
         <td>75.0</td>
-        <td>70</td>
+        <!-- <td>70</td> -->
       </tr>
       
       <tr>
@@ -920,7 +920,7 @@ permalink: /data/
         <td>100.0</td>
         <td>294.0</td>
         <td>294.0</td>
-        <td>81</td>
+        <!-- <td>81</td> -->
       </tr>
       
     </table>
@@ -933,7 +933,7 @@ permalink: /data/
         <th>Percentage</th>
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
-        <th>Lookup Row</th>
+        <!-- <th>Lookup Row</th> -->
       </tr>
       
       <tr>
@@ -941,7 +941,7 @@ permalink: /data/
         <td>100.0</td>
         <td>40.0</td>
         <td>40.0</td>
-        <td>8</td>
+        <!-- <td>8</td> -->
       </tr>
       
       <tr>
@@ -949,7 +949,7 @@ permalink: /data/
         <td>100.0</td>
         <td>113.0</td>
         <td>113.0</td>
-        <td>9</td>
+        <!-- <td>9</td> -->
       </tr>
       
       <tr>
@@ -957,7 +957,7 @@ permalink: /data/
         <td>100.0</td>
         <td>50.0</td>
         <td>50.0</td>
-        <td>12</td>
+        <!-- <td>12</td> -->
       </tr>
       
       <tr>
@@ -965,7 +965,7 @@ permalink: /data/
         <td>100.0</td>
         <td>51.9</td>
         <td>51.9</td>
-        <td>52</td>
+        <!-- <td>52</td> -->
       </tr>
       
     </table>
@@ -1045,7 +1045,7 @@ permalink: /data/
         <th>Percentage</th>
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
-        <th>Lookup Row</th>
+        <!-- <th>Lookup Row</th> -->
       </tr>
       
       <tr>
@@ -1053,7 +1053,7 @@ permalink: /data/
         <td>100.0</td>
         <td>30.0</td>
         <td>30.0</td>
-        <td>4</td>
+        <!-- <td>4</td> -->
       </tr>
       
       <tr>
@@ -1061,7 +1061,7 @@ permalink: /data/
         <td>100.0</td>
         <td>20.0</td>
         <td>20.0</td>
-        <td>5</td>
+        <!-- <td>5</td> -->
       </tr>
       
       <tr>
@@ -1069,7 +1069,7 @@ permalink: /data/
         <td>100.0</td>
         <td>11.0</td>
         <td>11.0</td>
-        <td>6</td>
+        <!-- <td>6</td> -->
       </tr>
       
       <tr>
@@ -1077,7 +1077,7 @@ permalink: /data/
         <td>100.0</td>
         <td>20.0</td>
         <td>20.0</td>
-        <td>8</td>
+        <!-- <td>8</td> -->
       </tr>
       
       <tr>
@@ -1085,7 +1085,7 @@ permalink: /data/
         <td>100.0</td>
         <td>19.0</td>
         <td>19.0</td>
-        <td>9</td>
+        <!-- <td>9</td> -->
       </tr>
       
       <tr>
@@ -1093,7 +1093,7 @@ permalink: /data/
         <td>100.0</td>
         <td>19.0</td>
         <td>19.0</td>
-        <td>12</td>
+        <!-- <td>12</td> -->
       </tr>
       
       <tr>
@@ -1101,7 +1101,7 @@ permalink: /data/
         <td>100.0</td>
         <td>10.7</td>
         <td>10.7</td>
-        <td>31</td>
+        <!-- <td>31</td> -->
       </tr>
       
       <tr>
@@ -1109,7 +1109,7 @@ permalink: /data/
         <td>100.0</td>
         <td>28.0</td>
         <td>28.0</td>
-        <td>45</td>
+        <!-- <td>45</td> -->
       </tr>
       
       <tr>
@@ -1117,7 +1117,7 @@ permalink: /data/
         <td>100.0</td>
         <td>0.3</td>
         <td>0.3</td>
-        <td>47</td>
+        <!-- <td>47</td> -->
       </tr>
       
       <tr>
@@ -1125,7 +1125,7 @@ permalink: /data/
         <td>100.0</td>
         <td>12.0</td>
         <td>12.0</td>
-        <td>48</td>
+        <!-- <td>48</td> -->
       </tr>
       
       <tr>
@@ -1133,7 +1133,7 @@ permalink: /data/
         <td>100.0</td>
         <td>30.0</td>
         <td>30.0</td>
-        <td>57</td>
+        <!-- <td>57</td> -->
       </tr>
       
       <tr>
@@ -1141,7 +1141,7 @@ permalink: /data/
         <td>100.0</td>
         <td>27.5</td>
         <td>27.5</td>
-        <td>65</td>
+        <!-- <td>65</td> -->
       </tr>
       
       <tr>
@@ -1149,7 +1149,7 @@ permalink: /data/
         <td>59.0</td>
         <td>53.0</td>
         <td>89.8</td>
-        <td>68</td>
+        <!-- <td>68</td> -->
       </tr>
       
       <tr>
@@ -1157,7 +1157,7 @@ permalink: /data/
         <td>70.0</td>
         <td>19.0</td>
         <td>27.1</td>
-        <td>80</td>
+        <!-- <td>80</td> -->
       </tr>
       
       <tr>
@@ -1165,7 +1165,7 @@ permalink: /data/
         <td>99.0</td>
         <td>57.0</td>
         <td>57.6</td>
-        <td>81</td>
+        <!-- <td>81</td> -->
       </tr>
       
     </table>
@@ -1178,7 +1178,7 @@ permalink: /data/
         <th>Percentage</th>
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
-        <th>Lookup Row</th>
+        <!-- <th>Lookup Row</th> -->
       </tr>
       
     </table>
@@ -1191,7 +1191,7 @@ permalink: /data/
         <th>Percentage</th>
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
-        <th>Lookup Row</th>
+        <!-- <th>Lookup Row</th> -->
       </tr>
       
       <tr>
@@ -1199,7 +1199,7 @@ permalink: /data/
         <td>100.0</td>
         <td>11.0</td>
         <td>11.0</td>
-        <td>6</td>
+        <!-- <td>6</td> -->
       </tr>
       
       <tr>
@@ -1207,7 +1207,7 @@ permalink: /data/
         <td>20.0</td>
         <td>5.0</td>
         <td>25.0</td>
-        <td>58</td>
+        <!-- <td>58</td> -->
       </tr>
       
     </table>
@@ -1220,7 +1220,7 @@ permalink: /data/
         <th>Percentage</th>
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
-        <th>Lookup Row</th>
+        <!-- <th>Lookup Row</th> -->
       </tr>
       
       <tr>
@@ -1228,7 +1228,7 @@ permalink: /data/
         <td>25.0</td>
         <td>60.0</td>
         <td>240.0</td>
-        <td>3</td>
+        <!-- <td>3</td> -->
       </tr>
       
       <tr>
@@ -1236,7 +1236,7 @@ permalink: /data/
         <td>10.0</td>
         <td>30.0</td>
         <td>300.0</td>
-        <td>37</td>
+        <!-- <td>37</td> -->
       </tr>
       
       <tr>
@@ -1244,7 +1244,7 @@ permalink: /data/
         <td>20.0</td>
         <td>20.0</td>
         <td>100.0</td>
-        <td>38</td>
+        <!-- <td>38</td> -->
       </tr>
       
       <tr>
@@ -1252,7 +1252,7 @@ permalink: /data/
         <td>100.0</td>
         <td>30.0</td>
         <td>30.0</td>
-        <td>39</td>
+        <!-- <td>39</td> -->
       </tr>
       
       <tr>
@@ -1260,7 +1260,7 @@ permalink: /data/
         <td>100.0</td>
         <td>14.2</td>
         <td>14.2</td>
-        <td>46</td>
+        <!-- <td>46</td> -->
       </tr>
       
       <tr>
@@ -1268,7 +1268,7 @@ permalink: /data/
         <td>100.0</td>
         <td>14.0</td>
         <td>14.0</td>
-        <td>49</td>
+        <!-- <td>49</td> -->
       </tr>
       
       <tr>
@@ -1276,7 +1276,7 @@ permalink: /data/
         <td>100.0</td>
         <td>45.0</td>
         <td>45.0</td>
-        <td>57</td>
+        <!-- <td>57</td> -->
       </tr>
       
       <tr>
@@ -1284,7 +1284,7 @@ permalink: /data/
         <td>100.0</td>
         <td>113.0</td>
         <td>113.0</td>
-        <td>70</td>
+        <!-- <td>70</td> -->
       </tr>
       
     </table>
@@ -1297,7 +1297,7 @@ permalink: /data/
         <th>Percentage</th>
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
-        <th>Lookup Row</th>
+        <!-- <th>Lookup Row</th> -->
       </tr>
       
       <tr>
@@ -1305,7 +1305,7 @@ permalink: /data/
         <td>100.0</td>
         <td>60.0</td>
         <td>60.0</td>
-        <td>3</td>
+        <!-- <td>3</td> -->
       </tr>
       
       <tr>
@@ -1313,7 +1313,7 @@ permalink: /data/
         <td>100.0</td>
         <td>30.0</td>
         <td>30.0</td>
-        <td>4</td>
+        <!-- <td>4</td> -->
       </tr>
       
       <tr>
@@ -1321,7 +1321,7 @@ permalink: /data/
         <td>100.0</td>
         <td>20.0</td>
         <td>20.0</td>
-        <td>5</td>
+        <!-- <td>5</td> -->
       </tr>
       
       <tr>
@@ -1329,7 +1329,7 @@ permalink: /data/
         <td>100.0</td>
         <td>20.0</td>
         <td>20.0</td>
-        <td>8</td>
+        <!-- <td>8</td> -->
       </tr>
       
       <tr>
@@ -1337,7 +1337,7 @@ permalink: /data/
         <td>100.0</td>
         <td>19.0</td>
         <td>19.0</td>
-        <td>9</td>
+        <!-- <td>9</td> -->
       </tr>
       
       <tr>
@@ -1345,7 +1345,7 @@ permalink: /data/
         <td>100.0</td>
         <td>19.0</td>
         <td>19.0</td>
-        <td>12</td>
+        <!-- <td>12</td> -->
       </tr>
       
       <tr>
@@ -1353,7 +1353,7 @@ permalink: /data/
         <td>100.0</td>
         <td>57.0</td>
         <td>57.0</td>
-        <td>18</td>
+        <!-- <td>18</td> -->
       </tr>
       
       <tr>
@@ -1361,7 +1361,7 @@ permalink: /data/
         <td>100.0</td>
         <td>47.5</td>
         <td>47.5</td>
-        <td>19</td>
+        <!-- <td>19</td> -->
       </tr>
       
       <tr>
@@ -1369,7 +1369,7 @@ permalink: /data/
         <td>100.0</td>
         <td>82.0</td>
         <td>82.0</td>
-        <td>24</td>
+        <!-- <td>24</td> -->
       </tr>
       
       <tr>
@@ -1377,7 +1377,7 @@ permalink: /data/
         <td>100.0</td>
         <td>19.0</td>
         <td>19.0</td>
-        <td>27</td>
+        <!-- <td>27</td> -->
       </tr>
       
       <tr>
@@ -1385,7 +1385,7 @@ permalink: /data/
         <td>100.0</td>
         <td>382.0</td>
         <td>382.0</td>
-        <td>29</td>
+        <!-- <td>29</td> -->
       </tr>
       
       <tr>
@@ -1393,7 +1393,7 @@ permalink: /data/
         <td>100.0</td>
         <td>1.0</td>
         <td>1.0</td>
-        <td>37</td>
+        <!-- <td>37</td> -->
       </tr>
       
       <tr>
@@ -1401,7 +1401,7 @@ permalink: /data/
         <td>100.0</td>
         <td>1.0</td>
         <td>1.0</td>
-        <td>38</td>
+        <!-- <td>38</td> -->
       </tr>
       
       <tr>
@@ -1409,7 +1409,7 @@ permalink: /data/
         <td>100.0</td>
         <td>31.0</td>
         <td>31.0</td>
-        <td>45</td>
+        <!-- <td>45</td> -->
       </tr>
       
       <tr>
@@ -1417,7 +1417,7 @@ permalink: /data/
         <td>100.0</td>
         <td>44.2</td>
         <td>44.2</td>
-        <td>46</td>
+        <!-- <td>46</td> -->
       </tr>
       
       <tr>
@@ -1425,7 +1425,7 @@ permalink: /data/
         <td>100.0</td>
         <td>0.8</td>
         <td>0.8</td>
-        <td>47</td>
+        <!-- <td>47</td> -->
       </tr>
       
       <tr>
@@ -1433,7 +1433,7 @@ permalink: /data/
         <td>100.0</td>
         <td>3.0</td>
         <td>3.0</td>
-        <td>48</td>
+        <!-- <td>48</td> -->
       </tr>
       
       <tr>
@@ -1441,7 +1441,7 @@ permalink: /data/
         <td>100.0</td>
         <td>44.0</td>
         <td>44.0</td>
-        <td>49</td>
+        <!-- <td>49</td> -->
       </tr>
       
       <tr>
@@ -1449,7 +1449,7 @@ permalink: /data/
         <td>100.0</td>
         <td>206.0</td>
         <td>206.0</td>
-        <td>57</td>
+        <!-- <td>57</td> -->
       </tr>
       
       <tr>
@@ -1457,7 +1457,7 @@ permalink: /data/
         <td>100.0</td>
         <td>5.0</td>
         <td>5.0</td>
-        <td>58</td>
+        <!-- <td>58</td> -->
       </tr>
       
       <tr>
@@ -1465,7 +1465,7 @@ permalink: /data/
         <td>59.0</td>
         <td>80.0</td>
         <td>135.6</td>
-        <td>68</td>
+        <!-- <td>68</td> -->
       </tr>
       
       <tr>
@@ -1473,7 +1473,7 @@ permalink: /data/
         <td>100.0</td>
         <td>58.0</td>
         <td>58.0</td>
-        <td>80</td>
+        <!-- <td>80</td> -->
       </tr>
       
       <tr>
@@ -1481,7 +1481,7 @@ permalink: /data/
         <td>100.0</td>
         <td>83.0</td>
         <td>83.0</td>
-        <td>81</td>
+        <!-- <td>81</td> -->
       </tr>
       
     </table>
@@ -1494,7 +1494,7 @@ permalink: /data/
         <th>Percentage</th>
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
-        <th>Lookup Row</th>
+        <!-- <th>Lookup Row</th> -->
       </tr>
       
     </table>
@@ -1550,7 +1550,7 @@ permalink: /data/
         <th>Percentage</th>
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
-        <th>Lookup Row</th>
+        <!-- <th>Lookup Row</th> -->
       </tr>
       
       <tr>
@@ -1558,7 +1558,7 @@ permalink: /data/
         <td>100.0</td>
         <td>90.0</td>
         <td>90.0</td>
-        <td>8</td>
+        <!-- <td>8</td> -->
       </tr>
       
       <tr>
@@ -1566,7 +1566,7 @@ permalink: /data/
         <td>100.0</td>
         <td>125.0</td>
         <td>125.0</td>
-        <td>9</td>
+        <!-- <td>9</td> -->
       </tr>
       
       <tr>
@@ -1574,7 +1574,7 @@ permalink: /data/
         <td>100.0</td>
         <td>150.0</td>
         <td>150.0</td>
-        <td>10</td>
+        <!-- <td>10</td> -->
       </tr>
       
       <tr>
@@ -1582,7 +1582,7 @@ permalink: /data/
         <td>100.0</td>
         <td>112.0</td>
         <td>112.0</td>
-        <td>12</td>
+        <!-- <td>12</td> -->
       </tr>
       
       <tr>
@@ -1590,7 +1590,7 @@ permalink: /data/
         <td>100.0</td>
         <td>74.0</td>
         <td>74.0</td>
-        <td>13</td>
+        <!-- <td>13</td> -->
       </tr>
       
       <tr>
@@ -1598,7 +1598,7 @@ permalink: /data/
         <td>100.0</td>
         <td>292.7</td>
         <td>292.7</td>
-        <td>14</td>
+        <!-- <td>14</td> -->
       </tr>
       
       <tr>
@@ -1606,7 +1606,7 @@ permalink: /data/
         <td>100.0</td>
         <td>683.0</td>
         <td>683.0</td>
-        <td>15</td>
+        <!-- <td>15</td> -->
       </tr>
       
       <tr>
@@ -1614,7 +1614,7 @@ permalink: /data/
         <td>100.0</td>
         <td>100.0</td>
         <td>100.0</td>
-        <td>17</td>
+        <!-- <td>17</td> -->
       </tr>
       
       <tr>
@@ -1622,7 +1622,7 @@ permalink: /data/
         <td>100.0</td>
         <td>226.0</td>
         <td>226.0</td>
-        <td>18</td>
+        <!-- <td>18</td> -->
       </tr>
       
       <tr>
@@ -1630,7 +1630,7 @@ permalink: /data/
         <td>0.2</td>
         <td>5.2</td>
         <td>2469.0</td>
-        <td>21</td>
+        <!-- <td>21</td> -->
       </tr>
       
       <tr>
@@ -1638,7 +1638,7 @@ permalink: /data/
         <td>100.0</td>
         <td>171.0</td>
         <td>171.0</td>
-        <td>24</td>
+        <!-- <td>24</td> -->
       </tr>
       
       <tr>
@@ -1646,7 +1646,7 @@ permalink: /data/
         <td>100.0</td>
         <td>119.3</td>
         <td>119.3</td>
-        <td>33</td>
+        <!-- <td>33</td> -->
       </tr>
       
       <tr>
@@ -1654,7 +1654,7 @@ permalink: /data/
         <td>100.0</td>
         <td>444.4</td>
         <td>444.4</td>
-        <td>34</td>
+        <!-- <td>34</td> -->
       </tr>
       
       <tr>
@@ -1662,7 +1662,7 @@ permalink: /data/
         <td>100.0</td>
         <td>500.0</td>
         <td>500.0</td>
-        <td>35</td>
+        <!-- <td>35</td> -->
       </tr>
       
       <tr>
@@ -1670,7 +1670,7 @@ permalink: /data/
         <td>100.0</td>
         <td>640.0</td>
         <td>640.0</td>
-        <td>36</td>
+        <!-- <td>36</td> -->
       </tr>
       
       <tr>
@@ -1678,7 +1678,7 @@ permalink: /data/
         <td>100.0</td>
         <td>280.0</td>
         <td>280.0</td>
-        <td>43</td>
+        <!-- <td>43</td> -->
       </tr>
       
       <tr>
@@ -1686,7 +1686,7 @@ permalink: /data/
         <td>100.0</td>
         <td>241.0</td>
         <td>241.0</td>
-        <td>44</td>
+        <!-- <td>44</td> -->
       </tr>
       
       <tr>
@@ -1694,7 +1694,7 @@ permalink: /data/
         <td>100.0</td>
         <td>666.7</td>
         <td>666.7</td>
-        <td>56</td>
+        <!-- <td>56</td> -->
       </tr>
       
       <tr>
@@ -1702,7 +1702,7 @@ permalink: /data/
         <td>100.0</td>
         <td>1683.0</td>
         <td>1683.0</td>
-        <td>57</td>
+        <!-- <td>57</td> -->
       </tr>
       
       <tr>
@@ -1710,7 +1710,7 @@ permalink: /data/
         <td>100.0</td>
         <td>593.4</td>
         <td>593.4</td>
-        <td>59</td>
+        <!-- <td>59</td> -->
       </tr>
       
     </table>
@@ -1723,7 +1723,7 @@ permalink: /data/
         <th>Percentage</th>
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
-        <th>Lookup Row</th>
+        <!-- <th>Lookup Row</th> -->
       </tr>
       
       <tr>
@@ -1731,7 +1731,7 @@ permalink: /data/
         <td>100.0</td>
         <td>90.0</td>
         <td>90.0</td>
-        <td>8</td>
+        <!-- <td>8</td> -->
       </tr>
       
       <tr>
@@ -1739,7 +1739,7 @@ permalink: /data/
         <td>100.0</td>
         <td>125.0</td>
         <td>125.0</td>
-        <td>9</td>
+        <!-- <td>9</td> -->
       </tr>
       
       <tr>
@@ -1747,7 +1747,7 @@ permalink: /data/
         <td>100.0</td>
         <td>150.0</td>
         <td>150.0</td>
-        <td>10</td>
+        <!-- <td>10</td> -->
       </tr>
       
       <tr>
@@ -1755,7 +1755,7 @@ permalink: /data/
         <td>100.0</td>
         <td>112.0</td>
         <td>112.0</td>
-        <td>12</td>
+        <!-- <td>12</td> -->
       </tr>
       
       <tr>
@@ -1763,7 +1763,7 @@ permalink: /data/
         <td>100.0</td>
         <td>74.0</td>
         <td>74.0</td>
-        <td>13</td>
+        <!-- <td>13</td> -->
       </tr>
       
       <tr>
@@ -1771,7 +1771,7 @@ permalink: /data/
         <td>100.0</td>
         <td>292.7</td>
         <td>292.7</td>
-        <td>14</td>
+        <!-- <td>14</td> -->
       </tr>
       
       <tr>
@@ -1779,7 +1779,7 @@ permalink: /data/
         <td>100.0</td>
         <td>683.0</td>
         <td>683.0</td>
-        <td>15</td>
+        <!-- <td>15</td> -->
       </tr>
       
       <tr>
@@ -1787,7 +1787,7 @@ permalink: /data/
         <td>100.0</td>
         <td>100.0</td>
         <td>100.0</td>
-        <td>17</td>
+        <!-- <td>17</td> -->
       </tr>
       
       <tr>
@@ -1795,7 +1795,7 @@ permalink: /data/
         <td>100.0</td>
         <td>226.0</td>
         <td>226.0</td>
-        <td>18</td>
+        <!-- <td>18</td> -->
       </tr>
       
       <tr>
@@ -1803,7 +1803,7 @@ permalink: /data/
         <td>0.2</td>
         <td>5.2</td>
         <td>2469.0</td>
-        <td>21</td>
+        <!-- <td>21</td> -->
       </tr>
       
       <tr>
@@ -1811,7 +1811,7 @@ permalink: /data/
         <td>100.0</td>
         <td>171.0</td>
         <td>171.0</td>
-        <td>24</td>
+        <!-- <td>24</td> -->
       </tr>
       
       <tr>
@@ -1819,7 +1819,7 @@ permalink: /data/
         <td>100.0</td>
         <td>119.3</td>
         <td>119.3</td>
-        <td>33</td>
+        <!-- <td>33</td> -->
       </tr>
       
       <tr>
@@ -1827,7 +1827,7 @@ permalink: /data/
         <td>100.0</td>
         <td>444.4</td>
         <td>444.4</td>
-        <td>34</td>
+        <!-- <td>34</td> -->
       </tr>
       
       <tr>
@@ -1835,7 +1835,7 @@ permalink: /data/
         <td>100.0</td>
         <td>500.0</td>
         <td>500.0</td>
-        <td>35</td>
+        <!-- <td>35</td> -->
       </tr>
       
       <tr>
@@ -1843,7 +1843,7 @@ permalink: /data/
         <td>100.0</td>
         <td>640.0</td>
         <td>640.0</td>
-        <td>36</td>
+        <!-- <td>36</td> -->
       </tr>
       
       <tr>
@@ -1851,7 +1851,7 @@ permalink: /data/
         <td>100.0</td>
         <td>280.0</td>
         <td>280.0</td>
-        <td>43</td>
+        <!-- <td>43</td> -->
       </tr>
       
       <tr>
@@ -1859,7 +1859,7 @@ permalink: /data/
         <td>100.0</td>
         <td>241.0</td>
         <td>241.0</td>
-        <td>44</td>
+        <!-- <td>44</td> -->
       </tr>
       
       <tr>
@@ -1867,7 +1867,7 @@ permalink: /data/
         <td>100.0</td>
         <td>666.7</td>
         <td>666.7</td>
-        <td>56</td>
+        <!-- <td>56</td> -->
       </tr>
       
       <tr>
@@ -1875,7 +1875,7 @@ permalink: /data/
         <td>100.0</td>
         <td>1683.0</td>
         <td>1683.0</td>
-        <td>57</td>
+        <!-- <td>57</td> -->
       </tr>
       
       <tr>
@@ -1883,7 +1883,7 @@ permalink: /data/
         <td>100.0</td>
         <td>593.4</td>
         <td>593.4</td>
-        <td>59</td>
+        <!-- <td>59</td> -->
       </tr>
       
     </table>
@@ -1896,7 +1896,7 @@ permalink: /data/
         <th>Percentage</th>
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
-        <th>Lookup Row</th>
+        <!-- <th>Lookup Row</th> -->
       </tr>
       
       <tr>
@@ -1904,7 +1904,7 @@ permalink: /data/
         <td>100.0</td>
         <td>90.0</td>
         <td>90.0</td>
-        <td>8</td>
+        <!-- <td>8</td> -->
       </tr>
       
       <tr>
@@ -1912,7 +1912,7 @@ permalink: /data/
         <td>100.0</td>
         <td>125.0</td>
         <td>125.0</td>
-        <td>9</td>
+        <!-- <td>9</td> -->
       </tr>
       
       <tr>
@@ -1920,7 +1920,7 @@ permalink: /data/
         <td>100.0</td>
         <td>150.0</td>
         <td>150.0</td>
-        <td>10</td>
+        <!-- <td>10</td> -->
       </tr>
       
       <tr>
@@ -1928,7 +1928,7 @@ permalink: /data/
         <td>100.0</td>
         <td>112.0</td>
         <td>112.0</td>
-        <td>12</td>
+        <!-- <td>12</td> -->
       </tr>
       
       <tr>
@@ -1936,7 +1936,7 @@ permalink: /data/
         <td>100.0</td>
         <td>74.0</td>
         <td>74.0</td>
-        <td>13</td>
+        <!-- <td>13</td> -->
       </tr>
       
       <tr>
@@ -1944,7 +1944,7 @@ permalink: /data/
         <td>100.0</td>
         <td>292.7</td>
         <td>292.7</td>
-        <td>14</td>
+        <!-- <td>14</td> -->
       </tr>
       
       <tr>
@@ -1952,7 +1952,7 @@ permalink: /data/
         <td>100.0</td>
         <td>683.0</td>
         <td>683.0</td>
-        <td>15</td>
+        <!-- <td>15</td> -->
       </tr>
       
       <tr>
@@ -1960,7 +1960,7 @@ permalink: /data/
         <td>100.0</td>
         <td>100.0</td>
         <td>100.0</td>
-        <td>17</td>
+        <!-- <td>17</td> -->
       </tr>
       
       <tr>
@@ -1968,7 +1968,7 @@ permalink: /data/
         <td>100.0</td>
         <td>226.0</td>
         <td>226.0</td>
-        <td>18</td>
+        <!-- <td>18</td> -->
       </tr>
       
       <tr>
@@ -1976,7 +1976,7 @@ permalink: /data/
         <td>0.2</td>
         <td>5.2</td>
         <td>2469.0</td>
-        <td>21</td>
+        <!-- <td>21</td> -->
       </tr>
       
       <tr>
@@ -1984,7 +1984,7 @@ permalink: /data/
         <td>100.0</td>
         <td>171.0</td>
         <td>171.0</td>
-        <td>24</td>
+        <!-- <td>24</td> -->
       </tr>
       
       <tr>
@@ -1992,7 +1992,7 @@ permalink: /data/
         <td>100.0</td>
         <td>119.3</td>
         <td>119.3</td>
-        <td>33</td>
+        <!-- <td>33</td> -->
       </tr>
       
       <tr>
@@ -2000,7 +2000,7 @@ permalink: /data/
         <td>100.0</td>
         <td>444.4</td>
         <td>444.4</td>
-        <td>34</td>
+        <!-- <td>34</td> -->
       </tr>
       
       <tr>
@@ -2008,7 +2008,7 @@ permalink: /data/
         <td>100.0</td>
         <td>500.0</td>
         <td>500.0</td>
-        <td>35</td>
+        <!-- <td>35</td> -->
       </tr>
       
       <tr>
@@ -2016,7 +2016,7 @@ permalink: /data/
         <td>100.0</td>
         <td>640.0</td>
         <td>640.0</td>
-        <td>36</td>
+        <!-- <td>36</td> -->
       </tr>
       
       <tr>
@@ -2024,7 +2024,7 @@ permalink: /data/
         <td>100.0</td>
         <td>280.0</td>
         <td>280.0</td>
-        <td>43</td>
+        <!-- <td>43</td> -->
       </tr>
       
       <tr>
@@ -2032,7 +2032,7 @@ permalink: /data/
         <td>100.0</td>
         <td>241.0</td>
         <td>241.0</td>
-        <td>44</td>
+        <!-- <td>44</td> -->
       </tr>
       
       <tr>
@@ -2040,7 +2040,7 @@ permalink: /data/
         <td>100.0</td>
         <td>666.7</td>
         <td>666.7</td>
-        <td>56</td>
+        <!-- <td>56</td> -->
       </tr>
       
       <tr>
@@ -2048,7 +2048,7 @@ permalink: /data/
         <td>100.0</td>
         <td>1683.0</td>
         <td>1683.0</td>
-        <td>57</td>
+        <!-- <td>57</td> -->
       </tr>
       
       <tr>
@@ -2056,7 +2056,7 @@ permalink: /data/
         <td>100.0</td>
         <td>593.4</td>
         <td>593.4</td>
-        <td>59</td>
+        <!-- <td>59</td> -->
       </tr>
       
     </table>
@@ -2112,7 +2112,7 @@ permalink: /data/
         <th>Percentage</th>
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
-        <th>Lookup Row</th>
+        <!-- <th>Lookup Row</th> -->
       </tr>
       
       <tr>
@@ -2120,7 +2120,7 @@ permalink: /data/
         <td>100.0</td>
         <td>67.0</td>
         <td>67.0</td>
-        <td>81</td>
+        <!-- <td>81</td> -->
       </tr>
       
     </table>
@@ -2133,7 +2133,7 @@ permalink: /data/
         <th>Percentage</th>
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
-        <th>Lookup Row</th>
+        <!-- <th>Lookup Row</th> -->
       </tr>
       
     </table>
@@ -2146,7 +2146,7 @@ permalink: /data/
         <th>Percentage</th>
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
-        <th>Lookup Row</th>
+        <!-- <th>Lookup Row</th> -->
       </tr>
       
     </table>
