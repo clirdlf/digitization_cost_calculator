@@ -154,6 +154,7 @@ def quality_control_stats
     min = 0 # TODO: set to first value in the value['raw_times'].first
     min = value['raw_times'].first[:time].to_f unless value['raw_times'].length == 0
     max = 0
+    @quality_control_stats[key]['raw_times'].sort_by! { |h| h[:institution] }
     @quality_control_stats[key]['raw_times'].each do |instance|
       sum += instance[:normalized]
       min = instance[:normalized].to_f if instance[:normalized].to_f < min
@@ -165,6 +166,8 @@ def quality_control_stats
     @quality_control_stats[key]['max'] = max
 
   end
+
+
   # TODO: write to js file
 end
 
@@ -175,6 +178,9 @@ def sub_hash_stats(hash)
     min = 0
     min = value['raw_times'].first[:time].to_f unless value['raw_times'].length == 0
     max = 0
+
+    # <% data['raw_times'].sort_by! {|h| h[:institution]} %>
+    hash[key]['raw_times'].sort_by! {|h| h[:institution]}
 
     hash[key]['raw_times'].each do |instance|
       sum += instance[:normalized]
@@ -328,6 +334,8 @@ def calcuate_image_capture_averages
     max = 0.0
     median = 0.0
 
+    value['raw_times'].sort_by! {|h| h[:institution]}
+
     value['raw_times'].each do |instance|
       sum += instance[:time].to_f
       # puts instance[:time].to_f < min
@@ -405,7 +413,6 @@ def post_preparation_stats
   end
   sub_hash_stats(@post_preparation_times)
 end
-
 
 def post_processing_stats
   post_processing_times
@@ -502,9 +509,9 @@ def metadata_times
   values = {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []}
 
   @metadata_times ||= {
-    'level_1' => values.clone,
-    'level_2' => values.clone,
-    'level_3' => values.clone
+    'level_1' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
+    'level_2' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
+    'level_3' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []}
   }
 end
 
