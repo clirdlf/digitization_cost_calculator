@@ -2,9 +2,31 @@ var hourly_employee = new Person(0, 'Thomas Jefferson', 'hourly', 10, 23);
 var salaried_employee = new Person(1, 'George Washington', 'salaried', 52000, 23);
 var scanner = 'Flatbed scanner (i.e., an Epson 11000XL)';
 var blank_estimate = estimate;
+
 // QUnit.test("template", function( assert ) {
 //     assert.ok(1 == "1", "Passed");
 // });
+
+QUnit.test("Test Task", function( assert ){
+    var e = $.extend(true, {}, blank_estimate);
+    e.extent = 1000;
+    // Task(category, label, percentage, average, extent) {
+
+    var task1 = new Task('Other', 'Task1', 100, 50, hourly_employee, e.extent);
+    // task 2 == estimate.preparation_of_materials.condition_review
+        // estimate.preparation_estimate()
+
+    // (1000 / 100) * 1 * (50/60) * .21
+    assert.equal(task1.costs.total_time, 8.333333333333334, 'new task total time');
+    assert.equal(task1.costs.total, 102.50000000000001, 'new task cost total');
+
+    var task2 = new Task('Preparation of Materials', 'condition_review', 100, 12.1625, hourly_employee, e.extent);
+    e.preparation_of_materials.condition_review.average = 100;
+    e.preparation_of_materials.condition_review.by = hourly_employee;
+
+    assert.equal(e.preparation_estimate().total, task2.costs.total);
+    assert.equal(e.preparation_estimate().total_time, task2.costs.total_time);
+});
 
 QUnit.test("Testing entire thing...", function( assert ){
     var e = $.extend(true, {}, blank_estimate);
