@@ -730,10 +730,10 @@ permalink: /data/
     
     <tr>
       <td>Level 2</td>
-      <td>107.5</td>
+      <td>45.4</td>
       <td>11.1</td>
-      <td>294.0</td>
-      <td>4</td>
+      <td>75.0</td>
+      <td>3</td>
     </tr>
     
     <tr>
@@ -915,14 +915,6 @@ permalink: /data/
         <!-- <td>70</td> -->
       </tr>
       
-      <tr>
-        <td>Davison Art Center, Wesleyan University</td>
-        <td>100.0</td>
-        <td>294.0</td>
-        <td>294.0</td>
-        <!-- <td>81</td> -->
-      </tr>
-      
     </table>
   
     <h3>Level 3</h3>
@@ -996,10 +988,10 @@ permalink: /data/
     
     <tr>
       <td>Background Removal</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>1</td>
     </tr>
     
     <tr>
@@ -1028,10 +1020,10 @@ permalink: /data/
     
     <tr>
       <td>Stitching</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0</td>
+      <td>1500.0</td>
+      <td>1500.0</td>
+      <td>1500.0</td>
+      <td>1</td>
     </tr>
     
   </table>
@@ -1179,6 +1171,14 @@ permalink: /data/
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
         <!-- <th>Lookup Row</th> -->
+      </tr>
+      
+      <tr>
+        <td>Northwestern University Libraries</td>
+        <td>100.0</td>
+        <td>2.0</td>
+        <td>2.0</td>
+        <!-- <td>86</td> -->
       </tr>
       
     </table>
@@ -1495,6 +1495,14 @@ permalink: /data/
         <th>Time per 100 Items</th>
         <th>Normalized Time</th>
         <!-- <th>Lookup Row</th> -->
+      </tr>
+      
+      <tr>
+        <td>Northwestern University Libraries</td>
+        <td>100.0</td>
+        <td>1500.0</td>
+        <td>1500.0</td>
+        <!-- <td>85</td> -->
       </tr>
       
     </table>
