@@ -70,7 +70,7 @@ people.push(empty_person);
             div += '<span class="name"><strong>' + this.name + '</strong></span> ';
             div += '<span class="rate_type">' + this.type + '</span> ';
             div += '<span class="rate">$' + this.set_rate + '</span> ';
-            div += '<span class="benefits">' + this.benefits_percent + '%</span> ';
+            div += '<span class="benefits">' + (this.benefits_percent * 100) + '%</span> ';
             div += '</p></div>';
             html += div;
         });
