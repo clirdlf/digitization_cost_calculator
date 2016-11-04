@@ -87,7 +87,7 @@ people.push(empty_person);
             html += '<td>' + estimate.capture_device + '</td>';
             html += '<td>&nbsp;</td>';
             html += '<td>' + estimate.capture_by.name + '</td>';
-            html += '<td>' + estimate.capture_estimate().total_time.toFixed(2) + '</td>';
+            html += '<td>' + estimate.capture_estimate().total_time.toFixed(2).toLocaleString() + '</td>';
             html += '<td>$' + estimate.capture_estimate().total.formatCurrency() + '</td>';
             html += '</tr>';
         }
@@ -115,7 +115,7 @@ people.push(empty_person);
         }
 
         html += '<tr><td colspan="4" class="text-right"><strong>Total:</strong></td>';
-        html += '<td><strong>' + estimate.total_estimate().total_time.toFixed(2) +'</strong>';
+        html += '<td><strong>' + estimate.total_estimate().total_time.toFixed(2).toLocaleString() +'</strong>';
         // html += ' (' + minutes_in_hours(estimate.total_estimate().total_time).toFixed(2) + ' hours)</td>';
         html += '<td><strong>$' + estimate.total_estimate().total.formatCurrency() + '</strong></td></tr>';
 
@@ -129,60 +129,11 @@ people.push(empty_person);
 
         var grand_total = estimate.total_estimate();
 
-        // var totals_table = summation_table();
         $('#export_table').html(summation_table());
-
-        $('#total .extent').html(estimate.extent + ' scans');
+        $('#total .extent').html(estimate.extent.toLocaleString() + ' scans');
         $('#total .total').html('$' + grand_total.total.formatCurrency());
-        $('#total .total_time').html(minutes_in_hours(grand_total.total_time).toFixed(2) + ' hours');
+        $('#total .total_time').html(minutes_in_hours(grand_total.total_time).toFixed(2).toLocaleString() + ' hours');
         $('#total .people').html(format_people());
-
-        // if (estimate.capture_device !== '' && estimate.capture_device !== 'Select Your Capture Device') {
-        //     $('#digitization_report').removeClass('hidden');
-        //     $('#report .image_capture_device').html(estimate.capture_device);
-        // }
-        //
-        // if (estimate.capture_by && estimate.capture_by.name) {
-        //     $('#report .scan_by').html(estimate.capture_by.name);
-        //     $('#report .scan_rate').html(estimate.capture_by.rate.formatCurrency());
-        //     $('#report .total_hourly_rate').html(estimate.capture_by.total_hourly_rate.formatCurrency());
-        // }
-        //
-        // if (estimate.capture_device && image_capture[estimate.capture_device]) {
-        //     var capture_min = image_capture[estimate.capture_device].min.toFixed(2);
-        //     var capture_max = image_capture[estimate.capture_device].max.toFixed(2);
-        //
-        //     $('#report .scanner_average').html(minutes_in_hours(image_capture[estimate.capture_device].average).toFixed(2));
-        //     $('#report .scanner_range').html(minutes_in_hours(capture_min) + ' - ' + minutes_in_hours(capture_max));
-        //     $('#report .scanner_time').html(minutes_in_hours(estimate.capture_estimate().total_time).toFixed(2));
-        //     $('#report .scanning_cost').html(estimate.capture_estimate().total.formatCurrency());
-        // }
-        //
-        // if (prep_items.length > 0) {
-        //     $('#preparation_of_materials_report').removeClass('hidden');
-        //     $('#prep_data').html(report_table(prep_items, 'preparation_of_materials'));
-        // }
-        //
-        // if (post_processing_items.length > 0) {
-        //     $('#post_processing_report').removeClass('hidden');
-        //     $('#post_processing_data').html(report_table(post_processing_items, 'post_proessing'));
-        // }
-        //
-        // if (post_preparation_items.length > 0) {
-        //     // Not yet implemented
-        //     $('#post_preparation_report').removeClass('hidden');
-        //     $('#post_preparation_data').html(report_table(post_processing_items, 'post_preparation'));
-        // }
-        //
-        // if (estimate.quality_control && estimate.quality_control.level) {
-        //     $('#quality_control_report').removeClass('hidden');
-        //     $('#quality_control_data').html(levels_table(estimate.quality_control, estimate.quality_control_estimate()));
-        // }
-        //
-        // if (estimate.metadata && estimate.metadata.level) {
-        //     $('#metadata_creation_report').removeClass('hidden');
-        //     $('#metadata_creation_data').html(levels_table(estimate.metadata, estimate.metadata_estimate()));
-        // }
     }
 
     function set_values() {
@@ -226,13 +177,13 @@ people.push(empty_person);
         row += '<td>' + obj.level + '</td>';
         row += '<td>' + obj.percentage + '</td>';
         row += '<td>' + obj.by.name + '</td>';
-        row += '<td>' + (costs.average).toFixed(2) + '</td>';
-        row += '<td>' + costs.total_time.toFixed(2) + '</td>';
+        row += '<td>' + (costs.average).toFixed(2).toLocaleString() + '</td>';
+        row += '<td>' + costs.total_time.toFixed(2).toLocaleString() + '</td>';
         row += '<td>$' + costs.total.formatCurrency() + '</td>';
         row += '</tr>';
         content += row;
         content += '<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td><strong>Total</strong></td>';
-        content += '<td>' + minutes_in_hours(costs.total_time).toFixed(2) + '</td>';
+        content += '<td>' + minutes_in_hours(costs.total_time).toFixed(2).toLocaleString() + '</td>';
         content += '<td>$' + costs.total.formatCurrency() + '</td></tr>';
         content += '</table>';
         return content;
@@ -247,7 +198,7 @@ people.push(empty_person);
         if(obj.by && obj.by.name){
             html += '<td>' + obj.by.name + '</td>';
         }
-        html += '<td>' + costs.total_time.toFixed(2) + '</td>';
+        html += '<td>' + costs.total_time.toFixed(2).toLocaleString() + '</td>';
         html += '<td>$' + costs.total.formatCurrency() + '</td>';
 
         html += '</tr>';
@@ -271,7 +222,7 @@ people.push(empty_person);
                 row += '<td>&nbsp;</td>';
             }
 
-            row += '<td>' + costs.total_time.toFixed(2) + '</td>';
+            row += '<td>' + costs.total_time.toFixed(2).toLocaleString() + '</td>';
             row += '<td>$' + costs.total.formatCurrency() + '</td>';
             html += row;
         });
@@ -303,7 +254,7 @@ people.push(empty_person);
                 row += '<td>&nbsp;</td>';
             }
 
-            row += '<td>' + costs.total_time.toFixed(2) + '</td>';
+            row += '<td>' + costs.total_time.toFixed(2).toLocaleString() + '</td>';
             row += '<td>$' + costs.total.formatCurrency() + '</td>';
             row += '</tr>';
             content += row;
@@ -313,7 +264,7 @@ people.push(empty_person);
         });
 
         content += '<tr><td>&nbsp;</td><td>&nbsp;</td><td><strong>Total</strong></td>';
-        content += '<td>' + minutes_in_hours(total_time).toFixed(2) + ' hours </td>';
+        content += '<td>' + minutes_in_hours(total_time).toFixed(2).toLocaleString() + ' hours </td>';
         content += '<td>$' + total_cost.formatCurrency() + '</td></tr>';
         content += '</tbody>';
         content += '</table>';
