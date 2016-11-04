@@ -1003,7 +1003,7 @@ permalink: /data/
     </tr>
 
     <tr>
-      <td>Clean Up</td>
+      <td>Clean Up/Dust Removal</td>
       <td>18.0</td>
       <td>11.0</td>
       <td>25.0</td>
@@ -1183,7 +1183,7 @@ permalink: /data/
 
     </table>
 
-    <h3>Clean Up</h3>
+    <h3>Clean Up/Dust Removal</h3>
 
     <table class="table">
       <tr>
