@@ -529,7 +529,7 @@ permalink: /data/
     <tr>
       <td>Rights Review</td>
       <td>4.7</td>
-      <td>4.3</td>
+      <td>4.4</td>
       <td>5.0</td>
       <td>2</td>
     </tr>
@@ -667,8 +667,8 @@ permalink: /data/
       <tr>
         <td>Center for Jewish History</td>
         <td>100.0</td>
-        <td>4.3</td>
-        <td>4.3</td>
+        <td>4.4</td>
+        <td>4.4</td>
         <!-- <td>71</td> -->
       </tr>
       
@@ -1587,8 +1587,8 @@ permalink: /data/
       <tr>
         <td>Case Western Reserve University</td>
         <td>100.0</td>
-        <td>119.3</td>
-        <td>119.3</td>
+        <td>119.4</td>
+        <td>119.4</td>
         <!-- <td>33</td> -->
       </tr>
       
