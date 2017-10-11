@@ -33,3 +33,57 @@ This list includes both current and past members of the DLF-AIG Cost Assessment 
 ## Contact us
 
 Please contact <a href="mailto:joyce(dot)chapman(at)duke(dot)edu">joyce dot chapman at duke dot edu with any questions.
+
+## Contributing Institutions
+
+Thank you to all of the institutions who have contributed data for past and present versions of the calculator! The Cost Calculator would not exist without the contributions from our community. Note that not all contributions are integrated into the current cost calculator due to issues with data definitions, methods for tracking data, and changing needs of the calculator.
+
+- American University
+- Capital Area District Libraries
+- Case Western Reserve University
+- Center for Jewish History
+- Center for Western Studies, Augustana University
+- Chemical Heritage Foundation
+- County of Los Angeles Public Library
+- Davison Art Center, Wesleyan University
+- Duke University Libraries
+- Harvard University
+- Indianapolis Museum of Art
+- Israel Museum, Jerusalem
+- Kansas State University Libraries
+- Licking County Records & Archives
+- Loyola University New Orleans
+- McGill University Library
+- Metropolitan New York Library Council (METRO)
+- North Carolina Digital Heritage Center
+- Northern Kentucky University
+- Northwestern University Libraries
+- Ohio History Connection
+- Royal Manitoba Theatre Centre
+- Smith College
+- Smithsonian Institution
+- Smithsonian Libraries
+- The Filson Historical Society
+- Triangle Research Libraries Network
+- University of Alabama Libraries
+- University of California, Berkeley
+- University of California, Riverside
+- University of California, San Francisco
+- University of California, Santa Barbara
+- University of Florida, George A. Smathers Libraries
+- University of Kansas Libraries
+- University of Kentucky
+- University of Miami
+- University of Nebraska at Omaha
+- University of Padua, Italy
+- University of Richmond Law Library
+- University of South Carolina Libraries
+- University of Tennessee, Knoxville
+- University of Texas at San Antonio
+- University of Utah
+- University of Virginia
+- University of Wisconsin Digital Collections Center
+- University of Wisconsin-Madison
+- Wake Forest University
+- Wesleyan University
+- Wyoming State Archives
