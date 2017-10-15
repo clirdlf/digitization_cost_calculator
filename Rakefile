@@ -31,8 +31,6 @@ namespace :convert do
     puts "Generating Image Capture stats file".yellow
     image_capture_stats
 
-    exit
-
     puts "Generating Preparation of Materials data".yellow
     preparation_stats
 

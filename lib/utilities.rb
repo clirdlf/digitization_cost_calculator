@@ -12,7 +12,7 @@ end
 def map_headers
   @headers = {}
   (1..@ws.num_cols).each do |c|
-    @headers[@ws[1,c]] = c
+    @headers[@ws[1, c]] = c
   end
 end
 
@@ -36,29 +36,27 @@ end
 # Write the file for JavaScript
 
 def write_file(path, contents)
-  begin
-    file = File.open(path, 'w')
-    file.write(contents)
-  rescue IOError => error
-    puts "File not writeable. Check your permissions.".red
-    puts error.inspect
-  ensure
-    file.close unless file == nil
-  end
+  file = File.open(path, 'w')
+  file.write(contents)
+rescue IOError => error
+  puts 'File not writeable. Check your permissions.'.red
+  puts error.inspect
+ensure
+  file.close unless file.nil?
 end
 
 ##
 # Clean extra text from header values in the spreadsheet
 
 def clean_scanner_header(header)
-  header.gsub(/Image Capture-/,'').gsub(/-Minutes per 100 scans/,'')
+  header.gsub(/Image Capture-/, '').gsub(/-Minutes per 100 scans/, '')
 end
 
 def clean_prep_header(header)
-  header.gsub!(/Preparation of original materials -/,'')
+  header.gsub!(/Preparation of original materials -/, '')
   header.gsub!(/ per 100 scans/, '')
-  header.gsub!(/ of materials on which process was performed \(i.e., "20" do not use the \% sign\)/,'')
-  header.gsub!(/ /, '_')
+  header.gsub!(/ of materials on which process was performed \(i.e., "20" do not use the \% sign\)/, '')
+  header.tr!(' ', '_')
   header.downcase
 end
 
@@ -80,13 +78,33 @@ def prep_times
   # 35 Supporting Material Time
   # 36 uuid %
   # 35 uuid time
-  (24..35).each do |column|
+  columns = [
+    'Preparation of original materials -Condition review-Minutes per 100 scans',
+    'Preparation of original materials -Disbinding-Percent of materials on which process was performed (i.e., "20" do not use the % sign)',
+    'Preparation of original materials -Disbinding-Minutes per 100 scans',
+    'Preparation of original materials -Fastener removal-Percent of materials on which process was performed (i.e., "20" do not use the % sign)',
+    'Preparation of original materials -Fastener removal-Minutes per 100 scans',
+    'Preparation of original materials -Flattening-Percent of materials on which process was performed (i.e., "20" do not use the % sign)',
+    'Preparation of original materials -Flattening-Minutes per 100 scans',
+    'Preparation of original materials -Rights review-Percent of materials on which process was performed (i.e., "20" do not use the % sign)',
+    'Preparation of original materials -Rights review-Minutes per 100 scans',
+    'Preparation of original materials -Sort materials into items-Percent of materials on which process was performed (i.e., "20" do not use the % sign)',
+    'Preparation of original materials -Sort materials into items-Minutes per 100 scans',
+    'Preparation of original materials -Supporting-Percent of materials on which process was performed (i.e., "20" do not use the % sign)',
+    'Preparation of original materials -Supporting-Minutes per 100 scans',
+    'Preparation of original materials -Unique identifier assignment-Percent of materials on which process was performed (i.e., "20" do not use the % sign)',
+    'Preparation of original materials -Unique identifier assignment-Minutes per 100 scans'
+  ]
+
+  # (24..35).each do |column|
+  columns.each do |column|
     # Preparation of original materials -Flattening-Percent of materials on which process was performed (i.e., "20" do not use the % sign)
     # Preparation of original materials -Flattening-Minutes per 100 scans
-    raw_header = clean_prep_header(@ws[1, column])
+    col = @headers[column]
+    raw_header = clean_prep_header(@ws[1, col])
     # split on -; [0] is the key
     key = raw_header.split('-')[0]
-    @prep_times.merge!("#{key}" => {'average' => 0, 'raw_times' => []})
+    @prep_times.merge!(key.to_s => { 'average' => 0, 'raw_times' => [] })
   end
 end
 
@@ -94,7 +112,7 @@ def quality_control_stats
   @quality_control_stats ||= {}
 
   (1..3).each do |i|
-    @quality_control_stats.merge!("level_#{i}" => {'average' => 0, 'raw_times' => []})
+    @quality_control_stats.merge!("level_#{i}" => { 'average' => 0, 'raw_times' => [] })
   end
 
   # Quality Control fields
@@ -116,26 +134,43 @@ def quality_control_stats
   # 51 => 57, 58
   # 52 => 59, 60
 
-  (2..@ws.num_rows).each do |row|
+  columns = [
+    'Quality control-Level 1-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)',
+    'Quality control-Level 1-Minutes per 100 scans',
+    'Quality control-Level 2-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)',
+    'Quality control-Level 2-Minutes per 100 scans',
+    'Quality control-Level 3-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)',
+    'Quality control-Level 3-Minutes per 100 scans'
+  ]
 
-    (55..59).step(2) do |column|
-      unless @ws[row, column].empty?
+  (2..@ws.num_rows).each do |row|
+    (0..columns.length).step(2) do |col|
+      # (55..59).step(2) do |column|
+      column = @headers[columns[col]]
+      # unless @ws[row, column].empty?
+      unless column.nil? || @ws[row, column].empty?
+
         v = {
-          institution: @ws[row, 2],
+          institution: @ws[row, @headers['Submitter information-Institution']],
           percentage: @ws[row, column],
           time:  @ws[row, column + 1],
           normalized: normalize_time(@ws[row, column], @ws[row, column + 1]),
           row: row
         }
 
-        case column
-        when 55
+        # puts v
+        # case column
+        case columns[col]
+        when 'Quality control-Level 1-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)'
+          # when 55
           @quality_control_stats['level_1']['raw_times'] << v
           break
-        when 57
+        # when 57
+        when 'Quality control-Level 2-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)',
           @quality_control_stats['level_2']['raw_times'] << v
           break
-        when 59
+        # when 59
+        when 'Quality control-Level 3-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)',
           @quality_control_stats['level_3']['raw_times'] << v
           break
         end
@@ -149,7 +184,7 @@ def quality_control_stats
     sum = 0
     average = 0
     min = 0 # TODO: set to first value in the value['raw_times'].first
-    min = value['raw_times'].first[:time].to_f unless value['raw_times'].length == 0
+    min = value['raw_times'].first[:time].to_f unless value['raw_times'].empty?
     max = 0
     @quality_control_stats[key]['raw_times'].sort_by! { |h| h[:institution] }
     @quality_control_stats[key]['raw_times'].each do |instance|
@@ -157,13 +192,11 @@ def quality_control_stats
       min = instance[:normalized].to_f if instance[:normalized].to_f < min
       max = instance[:normalized].to_f if instance[:normalized].to_f > max
     end
-    average = sum / @quality_control_stats[key]['raw_times'].length unless @quality_control_stats[key]['raw_times'].length == 0
+    average = sum / @quality_control_stats[key]['raw_times'].length unless @quality_control_stats[key]['raw_times'].empty?
     @quality_control_stats[key]['average'] = average
     @quality_control_stats[key]['min'] = min
     @quality_control_stats[key]['max'] = max
-
   end
-
 
   # TODO: write to js file
 end
@@ -173,18 +206,18 @@ def sub_hash_stats(hash)
     sum = 0
     average = 0
     min = 0
-    min = value['raw_times'].first[:time].to_f unless value['raw_times'].length == 0
+    min = value['raw_times'].first[:time].to_f unless value['raw_times'].empty?
     max = 0
 
     # <% data['raw_times'].sort_by! {|h| h[:institution]} %>
-    hash[key]['raw_times'].sort_by! {|h| h[:institution]}
+    hash[key]['raw_times'].sort_by! { |h| h[:institution] }
 
     hash[key]['raw_times'].each do |instance|
       sum += instance[:normalized]
       min = instance[:normalized].to_f if instance[:normalized].to_f < min
       max = instance[:normalized].to_f if instance[:normalized].to_f > max
     end
-    average = sum / value['raw_times'].length unless value['raw_times'].length == 0
+    average = sum / value['raw_times'].length unless value['raw_times'].empty?
     hash[key]['average'] = average
     hash[key]['min'] = min
     hash[key]['max'] = max
@@ -201,7 +234,7 @@ def scanner_types
   (2..@ws.num_rows).each do |row|
     col = @headers[label]
     value = @ws[row, col]
-    @scanner_types.merge!("#{value}" => {'raw_times' => []}) unless value.empty?
+    @scanner_types.merge!(value.to_s => { 'raw_times' => [] }) unless value.empty?
   end
 end
 
@@ -216,7 +249,7 @@ def average(array)
 end
 
 def stats(hash)
-  hash.each do |key, val|
+  hash.each do |_key, val|
     val['min'] = val['raw_times'].min
     val['max'] = val['raw_times'].max
     val['average'] = average(val['raw_times'])
@@ -226,7 +259,7 @@ end
 
 def render_vals(hash)
   # TODO: refactor to
-  hash.each do |key, val|
+  hash.each do |_key, val|
     val['min'] = val['raw_times'].min
     val['max'] = val['raw_times'].max
     val['average'] = average(val['raw_times'])
@@ -260,23 +293,50 @@ def preparation_stats
   # 35 Supporting Material Time
   # 36 uuid %
   # 37 uuid time
+  columns = [
+    'Preparation of original materials -Condition review-Percent of materials on which process was performed (i.e., "20" do not use the % sign)',
+    'Preparation of original materials -Condition review-Minutes per 100 scans',
+    'Preparation of original materials -Disbinding-Percent of materials on which process was performed (i.e., "20" do not use the % sign)',
+    'Preparation of original materials -Disbinding-Minutes per 100 scans',
+    'Preparation of original materials -Fastener removal-Percent of materials on which process was performed (i.e., "20" do not use the % sign)',
+    'Preparation of original materials -Fastener removal-Minutes per 100 scans',
+    'Preparation of original materials -Flattening-Percent of materials on which process was performed (i.e., "20" do not use the % sign)',
+    'Preparation of original materials -Flattening-Minutes per 100 scans',
+    'Preparation of original materials -Rights review-Percent of materials on which process was performed (i.e., "20" do not use the % sign)',
+    'Preparation of original materials -Rights review-Minutes per 100 scans',
+    'Preparation of original materials -Sort materials into items-Percent of materials on which process was performed (i.e., "20" do not use the % sign)',
+    'Preparation of original materials -Sort materials into items-Minutes per 100 scans',
+    'Preparation of original materials -Supporting-Percent of materials on which process was performed (i.e., "20" do not use the % sign)',
+    'Preparation of original materials -Supporting-Minutes per 100 scans',
+    'Preparation of original materials -Unique identifier assignment-Percent of materials on which process was performed (i.e., "20" do not use the % sign)',
+    'Preparation of original materials -Unique identifier assignment-Minutes per 100 scans'
+  ]
+
+  counter = 0
+
   (2..@ws.num_rows).each do |row|
-    (24..37).step(2) do |column|
+    # (24..37).step(2) do |column|
+    (0..columns.length - 1).step(2) do |iterator|
+      header = columns[iterator]
+      column = @headers[header]
       raw_header = clean_prep_header(@ws[1, column])
+
       # hash to put these values in
       values = {}
 
       key = raw_header.split('-')[0]
-      key.downcase.gsub!(/ /, '_') # clean up the parameters
+      key.downcase.tr!(' ', '_') # clean up the parameters
       value = raw_header.split('-')[1] # percentage or minutes
 
-      values = {
-        institution: @ws[row, 2],
-        percentage: @ws[row,column],
-        time: @ws[row,column + 1],
-        normalized: normalize_time(@ws[row,column], @ws[row,column + 1]),
-        row: row
-      } unless @ws[row,column].empty?
+      unless @ws[row, column].empty?
+        values = {
+          institution: @ws[row, @headers['Submitter information-Institution']],
+          percentage: @ws[row, column],
+          time: @ws[row, column + 1],
+          normalized: normalize_time(@ws[row, column], @ws[row, column + 1]),
+          row: row
+        }
+      end
 
       @prep_times[key]['raw_times'] << values unless values.empty?
     end
@@ -300,47 +360,47 @@ end
 # end
 
 def calculate_prep_averages
+  @prep_times.each do |_key, value|
+    sum = 0
+    average = 0
 
-  @prep_times.each do |key, value|
-      sum = 0
-      average = 0
+    min = 0
+    min = value['raw_times'].first[:time].to_f unless value['raw_times'].empty?
 
-      min = 0
-      min = value['raw_times'].first[:time].to_f unless value['raw_times'].length == 0
-
-      max = 0
-      median = 0
-      value['raw_times'].each do |instance|
-        sum += instance[:normalized]
-        min = instance[:normalized] if instance[:normalized].to_f < min
-        max = instance[:normalized] if instance[:normalized].to_f > max
-      end
-      average = sum / value['raw_times'].length unless value['raw_times'].length == 0
-      value['average'] = average
-      value['min'] = min
-      value['max'] = max
+    max = 0
+    median = 0
+    value['raw_times'].each do |instance|
+      sum += instance[:normalized]
+      min = instance[:normalized] if instance[:normalized].to_f < min
+      max = instance[:normalized] if instance[:normalized].to_f > max
+    end
+    average = sum / value['raw_times'].length unless value['raw_times'].empty?
+    value['average'] = average
+    value['min'] = min
+    value['max'] = max
   end
 end
 
 def calcuate_image_capture_averages
-  puts @scanner_types.size
-  @scanner_types.each do |key, value|
+  @scanner_types.each do |_key, value|
     sum = 0
     average = 0
-    min = value['raw_times'].first[:time].to_f
+
+    min = 0.0
+    min = value['raw_times'].first[:time].to_f unless value['raw_times'].empty?
     max = 0.0
     median = 0.0
 
-    value['raw_times'].sort_by! {|h| h[:institution]}
+    value['raw_times'].sort_by! { |h| h[:institution] }
 
     value['raw_times'].each do |instance|
       sum += instance[:time].to_f
       # puts instance[:time].to_f < min
       min = instance[:time].to_f if instance[:time].to_f < min
       max = instance[:time].to_f if instance[:time].to_f > max
-      #TODO median
+      # TODO: median
     end
-    average = sum / value['raw_times'].length unless value['raw_times'].length == 0
+    average = sum / value['raw_times'].length unless value['raw_times'].empty?
     value['average'] = average
     value['min'] = min
     value['max'] = max
@@ -353,20 +413,20 @@ end
 
 def post_processing_times
   @post_processing_times ||= {
-    'alignment' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
-    'background_removal' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
-    'clean_up' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
-    'color_correction' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
-    'cropping' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
-    'stitching' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
+    'alignment' => { 'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => [] },
+    'background_removal' => { 'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => [] },
+    'clean_up' => { 'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => [] },
+    'color_correction' => { 'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => [] },
+    'cropping' => { 'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => [] },
+    'stitching' => { 'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => [] }
   }
 end
 
 def post_preparation_times
   @post_preparation_times ||= {
-    'desorting' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
-    'rebinding' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
-    'refastening' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []}
+    'desorting' => { 'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => [] },
+    'rebinding' => { 'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => [] },
+    'refastening' => { 'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => [] }
   }
 end
 
@@ -382,29 +442,39 @@ def post_preparation_stats
   # 85: Post-preparation.-Re-binding-Minutes per 100 scans
   # 86: Post-preparation.-Re-fastening-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)
   # 87: Post-preparation.-Re-fastening-Minutes per 100 scans
+
+  columns = [
+    'Post-preparation-De-sorting',
+    'Post-preparation-Re-binding',
+    'Post-preparation-Re-fastening'
+  ]
   (2..@ws.num_rows).each do |row|
-    (79..81).each do |column|
-      unless @ws[row, column].empty?
-        v = {
-          institution: @ws[row, 2],
-          percentage: @ws[row, column + 3],
-          time: @ws[row, column + 4],
-          normalized: normalize_time(@ws[row, column + 3], @ws[row, column + 4]),
-          row: row
-        }
-
-        case column
-        when 79
-          @post_preparation_times['desorting']['raw_times'] << v
-          break
-        when 80
-          @post_preparation_times['rebinding']['raw_times'] << v
-          break
-        when 81
-          @post_preparation_times['refastening']['raw_times'] << v
-          break
-        end
-
+    # (79..81).each do |column|
+    (0..columns.length).each do |col|
+      column = @headers[columns[col]]
+      next if (column.nil? || @ws[row, column].empty? )
+      v = {
+        institution: @ws[row, @headers['Submitter information-Institution']],
+        percentage: @ws[row, column + 3],
+        time: @ws[row, column + 4],
+        normalized: normalize_time(@ws[row, column + 3], @ws[row, column + 4]),
+        row: row
+      }
+      puts columns[col]
+      # case column
+      case columns[col]
+      # when 79
+      when 'Post-preparation-De-sorting'
+        @post_preparation_times['desorting']['raw_times'] << v
+        break
+      # when 80
+      when 'Post-preparation-Re-binding'
+        @post_preparation_times['rebinding']['raw_times'] << v
+        break
+      # when 81
+      when 'Post-preparation-Re-fastening'
+        @post_preparation_times['refastening']['raw_times'] << v
+        break
       end
     end
   end
@@ -432,34 +502,64 @@ def post_processing_stats
   # 76: Post-processing-Cropping-Minutes per 100 scans
   # 77: Post-processing-Stitching-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)
   # 78: Post-processing-Stitching-Minutes per 100 scans
+
+  columns = [
+    # 'Post-processing -Alignment/rotation',
+    # 'Post-processing -Background removal (books/texts)',
+    # 'Post-processing -Clean up/dust removal',
+    # 'Post-processing -Color correction and tonal adjustment',
+    # 'Post-processing -Cropping',
+    # 'Post-processing -Stitching',
+    'Post-processing-Alignment/rotation-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)',
+    'Post-processing-Alignment/rotation-Minutes per 100 scans',
+    'Post-processing-Background removal (books/texts)-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)',
+    'Post-processing-Background removal (books/texts)-Minutes per 100 scans',
+    'Post-processing-Clean up/dust removal-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)',
+    'Post-processing-Clean up/dust removal-Minutes per 100 scans',
+    'Post-processing-Color correction and tonal adjustment-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)',
+    'Post-processing-Color correction and tonal adjustment-Minutes per 100 scans',
+    'Post-processing-Cropping-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)',
+    'Post-processing-Cropping-Minutes per 100 scans',
+    'Post-processing-Stitching-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)',
+    'Post-processing-Stitching-Minutes per 100 scans'
+  ]
+
   (2..@ws.num_rows).each do |row|
     # TODO: bug in this logic to populate the arrays
-    (67..78).step(2).each do |column|
-      unless @ws[row, column].empty?
-        v = {
-          institution: @ws[row, 2],
-          percentage: @ws[row, column],
-          time: @ws[row, column + 1],
-          normalized: normalize_time(@ws[row, column], @ws[row, column + 1]),
-          row: row
-        }
+    # (67..78).step(2).each do |column|
+    (0..columns.length).step(2).each do |col|
+      column = @headers[columns[col]]
 
-        case column
-        when 67
-          @post_processing_times['alignment']['raw_times'] << v
-        when 69
-          @post_processing_times['background_removal']['raw_times'] << v
-        when 71
-          @post_processing_times['clean_up']['raw_times'] << v
-        when 73
-          @post_processing_times['color_correction']['raw_times'] << v
-        when 75
-          @post_processing_times['cropping']['raw_times'] << v
-        when 77
-          @post_processing_times['stitching']['raw_times'] << v
-        end
+      next if column.nil? || @ws[row, column].empty?
+      v = {
+        institution: @ws[row, @headers['Submitter information-Institution']],
+        percentage: @ws[row, column],
+        time: @ws[row, column + 1],
+        normalized: normalize_time(@ws[row, column], @ws[row, column + 1]),
+        row: row
+      }
+
+      # case column
+      case columns[col]
+      # when 67
+      when 'Post-processing-Alignment/rotation-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)'
+        @post_processing_times['alignment']['raw_times'] << v
+      # when 69
+      when 'Post-processing-Background removal (books/texts)-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)'
+        @post_processing_times['background_removal']['raw_times'] << v
+      # when 71
+      when 'Post-processing-Clean up/dust removal-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)'
+        @post_processing_times['clean_up']['raw_times'] << v
+      # when 73
+      when 'Post-processing-Color correction and tonal adjustment-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)'
+        @post_processing_times['color_correction']['raw_times'] << v
+      # when 75
+      when 'Post-processing-Cropping-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)'
+        @post_processing_times['cropping']['raw_times'] << v
+      # when 77
+      when 'Post-processing-Stitching-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)',
+        @post_processing_times['stitching']['raw_times'] << v
       end
-
     end
   end
 
@@ -512,7 +612,7 @@ def image_capture_stats
     #   time = @ws[row, column]
     #
     #   v = {
-    #     institution: @ws[row, 2],
+    #     institution: @ws[row, @headers['Submitter information-Institution']],
     #     time: time,
     #     row: row
     #   }
@@ -526,12 +626,12 @@ def image_capture_stats
 end
 
 def metadata_times
-  values = {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []}
+  values = { 'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => [] }
 
   @metadata_times ||= {
-    'level_1' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
-    'level_2' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []},
-    'level_3' => {'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => []}
+    'level_1' => { 'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => [] },
+    'level_2' => { 'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => [] },
+    'level_3' => { 'average' => 0, 'min' => 0, 'max' => 0, 'median' => 0, 'raw_times' => [] }
   }
 end
 
@@ -551,28 +651,42 @@ def metadata_stats
   # 98: Descriptive metadata creation-Level 3-Percent of scans on which process was performed (i.e., "20"; do not use the % sign)
   # 99: Descriptive metadata -Level 3-Minutes per 100 scans
 
-  (2..@ws.num_rows).each do |row|
-    (94..99).step(2).each do |column|
-      unless @ws[row, column].empty?
-        v = {
-          institution: @ws[row,2],
-          percentage: @ws[row, column],
-          time: @ws[row, column + 1],
-          normalized: normalize_time(@ws[row, column], @ws[row, column + 1]),
-          row: row
-        }
+  columns = [
+    'Descriptive metadata creation -Level 1-Percent of scans on which process was performed (i.e., "20"; do not use the % sign)',
+    'Descriptive metadata creation -Level 1-Minutes per 100 scans',
+    'Descriptive metadata creation-Level 2-Percent of scans on which process was performed (i.e., "20"; do not use the % sign)',
+    'Descriptive metadata creation-Level 2-Minutes per 100 scans',
+    'Descriptive metadata creation-Level 3-Percent of scans on which process was performed (i.e., "20"; do not use the % sign)',
+    'Descriptive metadata -Level 3-Minutes per 100 scans'
+  ]
 
-        case column
-        when 94
-          @metadata_times['level_1']['raw_times'] << v
-          break
-        when 96
-          @metadata_times['level_2']['raw_times'] << v
-          break
-        when 98
-          @metadata_times['level_3']['raw_times'] << v
-          break
-        end
+  (2..@ws.num_rows).each do |row|
+    # (94..99).step(2).each do |column|
+    (0..columns.length).step(2).each do |col|
+      column = @headers[columns[col]]
+      next if ( column.nil? || @ws[row, column].empty? )
+      v = {
+        institution: @ws[row, @headers['Submitter information-Institution']],
+        percentage: @ws[row, column],
+        time: @ws[row, column + 1],
+        normalized: normalize_time(@ws[row, column], @ws[row, column + 1]),
+        row: row
+      }
+
+      # case column
+      case columns[col]
+      # when 94
+      when 'Descriptive metadata creation -Level 1-Percent of scans on which process was performed (i.e., "20"; do not use the % sign)'
+        @metadata_times['level_1']['raw_times'] << v
+        break
+      # when 96
+      when 'Descriptive metadata creation-Level 2-Percent of scans on which process was performed (i.e., "20"; do not use the % sign)'
+        @metadata_times['level_2']['raw_times'] << v
+        break
+      # when 98
+      when 'Descriptive metadata creation-Level 3-Percent of scans on which process was performed (i.e., "20"; do not use the % sign)'
+        @metadata_times['level_3']['raw_times'] << v
+        break
       end
     end
   end
