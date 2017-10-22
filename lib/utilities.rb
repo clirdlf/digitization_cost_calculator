@@ -151,6 +151,7 @@ def quality_control_stats
       unless column.nil? || @ws[row, column].empty?
 
         v = {
+          id: @ws[row, @headers['ID']],
           institution: @ws[row, @headers['Submitter information-Institution']],
           percentage: @ws[row, column],
           time:  @ws[row, column + 1],
@@ -330,6 +331,7 @@ def preparation_stats
 
       unless @ws[row, column].empty?
         values = {
+          id: @ws[row, @headers['ID']],
           institution: @ws[row, @headers['Submitter information-Institution']],
           percentage: @ws[row, column],
           time: @ws[row, column + 1],
@@ -454,6 +456,7 @@ def post_preparation_stats
       column = @headers[columns[col]]
       next if (column.nil? || @ws[row, column].empty? )
       v = {
+        id: @ws[row, @headers['ID']],
         institution: @ws[row, @headers['Submitter information-Institution']],
         percentage: @ws[row, column + 3],
         time: @ws[row, column + 4],
@@ -532,6 +535,7 @@ def post_processing_stats
 
       next if column.nil? || @ws[row, column].empty?
       v = {
+        id: @ws[row, @headers['ID']],
         institution: @ws[row, @headers['Submitter information-Institution']],
         percentage: @ws[row, column],
         time: @ws[row, column + 1],
@@ -666,6 +670,7 @@ def metadata_stats
       column = @headers[columns[col]]
       next if ( column.nil? || @ws[row, column].empty? )
       v = {
+        id: @ws[row, @headers['ID']],
         institution: @ws[row, @headers['Submitter information-Institution']],
         percentage: @ws[row, column],
         time: @ws[row, column + 1],
