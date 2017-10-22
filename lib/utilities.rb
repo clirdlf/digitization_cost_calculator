@@ -604,6 +604,7 @@ def image_capture_stats
       v = {
         institution: @ws[row, @headers['Submitter information-Institution']],
         time: time,
+        make: @ws[row, @headers['Image CaptureÂ Exact type of scanner (make and model)']],
         row: row,
         id: @ws[row, @headers['ID']]
       }
