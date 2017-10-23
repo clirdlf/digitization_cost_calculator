@@ -513,6 +513,8 @@ def post_processing_stats
     # 'Post-processing -Color correction and tonal adjustment',
     # 'Post-processing -Cropping',
     # 'Post-processing -Stitching',
+    # 'Align/rotate-Method',
+    # 'Crop-Method',
     'Post-processing-Alignment/rotation-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)',
     'Post-processing-Alignment/rotation-Minutes per 100 scans',
     'Post-processing-Background removal (books/texts)-Percent of materials on which process was performed (i.e., "20"; do not use the % sign)',
