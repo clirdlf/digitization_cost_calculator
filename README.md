@@ -48,7 +48,7 @@ After you've made changes, you should see a list of changes under the "Uncommitt
 
 This is important, you then need to **sync** these changes by clicking on the **Sync** button in the top-right.
 
-### OS X
+### macOS
 
 All of the commands are run through the terminal. You can make this a
 nicer experience with [iTerm2](https://www.iterm2.com/) and
