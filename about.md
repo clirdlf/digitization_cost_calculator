@@ -19,8 +19,8 @@ When calculating the "cost" for a salaried staff person, the calculator takes as
 
 This list includes both current and past members of the DLF-AIG Cost Assessment working group.
 
-* Chrissy Rissmeyer, University of California, Santa Barbara (project co-coordinator)
-* Sarah Severson, McGill University Library
+* Chrissy Rissmeyer, University of California, Santa Barbara  (project co-coordinator)
+* Sarah Severson, University of Alberta Libraries (project co-coordinator)
 * Joyce Chapman, Duke University Libraries (project founder)
 * Wayne Graham, CLIR (technical lead)
 * David Bliss, University of Texas at Austin
