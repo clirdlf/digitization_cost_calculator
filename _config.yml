@@ -18,4 +18,5 @@ exclude:
   - README.md
   - templates
   - vendor
-google-tracking-id: 'UA-9461551-6'
+#google-tracking-id: 'UA-9461551-6'
+google-tracking-id: 'G-6RE5HSN41R'
