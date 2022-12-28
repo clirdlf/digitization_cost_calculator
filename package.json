@@ -21,5 +21,9 @@
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-sass": "^5.1.0"
+  },
+  "overrides": {
+    "chokidar": "^3.5.3",
+    "glob-parent": "6.0.2"
   }
 }
