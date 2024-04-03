@@ -19,7 +19,7 @@
   "devDependencies": {
     "sass": "^1.25.0",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^6.1.0",
+    "gulp-autoprefixer": "^9.0.0",
     "gulp-sass": "^5.1.0"
   },
   "overrides": {
