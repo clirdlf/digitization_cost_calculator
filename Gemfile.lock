@@ -286,7 +286,7 @@ GEM
     multi_json (1.15.0)
     multipart-post (2.4.1)
     mutex_m (0.3.0)
-    nokogiri (1.19.1)
+    nokogiri (1.19.4)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     octokit (4.25.1)
